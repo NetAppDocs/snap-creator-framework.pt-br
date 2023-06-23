@@ -1,0 +1,122 @@
+---
+permalink: installation/concept_snap_creator_installation_and_configuration_requirements.html 
+sidebar: sidebar 
+keywords: snap, creator, install, installation, configuration, requirements 
+summary: Antes de instalar o Snap Creator Framework, você deve estar ciente de certos requisitos de instalação e configuração para licenças, software e hardware. 
+---
+= Requisitos de instalação e configuração do Snap Creator
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de instalar o Snap Creator Framework, você deve estar ciente de certos requisitos de instalação e configuração para licenças, software e hardware.
+
+
+
+== Requisitos de licença
+
+Embora o Snap Creator não exija uma licença, as seguintes licenças podem ser necessárias, dependendo das ações que você deseja executar ao usar o Snap Creator:
+
+* FlexClone (para clonagem de volume)
+* Pacote principal do Active IQ Unified Manager (para a funcionalidade de proteção de dados do Console de Gerenciamento do NetApp e console do Gerenciador de operações)
+* SnapVault de sistemas abertos (para ações OSSV)
+* SnapDrive (para ações SnapDrive)
+* SnapMirror (para ações SnapMirror)
+* SnapRestore (para restaurar)
+* SnapVault (para ações SnapVault)
+
+
+Consulte a Matriz de interoperabilidade, que está online em http://mysupport.netapp.com/matrix["mysupport.NetApp.com/matrix"], para obter detalhes sobre o software suportado.
+
+
+
+== Informações de software
+
+O seguinte software pode ser necessário, dependendo do seu ambiente:
+
+* Java (obrigatório)
++
+
+NOTE: O Snap Creator Framework 4.3.3 suporta apenas OpenJDK e Oracle Java 1,8 Update 72 e posterior.
+
+* Data ONTAP (obrigatório)
+* Microsoft .NET Framework
+* Sistema operativo:
++
+
+NOTE: Atualmente, apenas sistemas operacionais baseados nos EUA são suportados.
+
++
+** Plataformas UNIX:
++
+
+NOTE: Snap Creator suporta apenas Bash Shell para todas as plataformas UNIX.
+
++
+*** AIX
+*** HP-UX
+*** Linux
+*** Solaris
+
+
+** Microsoft Windows
+
+
+* Navegadores da Web:
++
+** Internet Explorer
+** Firefox
+
+
+
+
+Consulte a Matriz de interoperabilidade, que está online em http://mysupport.netapp.com/matrix["mysupport.NetApp.com/matrix"], para obter detalhes sobre o software suportado.
+
+
+
+== Requisitos de hardware
+
+Os requisitos de hardware do Snap Creator são os seguintes:
+
+* Requisitos do servidor Snap Creator:
++
+|===
+| Componente de hardware | Mínimo | Recomendado 
+
+
+ a| 
+Processador
+ a| 
+1 núcleo
+ a| 
+4 núcleos, 2 GHz ou mais rápido
+
+
+
+ a| 
+Memória (para Snap Creator mais o sistema operativo)
+ a| 
+2 GB DE RAM
+ a| 
+4 GB DE RAM
+
+
+
+ a| 
+Espaço em disco
+ a| 
+5 GB
+ a| 
+50 GB ou superior (com base no número de registos a armazenar)
+
+|===
+* Requisitos do Snap Creator Agent:
++
+Requer um mínimo de 256 MB de memória quando nenhum plug-in é implantado ou quando plug-ins pré-empacotados são usados.
+
++
+Os plug-ins pré-embalados não devem precisar de quaisquer requisitos de memória adicionais. Outros plug-ins podem ter requisitos adicionais.
+
+

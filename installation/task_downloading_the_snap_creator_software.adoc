@@ -1,0 +1,29 @@
+---
+permalink: installation/task_downloading_the_snap_creator_software.html 
+sidebar: sidebar 
+keywords: downloading, download, snap, creator, software 
+summary: 'Transfira o software Snap Creator a partir do site de suporte da NetApp. O Snap Creator está listado na seção "Download de software" em Snap Creator Framework.' 
+---
+= Baixando o software Snap Creator
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Transfira o software Snap Creator a partir do site de suporte da NetApp. O Snap Creator está listado na seção ""Download de software"" em Snap Creator Framework.
+
+. Vá para a página Software no site de suporte da NetApp.
++
+O Snap Creator está listado na seção *Downloads* > *Software* como *Snap Creator Framework*.
+
+. Selecione uma plataforma e clique em *Go*.
+. Selecione a versão do Snap Creator para transferir clicando em *View & Download*.
+. A partir das instruções de transferência de software, clique em *CONTINUAR*.
+. Leia e aceite o Contrato de Licença de Usuário final.
+. Selecione o sistema operacional e o nível de bits do pacote de software.
+
+
+*Informações relacionadas*
+
+http://mysupport.netapp.com/["Site de suporte da NetApp: Mysupport.NetApp.com"]

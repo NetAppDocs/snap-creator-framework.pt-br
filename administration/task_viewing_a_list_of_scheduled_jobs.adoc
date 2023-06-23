@@ -1,0 +1,21 @@
+---
+permalink: administration/task_viewing_a_list_of_scheduled_jobs.html 
+sidebar: sidebar 
+keywords: schedule, job, view, list, snap, creator, gui 
+summary: Pode ver a lista de trabalhos agendados. 
+---
+= Visualizar uma lista de trabalhos agendados
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Pode ver a lista de trabalhos agendados.
+
+. No menu principal da GUI Snap Creator, selecione *Management* > *Schedules*.
+. No separador agendas, reveja a lista de trabalhos agendados.
++
+O campo resultado da última execução mostra o estado do último trabalho agendado. Uma marca de verificação verde no campo indica que o trabalho foi executado com êxito e um "X" vermelho indica que houve uma falha.
+
+

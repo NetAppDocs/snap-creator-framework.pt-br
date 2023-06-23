@@ -1,0 +1,660 @@
+---
+permalink: administration/reference_storage_error_messages.html 
+sidebar: sidebar 
+keywords: storage troubleshoot, error, message 
+summary: As mensagens de erro relacionadas ao storage podem ajudá-lo a solucionar quaisquer problemas que ocorram. 
+---
+= Mensagens de erro de armazenamento
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+As mensagens de erro relacionadas ao storage podem ajudá-lo a solucionar quaisquer problemas que ocorram.
+
+A tabela a seguir lista os códigos de erro e as mensagens, juntamente com uma breve descrição do erro e da resolução sugerida.
+
+[cols="15,35,50"]
+|===
+| Código de erro | Mensagem de erro | Descrição/resolução 
+
+
+ a| 
+STORAGE-00001
+ a| 
+Formato de data [%s] não é válido: [%s]
+ a| 
+O clone de volume não foi criado pelo Snap Creator, ou o carimbo de hora anexado ao nome do clone não é válido.
+
+
+
+ a| 
+STORAGE-00002
+ a| 
+Não foi possível recuperar o executor
+ a| 
+Um executor não foi criado para armazenamento. Verifique se há erros de gerenciamento do NetApp nos logs, o que pode revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-00003
+ a| 
+Não é possível conetar-se ao host
+ a| 
+O host não é acessível. Certifique-se de que as configurações de firewall local estão corretas e de que o host é capaz de fazer ping do sistema onde o Snap Creator Server está instalado.
+
+
+
+ a| 
+STORAGE-01003
+ a| 
+A criação de uma mensagem AutoSupport com ID de evento [%s], categoria [%s], descrição [%s], nível [%s], nome de host [%s] falhou com o erro [%s].
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-01004
+ a| 
+Para a restauração de arquivos, os volumes de origem e destino precisam ter o mesmo volume.
+ a| 
+Os volumes de origem e destino são diferentes.forneça o mesmo volume que o volume de origem e o volume de destino.
+
+
+
+ a| 
+STORAGE-02003
+ a| 
+A criação de cópias Snapshot do grupo de consistência [%s] em volumes [%s] falhou com o erro [%s];
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-02006
+ a| 
+A confirmação da cópia Snapshot do grupo de consistência em [%s] com ID CG [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-02009
+ a| 
+A criação de cópia Snapshot [%s] no volume [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-02015
+ a| 
+A remoção da cópia Snapshot [%s] no volume [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-02021
+ a| 
+A restauração da cópia Snapshot [%s] do volume [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-02025
+ a| 
+A restauração do arquivo [%s] da cópia Snapshot [%s] para [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-02028
+ a| 
+A criação do agendamento de cópia Snapshot primário do SnapVault [%s] no volume [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-02034
+ a| 
+A remoção SnapVault de agendas de cópias Snapshot primárias do volume [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-02038
+ a| 
+A criação do clone [%s] do volume [%s] com base na cópia Snapshot [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-02041
+ a| 
+Falha no arquivo de clonagem [%s] no volume [%s] para [%s] com base na cópia Snapshot [%s] com erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-02043
+ a| 
+A listagem de ficheiros no caminho [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-02046
+ a| 
+A clonagem de LUN [%s] para [%s] com base na cópia Snapshot [%s] com reserva de espaço [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-02049
+ a| 
+A eliminação de LUN [%s] do volume [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-02052
+ a| 
+Falha na listagem de LUNs com erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-02062
+ a| 
+A adição de exportação NFS [%s] para o nome do host [%s] com acesso [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-02072
+ a| 
+A recuperação do estado do SnapMirror no controlador [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-02075
+ a| 
+A recuperação de relações SnapMirror no controlador [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-02082
+ a| 
+A atualização do relacionamento do SnapMirror [%s] com base na cópia Snapshot [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-02092
+ a| 
+A listagem de cópias Snapshot no volume [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-02102
+ a| 
+A renomeação da cópia Snapshot [%s] no volume [%s] para [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-02112
+ a| 
+A recuperação do estado do SnapVault no controlador [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-02115
+ a| 
+A recuperação de relações SnapVault no controlador [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-02122
+ a| 
+A atualização do relacionamento do SnapVault [%s] com base na cópia Snapshot [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-02132
+ a| 
+A listagem de volumes clonados com base no volume [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-02142
+ a| 
+A eliminação do volume [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-02152
+ a| 
+Falha na listagem de volumes com erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-02155
+ a| 
+Falha na listagem do volume [%s] com mensagem de erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-02162
+ a| 
+A restauração da cópia Snapshot [%s] do volume [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-03001
+ a| 
+Recuperando VServers do nó do cluster ONTAP [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-05003
+ a| 
+A criação do conjunto de dados do console de gerenciamento do NetApp [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-05006
+ a| 
+A criação do backup do conjunto de dados [%s] baseado no console de gerenciamento do NetApp no controlador de storage [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-05009
+ a| 
+A recuperação do status do conjunto de dados do console de gerenciamento do NetApp para o conjunto de dados [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-05012
+ a| 
+A validação do conjunto de dados do console de gerenciamento do NetApp [%s] falhou com o erro [%s].
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-05018
+ a| 
+Criar evento OM [%s] em [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-03002
+ a| 
+O mapeamento do grupo de trabalho [%s] no LUN [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-03005
+ a| 
+Falha ao fazer LUN [%s] no volume [%s] com erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-03008
+ a| 
+A criação da cópia Snapshot primária do SnapVault [%s] no volume [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-03011
+ a| 
+A listagem de cópias de backup do console de gerenciamento do NetApp para o conjunto de dados [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-03014
+ a| 
+A exclusão do ID da versão de backup do console de gerenciamento do NetApp [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-03019
+ a| 
+O início da cópia de segurança da consola de gestão do NetApp para [%s] ([%s]) falhou, saindo!
+ a| 
+Verifique se há erros nos logs.você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-03022
+ a| 
+O início do progresso do backup do console de gerenciamento do NetApp [%s] falhou, saindo!
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-03025
+ a| 
+A eliminação do ficheiro no caminho [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-03030
+ a| 
+Falha na descoberta de nós de Data ONTAP em cluster em [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-03033
+ a| 
+A obtenção dos detalhes da versão do sistema de [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-03036
+ a| 
+A criação do diretório no caminho [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-03039
+ a| 
+A exclusão do diretório no caminho [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-03043
+ a| 
+A criação do ficheiro no caminho [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-03046
+ a| 
+Falha na modificação do conjunto de dados do console de gerenciamento do NetApp para o conjunto de dados [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-03049
+ a| 
+Não foi possível ler o conteúdo do ficheiro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-03052
+ a| 
+As opções obter para a opção [%s] falharam
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-03055
+ a| 
+Contadores de desempenho obter para objeto [%s] falhou
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-03058
+ a| 
+As instâncias de desempenho obtidas para objeto [%s] falharam
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-03061
+ a| 
+As informações do conjunto de dados do console de gerenciamento do NetApp para [%s] falharam
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-03064
+ a| 
+Falha no comando da CLI do sistema [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-03067
+ a| 
+A exclusão do conjunto de dados do console de gerenciamento do NetApp [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-03070
+ a| 
+A restauração da relação SnapVault [%s] com base na cópia Snapshot [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-03073
+ a| 
+Exportação CIFS para [%s]:[%s] falhou!
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-03076
+ a| 
+A obtenção do volume raiz no controlador [%s] falhou com o erro [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-03079
+ a| 
+Falha no caminho de junção para o volume [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-03082
+ a| 
+Falha na obtenção do nome do sistema
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-03085
+ a| 
+Falha no serviço NFS no controlador [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-03088
+ a| 
+Falha na verificação de permissão NFS para o nome do caminho [%s] do host [%s] permissão [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-03091
+ a| 
+Falha na interface de rede no controlador [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-03094
+ a| 
+Falha na lista Qtree no volume [%s]
+ a| 
+Verifique se há erros nos logs. Você provavelmente tem um erro de gerenciamento do NetApp. Os logs podem revelar a causa do problema.
+
+
+
+ a| 
+STORAGE-04119
+ a| 
+A listagem de VServers falhou com erro
+ a| 
+Verifique se há erros nos logs. É provável que você tenha um erro de solução de gerenciamento do ONTAP que pode revelar a causa do problema.
+
+
+
+ a| 
+SVM_TUNNEL_ENABLED
+ a| 
+(Y/N)
+ a| 
+Defina o túnel Vsim. Se definido como Y, o recurso de túnel Vsim está ativado.
+
+|===

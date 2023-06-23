@@ -1,0 +1,45 @@
+---
+permalink: administration/task_changing_the_snap_creator_agent_port_after_installation.html 
+sidebar: sidebar 
+keywords: snap, creator, agent, creatoragent, properties, unix, default, port 
+summary: Para alterar a porta na qual o Snap Creator Agent está ouvindo, você pode fazer uma alteração no arquivo Snap Creatoragent.properties e reiniciar o agente. 
+---
+= Alterar a porta Snap Creator Agent após a instalação
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para alterar a porta na qual o Snap Creator Agent está ouvindo, você pode fazer uma alteração no arquivo Snap Creatoragent.properties e reiniciar o agente.
+
+O procedimento para alterar a porta Snap Creator Agent é o mesmo para Windows e UNIX. O procedimento a seguir usa exemplos do ambiente UNIX.
+
+. Faça login no sistema no qual o Snap Creator Agent está sendo executado e alterne para o subdiretório etc dentro do diretório de instalação.
++
+[listing]
+----
+cd /install_path/scAgent4.3.0/etc
+----
+. Abra o arquivo agent.properties usando um editor de texto.
+. Altere o valor do parâmetro default_PORT para a nova porta (por padrão, a porta é 9090).
++
+Por exemplo, para usar a porta 9191, altere o parâmetro DEFAULT_PORT da seguinte forma:
+
++
+[listing]
+----
+DEFAULT_PORT=9191
+----
+. Salve e feche o arquivo agent.properties.
+. Reinicie o Snap Creator Agent.
++
+[listing]
+----
+/install_path/scAgent4.3.0/bin/scAgent restart
+----
++
+
+NOTE: Se o Snap Creator Agent estiver em execução quando quaisquer alterações forem feitas no arquivo allowed_commands.config ou no arquivo agent.properties, o agente deverá ser reiniciado.
+
+

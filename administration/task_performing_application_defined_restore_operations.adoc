@@ -1,0 +1,31 @@
+---
+permalink: administration/task_performing_application_defined_restore_operations.html 
+sidebar: sidebar 
+keywords: vmware, kvm, xen, plug-in, snap, creator, gui 
+summary: Se você estiver usando plug-ins VMware, KVM e Xen, poderá executar operações de restauração definidas pela aplicação usando a GUI do Snap Creator. 
+---
+= Execução de operações de restauração definidas pela aplicação
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se você estiver usando plug-ins VMware, KVM e Xen, poderá executar operações de restauração definidas pela aplicação usando a GUI do Snap Creator.
+
+Em certos ambientes VMware, as operações de restauração podem levar muito tempo. Nesses casos, você pode usar a CLI do Snap Creator ou configurar dois agentes: Um para backup e outro para restauração.
+
+
+NOTE: As operações de restauração da VMware usando a GUI são suportadas apenas para o Snap Creator Agent.
+
+. No menu principal da GUI Snap Creator, selecione *Gerenciamento* > *Configurações*.
+. Na guia *Configurações*, no painel Perfis e Configuração, selecione o arquivo de configuração.
+. Selecione *Ação* > *Restaurar*.
++
+A caixa de diálogo Restauração definida pelo aplicativo é exibida no painel direito.
+
+. Insira os detalhes da restauração e clique em *OK*:
++
+image::../media/restore_application_defined.gif[restaurar a aplicação definida]
+
+

@@ -1,0 +1,25 @@
+---
+permalink: administration/task_viewing_a_list_of_backup_copies_of_a_configuration_file.html 
+sidebar: sidebar 
+keywords: backup, copy, ontap, volume, configuration, file, data 
+summary: É possível exibir uma lista das cópias de backup dos volumes do ONTAP definidos no arquivo de configuração. Você também pode obter detalhes sobre backups disponíveis e renomear backups específicos com base no requisito. 
+---
+= Exibindo uma lista de cópias de backup de um arquivo de configuração
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+É possível exibir uma lista das cópias de backup dos volumes do ONTAP definidos no arquivo de configuração. Você também pode obter detalhes sobre backups disponíveis e renomear backups específicos com base no requisito.
+
+. No menu principal da GUI do Snap Creator, selecione *dados* > *backups*.
+. No painel Perfis e Configurações da guia backups, expanda um perfil e selecione um arquivo de configuração.
++
+A guia backups exibe uma lista de todas as cópias de backup dos volumes do ONTAP definidos no arquivo de configuração.
+
++
+
+NOTE: O Snap Creator 4,3 ou uma versão anterior exclui uma cópia Snapshot com base no período de retenção, mesmo que as cópias sejam renomeadas. Para reter cópias Snapshot por um tempo ilimitado, o Snap Creator Framework forneceu um botão chamado "retenção ilimitada", sob a guia "data ->backup" na GUI do Snap Creator Framework. Você pode selecionar uma cópia Snapshot que deseja manter por um tempo ilimitado e clicar no botão "retenção ilimitada". O nome da cópia Snapshot selecionada muda de <snapshot_name> para <snapshot_name_unlimited>.
+
+

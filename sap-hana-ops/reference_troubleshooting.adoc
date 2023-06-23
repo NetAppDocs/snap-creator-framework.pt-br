@@ -1,0 +1,179 @@
+---
+permalink: sap-hana-ops/reference_troubleshooting.html 
+sidebar: sidebar 
+keywords: troubleshooting 
+summary: A seção de solução de problemas fornece informações sobre os códigos de erro, mensagens de erro e inclui a descrição ou resolução para resolver o problema. 
+---
+= Solução de problemas
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A seção de solução de problemas fornece informações sobre os códigos de erro, mensagens de erro e inclui a descrição ou resolução para resolver o problema.
+
+A tabela a seguir lista as mensagens de erro do plug-in do SAP HANA.
+
+|===
+| Código de erro | Mensagem de erro | Descrição/Resolução 
+
+
+ a| 
+hdb-00001
+ a| 
+Não é possível encontrar um nó HANA acessível para executar comandos hdbsql usando os parâmetros de configuração fornecidos. Verifique e atualize as configurações DO HANA na configuração e tente novamente.
+ a| 
+Verifique se os nós HANA estão em execução e alcançáveis, e o número da instância fornecido está correto.
+
+
+
+ a| 
+hdb-00002
+ a| 
+A criação de instantâneos da base de dados para a sid falhou.
+ a| 
+Verifique se um snapshot do banco de dados HANA já está criado no banco de dados. Se já tiver sido criado, exclua o snapshot do banco de dados HANA ou execute uma operação unquiesce. Se ainda não tiver sido criado, verifique se há outras mensagens de erro e detalhes nos logs.
+
+
+
+ a| 
+hdb-00003
+ a| 
+Falha ao excluir o instantâneo do banco de dados para o sid.
+ a| 
+Verifique se um instantâneo do banco de DADOS HANA já foi excluído. Se sim, este erro pode ser ignorado. Se não, verifique os parâmetros do plug-in do SAP HANA e certifique-se de que os nós sejam alcançáveis e o número da instância fornecido esteja correto.
+
+
+
+ a| 
+hdb-00004
+ a| 
+A conexão com o nó [[hana_node] com a instância [] falhou, pois a conexão foi recusada.
+ a| 
+O NÓ HANA com instância exibida na mensagem não é alcançável. Isso pode ser apenas um aviso, pois o plug-in tentará executar comandos hdbsql em outros nós. Verifique os registos para ver se a operação foi bem-sucedida.
+
+
+
+ a| 
+hdb-00005
+ a| 
+Banco de dados [sid] já tem um snapshot!
+ a| 
+O instantâneo do banco de dados HANA já existe no banco de dados. Exclua o snapshot do banco de dados HANA ou execute uma operação de aquisição para resolver esse problema.
+
+
+
+ a| 
+hdb-00006
+ a| 
+Não foi possível resolver o nome de host [ Hana_node].
+ a| 
+O nome do host do NÓ HANA não pode ser resolvido. Verifique as entradas do servidor DNS ou hosts etc.
+
+
+
+ a| 
+hdb-00007
+ a| 
+Nome de utilizador ou palavra-passe inválidos. Verifique as credenciais e tente novamente.
+ a| 
+O nome de usuário e a senha fornecidos para o banco de dados HANA estão incorretos. Corrija as entradas no arquivo de configuração e tente novamente.
+
+
+
+ a| 
+hdb-00008
+ a| 
+Falha ao executar o comando [[hdbsql_cmd] em [[hana_node].
+ a| 
+O plug-in falhou ao executar o comando hdbsql em todos os nós HANA fornecidos na configuração. Verifique os nós HANA e os parâmetros da instância e garanta que pelo menos um NÓ HANA esteja ativo e acessível.
+
+
+
+ a| 
+hdb-00009
+ a| 
+Não foi possível encontrar O HANA.
+ a| 
+A operação SCDUMP do plug-in do SAP HANA não conseguiu recuperar informações específicas dos bancos de dados HANA. Verifique os nós HANA e os parâmetros da instância e certifique-se de que pelo menos um NÓ HANA esteja ativo e acessível.
+
+
+
+ a| 
+hdb-00010
+ a| 
+Falha na recolha de informações do SO.
+ a| 
+A coleta de informações do sistema operacional falhou no ambiente Windows; o plug-in SAP HANA não é suportado no Windows. Em vez disso, use um sistema operacional SLES.
+
+
+
+ a| 
+hdb-00011
+ a| 
+Falha na recolha de informações do SO.
+ a| 
+O Snap Creator não conseguiu recolher informações do SO para a operação SCDUMP. Verifique o arquivo de configuração do agente e corrija as configurações.
+
+
+
+ a| 
+hdb-00012
+ a| 
+Falha na recolha de informações do SnapDrive.
+ a| 
+O plug-in SAP HANA só é compatível em um ambiente NFS. Sua configuração para banco de dados HANA tem o SnapDrive habilitado; defina O SnapDrive no arquivo de configuração.
+
+
+
+ a| 
+hdb-00013
+ a| 
+O parâmetro HANA_NODES não está definido. Verifique as configurações DO HANA no arquivo de configuração.
+ a| 
+O parâmetro HANA Nodes (HANA_NODES) é necessário para o plug-in SAP HANA. Defina o parâmetro e tente novamente.
+
+
+
+ a| 
+hdb-00014
+ a| 
+Não é possível encontrar um nó HANA acessível para executar comandos hdbsqlusando os parâmetros de configuração fornecidos. Verifique e atualize as configurações DO HANA na configuração e tente novamente.
+ a| 
+Verifique se os nós HANA estão em execução e alcançáveis, e o número da instância fornecido está correto.
+
+
+
+ a| 
+hdb-00015
+ a| 
+O parâmetro HANA_INSTANCE não está definido. Verifique as configurações DO HANA no arquivo de configuração.
+ a| 
+O parâmetro instância HANA (HANA_INSTANCE) é necessário para o plug-in SAP HANA. Defina o parâmetro e tente novamente.
+
+
+
+ a| 
+hdb-00016
+ a| 
+O parâmetro HANA_PASSWORD não está definido. Verifique as configurações DO HANA no arquivo de configuração.
+ a| 
+O parâmetro HANA password (HANA_PASSWORD) é necessário para o plug-in SAP HANA. Defina o parâmetro e tente novamente.
+
+
+
+ a| 
+hdb-00017
+ a| 
+Caminho para hdbsql, o valor do parâmetro HANA_HDBSQL_CMD é inválido!
+ a| 
+Ocorreu uma das seguintes situações:
+
+* Você não forneceu o caminho hdbsql
+* O caminho hdbsql fornecido está incorreto.
+
+
+Certifique-se de ter o cliente HANA dbsql instalado no host de gerenciamento onde o Snap Creator Agent está instalado e forneça o caminho correto do binário hdbsql em parâmetros HANA; em seguida, tente novamente.
+
+|===

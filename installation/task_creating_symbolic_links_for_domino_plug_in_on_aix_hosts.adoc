@@ -1,0 +1,53 @@
+---
+permalink: installation/task_creating_symbolic_links_for_domino_plug_in_on_aix_hosts.html 
+sidebar: sidebar 
+keywords: creating, create, symbolic, links, domino, plug-in, aix, hosts 
+summary: Você deve executar este procedimento para adicionar links simbólicos para o plug-in Domino em hosts AIX. 
+---
+= Criando links simbólicos para o plug-in Domino em hosts AIX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você deve executar este procedimento para adicionar links simbólicos para o plug-in Domino em hosts AIX.
+
+Você não deve copiar e colar comandos diretamente deste documento; erros (como carateres transferidos incorretamente causados por quebras de linha e retornos difíceis) podem resultar. Copie e cole os comandos em um editor de texto, verifique os comandos e insira-os no console CLI.
+
+
+NOTE: Os caminhos fornecidos nas etapas a seguir referem-se aos sistemas de 32 bits; os sistemas de 64 bits devem criar links simples para /usr/lib64 em vez de /usr/lib.
+
+. Adicione links para /usr/lib para os seguintes arquivos:
++
+** libxmlproc_r.a
+** libndgts_r.a
+** libnotes_r.a
+** libgsk8iccs_r.a (apenas para Domino 9,0 ou posterior) Um método típico de criação de um link simbólico é usar o comando ln:
+
+
++
+ln -s /path/to/source_file /usr/lib/linked_file
+
++
+onde:
+
++
+** -s instrui o sistema operacional a fazer um link simbólico.
+** /Path/to/source_file é o caminho para um dos arquivos de biblioteca do Domino, incluindo o nome do arquivo.
+** linked_file é o nome do arquivo que está sendo vinculado.
++
+[listing]
+----
+ln -s /opt/ibm/domino/notes/latest/ibmpow/libxmlproc_r.a /usr/lib/libxmlproc_r.a
+ln -s /opt/ibm/domino/notes/latest/ibmpow/libndgts_r.a /usr/lib/libndgts_r.a
+ln -s /opt/ibm/domino/notes/latest/ibmpow/libnotes_r.a /usr/lib/libnotes_r.a
+ln -s /opt/ibm/domino/notes/latest/linux/libgsk8iccs.so /usr/lib/libgsk8iccs_r.a
+----
+
+
+. Verifique o caminho para os arquivos listados na Etapa 1.
++
+Os comandos neste exemplo usam o caminho padrão para AIX, mas as instalações podem variar.
+
+

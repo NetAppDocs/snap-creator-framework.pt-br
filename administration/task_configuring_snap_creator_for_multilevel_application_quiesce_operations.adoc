@@ -1,0 +1,103 @@
+---
+permalink: administration/task_configuring_snap_creator_for_multilevel_application_quiesce_operations.html 
+sidebar: sidebar 
+keywords: hypervisoer, virtualization, plug-in, vmware, vcloud, multilevel, application, quiesce 
+summary: 'Quando você está usando os plug-ins do hypervisor (também conhecidos como virtualização) (VMware (VMware vCloud diretor e VMware vSphere), KVM e Citrix XenServer) e deseja executar uma operação de backup e arquivamento de aplicativos multinível, você precisa configurar o Snap Creator para esse tipo de configuração.' 
+---
+= A configuração do Snap Creator para operações de aplicativos multinível exige o uso de plug-ins de hipervisor
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Quando você está usando os plug-ins do hypervisor (também conhecidos como "virtualização") (VMware (VMware vCloud diretor e VMware vSphere), KVM e Citrix XenServer) e deseja executar uma operação de backup e arquivamento de aplicativos multinível, você precisa configurar o Snap Creator para esse tipo de configuração.
+
+Essa configuração permite que você silencie um aplicativo que reside em uma máquina virtual, silencie a máquina virtual e, em seguida, faça uma cópia Snapshot.
+
+Durante esse processo, você criará uma configuração de hypervisor e aplicativo especificando um arquivo de configuração pai com um ou mais arquivos de configuração filho. Esse arquivo de configuração pai contém as informações típicas do arquivo de configuração, como política de retenção, detalhes do SVM e informações do plug-in do hypervisor. Cada arquivo de configuração filho contém os detalhes necessários para executar as ações do Snap Creator quiesce e Unquiesce usando o plug-in específico do aplicativo.
+
+. Crie um novo perfil.
+. Crie uma nova configuração.
++
+.. Na página Configuração, introduza um nome para o ficheiro de configuração.
++
+
+NOTE: Por padrão, a criptografia de senha é ativada para impedir que as senhas sejam exibidas em texto não criptografado no arquivo de configuração.
+
+.. Na página tipo de plug-in, selecione *plug-in de virtualização*.
+.. Na página Virtualization Plug-in (Plug-in de virtualização), selecione o plug-in a configurar.
+.. Na página parâmetros do plug-in, forneça os detalhes de configuração associados à opção do plug-in selecionado.
++
+No exemplo a seguir, o VMware vSphere é o plug-in de virtualização selecionado. As telas do assistente que são exibidas dependem de sua seleção.
+
++
+... Forneça as informações apropriadas e clique em *Adicionar*.
++
+image::../media/scf_config_multilvl_setup_1.gif[configuração do scf multilvl 1]
+
+... Na página novo vCenter, forneça o vCenter IP e o nome do host e clique em *Adicionar*.
+... Selecione os datastores e as máquinas virtuais aplicáveis para backup.
++
+image::../media/scf_config_multilvl_setup_2.gif[configuração do scf multilvl 2]
+
+... Verifique se os detalhes inseridos estão corretos.
+... Na página Configuração do agente, forneça os detalhes do agente VMware, que são os detalhes do sistema em que você instalou o agente.
++
+
+NOTE: A porta é a porta na qual o agente está escutando.
+
++
+Clique em *Test Agent Connection* para verificar se o agente está em execução.
+
+... Na página Hypervisor e Backup de aplicativos, selecione *Sim* porque os backups consistentes com o hypervisor e o aplicativo são necessários.
+... Na página de configuração do Hypervisor e do aplicativo, forneça o nome de configuração pai para a configuração do hypervisor e do aplicativo.
+... Na página tipo de plug-in, selecione *plug-in do aplicativo*.
+... Na página Plug-ins de aplicativos, selecione o aplicativo a ser usado para backup e restauração.
+... Forneça os detalhes para a aplicação selecionada.
+... Na página Configuração do agente, forneça os detalhes do Agente Snap Creator do aplicativo, que são os detalhes do host do aplicativo ou do banco de dados no qual você instalou o agente.
++
+
+NOTE: Normalmente, o host é uma máquina virtual que está sendo feita uma cópia de segurança que tem um aplicativo em execução nele.
+
++
+Clique em *Test Agent Connection* para verificar se o agente está em execução.
+
+... Na página Resumo, verifique as informações e clique em *Finish*.
+... Na página Hypervisor e App, você tem as seguintes opções:
++
+**** Para adicionar aplicativos adicionais a essa configuração, clique em *Add* e repita as etapas vii a xii neste exemplo.
+**** Para excluir aplicativos dessa configuração, selecione o item e clique em *Excluir*.
+**** Para continuar com o assistente de configuração principal, clique em *Next*.
++
+
+NOTE: Se você tiver vários aplicativos listados, terá a opção de reordenar essa lista movendo um aplicativo para cima ou para baixo na lista. O backup dos aplicativos é feito em série, portanto, se um aplicativo precisar ser silenciado antes de outro na lista, você precisará colocar os aplicativos na sequência adequada.
+
+
+
+
+
+.. Na página Configurações de conexão de armazenamento, forneça as seguintes informações:
++
+*** Para a opção *Transporte*, selecione *HTTPS*.
+*** Para a opção *Controller/SVM Port*, deixe a configuração padrão (443).
+*** Para a opção *Clustered ONTAP*, selecione *Sim*. image:../media/scf_config_multilvl_setup_3.gif[""]
+
+
+.. Na página novo controlador/SVM, forneça o endereço IP, nome de usuário e senha do controlador.
+.. Forneça os detalhes da cópia Snapshot.
++
+image::../media/scf_config_multilvl_setup_4.gif[configuração do scf multilvl 4]
+
+.. Na página Detalhes do instantâneo, não selecione a opção *Grupo de consistência*.
+.. Na página proteção de dados, não selecione nenhuma das opções *transferência de dados*.
+.. Verifique as informações na página Resumo e clique em *Finish*.
+
+
+
+
+*Informações relacionadas*
+
+xref:task_creating_profiles.adoc[Criando perfis]
+
+xref:task_creating_configuration_files_using_sc_gui.adoc[Criando arquivos de configuração]

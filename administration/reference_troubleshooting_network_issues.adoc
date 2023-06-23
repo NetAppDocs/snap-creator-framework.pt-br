@@ -1,0 +1,96 @@
+---
+permalink: administration/reference_troubleshooting_network_issues.html 
+sidebar: sidebar 
+keywords: network, issues, snap, creator, authorization, failure, troubleshoot, nat 
+summary: Você pode encontrar problemas de rede no Snap Creator, como falhas de autorização. Você deve estar ciente desses problemas e saber como solucioná-los. 
+---
+= Solução de problemas de rede
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode encontrar problemas de rede no Snap Creator, como falhas de autorização. Você deve estar ciente desses problemas e saber como solucioná-los.
+
+* *Emissão*
++
+Enquanto estiver dentro do Snap Creator, você encontra um problema de falha de autorização.
+
+* *Causa*
++
+Uma falha de autorização pode ser devido à configuração, permissões de firewall ou conversão de endereço de rede (NAT).
+
+* *Ações corretivas*
++
+Verifique o seguinte:
+
++
+** Nome IP/Host
++
+A menos que você use o equiv do host, o nome do sistema de armazenamento do comando hostname no controlador deve ser o mesmo que o que foi inserido no arquivo de configuração do Snap Creator.
+
++
+Não use um nome de domínio totalmente qualificado (FQDN) quando o nome de host de um sistema de armazenamento for abreviado.
+
++
+Certifique-se de que a resolução IP corresponde ao nome especificado. Se houver uma incompatibilidade, corrija-a usando o equipamento host no sistema de armazenamento.
+
++
+Para ativar o equiv do host, execute as seguintes etapas:
+
++
+... Digite o seguinte comando: Opções https.admin.hostsequiv.enable ON
+... Edite o arquivo /etc/hostsequiv e adicione o seguinte: IP/Host_NAME_in_Snap_Creator config_fileSnap_Creator_User
+
+
+** A funcionalidade de proteção de dados do Console de gerenciamento do NetApp
++
+O nome do controlador de storage definido nos VOLUMES de parâmetros de configuração do Snap Creator deve corresponder ao nome do controlador de storage na funcionalidade de proteção de dados do Console de gerenciamento do NetApp. Se os nomes do controlador de armazenamento não corresponderem, você poderá usar o arquivo host do sistema operacional para forçar a correspondência dos nomes do controlador de armazenamento.
+
+** Firewall
++
+Se houver um firewall entre o host que está executando o Snap Creator e seu sistema de storage, verifique se você tem listas de controle de acesso bidirecional (ACLs) abertas para 80, 443 ou ambos.
+
++
+*** 80: Usado para se comunicar com o sistema de armazenamento se HTTP estiver selecionado
+*** 443: Usado para se comunicar com o sistema de armazenamento se HTTPS for selecionado para usar HTTPS (443) para Linux, Solaris ou AIX, instale as bibliotecas openssl, que são necessárias para usar SSL.
+
+
+
+
++
+Se o Snap Creator Agent estiver em execução, a porta na qual o Agente está em execução deve estar aberta. Certifique-se de que o tráfego de retorno do sistema de storage possa ir para o sistema que está executando o Snap Creator, pelo menos nas portas sem privilégios.
+
++
+** O Snap Creator Framework pode se comunicar com o Clustered Data ONTAP e o Data ONTAP operando no modo 7 usando TLS se o SSL estiver desativado.
++
+No Snap Creator Framework, você pode desativar O SSLv3 no host e no sistema de armazenamento:
+
++
+*** Para desativar O SSLv3 em AIX, Unix ou Windows, você deve atualizar o parâmetro jdk.tls.DisabledAlgorithms no arquivo java.security da seguinte forma:
++
+jdk.tls.disabledAlgorithms: SSLv3
+
++
+O arquivo java.security está localizado sob o caminho: /java/jre/lib/security/
+
+*** Para desativar O SSLv3 no sistema de armazenamento, você deve executar o comando System Service Web Modify e configurar os seguintes parâmetros:
++
+TLSv1 ativado: Verdadeiro
+
++
+SSLv3 ativado: Falso
+
++
+SSLv2 ativado: Falso
+
+
+
+** NAT
++
+Se utilizar NAT, certifique-se de que os endereços IP de origem/destino não são alterados no pacote TCP (Transmission Control Protocol). Os sistemas de host e storage precisam saber com quem estão se comunicando. Apresentar um IP de firewall em vez do IP de host ou controlador real pode causar problemas.
+
+
+
+

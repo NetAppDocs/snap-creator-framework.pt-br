@@ -1,0 +1,31 @@
+---
+permalink: domino-ops/concept_backup_operations_using_domino_plug_in.html 
+sidebar: sidebar 
+keywords: domino, ibm, backup, operations, ibm, understanding 
+summary: Ao contrário de outras tecnologias de backup, o plug-in IBM Domino permite que os dados sejam gravados no banco de dados durante as operações de backup. Ele garante que o backup seja consistente com os dados do aplicativo, registrando quaisquer alterações no banco de dados durante as operações de backup em um diretório temporário chamado changeinfo. No momento da restauração, ele aplica essas alterações ao banco de dados depois de restaurar os dados da cópia Snapshot. 
+---
+= Compreender as operações de backup do plug-in do IBM Domino
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ao contrário de outras tecnologias de backup, o plug-in IBM Domino permite que os dados sejam gravados no banco de dados durante as operações de backup. Ele garante que o backup seja consistente com os dados do aplicativo, registrando quaisquer alterações no banco de dados durante as operações de backup em um diretório temporário chamado changeinfo. No momento da restauração, ele aplica essas alterações ao banco de dados depois de restaurar os dados da cópia Snapshot.
+
+Durante as operações de backup, os arquivos de banco de dados estão em modo de backup. Embora o Snap Creator Framework se refira a esses arquivos como "quiesced", esse não é o caso. Os dados continuam a ser gravados nos arquivos enquanto a cópia Snapshot está sendo feita.
+
+Os passos de alto nível são os seguintes:
+
+. Liste bancos de dados, modelos e caixas de correio nos volumes a serem copiados.
+. Coloque arquivos no modo de backup, um banco de dados de cada vez.
+. Verifique se existem bancos de dados inconsistentes ou corrompidos.
++
+
+NOTE: Você pode forçar o plug-in a prosseguir com as operações de backup apesar de erros, conforme descrito na etapa link:task_using_the_gui_to_create_a_configuration_file.md#STEP_AA41331683A24598B7845367CB967F99["Task_using_the_gui_to_create_a_Configuration_file.md_AA41331683A24598B7845367CB967F99"].
+
+. Faça uma cópia Snapshot de cada volume.
+. Se o log de transações do Domino estiver em uso, arquive cópias de logs de transações do Domino para uso em operações de restauração mais recentes.
+. Tire arquivos do modo de backup, um banco de dados de cada vez.
+. Registre as alterações no banco de dados já que os arquivos foram colocados no modo de backup no diretório changeinfo.
+

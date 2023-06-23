@@ -1,0 +1,22 @@
+---
+permalink: administration/task_editing_scheduled_jobs.html 
+sidebar: sidebar 
+keywords: edit, schedule, job, snap, creator, gui 
+summary: Pode editar um trabalho agendado. 
+---
+= Editar trabalhos agendados
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Pode editar um trabalho agendado.
+
+. No menu principal da GUI Snap Creator, selecione *Management* > *Schedules*.
+. Na guia horários, selecione um trabalho na lista de tarefas agendadas e clique em *Editar*.
+. Modifique os campos desejados e clique em *Salvar*.
++
+O trabalho agendado é guardado com as modificações.
+
+

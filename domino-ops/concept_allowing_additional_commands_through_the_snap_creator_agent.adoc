@@ -1,0 +1,32 @@
+---
+permalink: domino-ops/concept_allowing_additional_commands_through_the_snap_creator_agent.html 
+sidebar: sidebar 
+keywords: domino, ibm, allowing, allow, additional, commands, snap, creator, agent 
+summary: Se você quiser executar um comando suplementar no Snap Creator Agent, você deve permitir explicitamente que o comando seja executado incluindo-o no arquivo allowed_commands.config no Agente. 
+---
+= Permitindo comandos suplementares no Snap Creator Agent
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se você quiser executar um comando suplementar no Snap Creator Agent, você deve permitir explicitamente que o comando seja executado incluindo-o no arquivo allowed_commands.config no Agente.
+
+Allowed_Commands.config está localizado no subdiretório etc do diretório de instalação do Snap Creator Agent. Por exemplo:
+
+* Em hosts UNIX, /install/path/scAgent4,1.x/etc/allowed_commands.config
+* Em hosts do Windows, o arquivo C:/Program Files/NetApp/scAgent4,1.x/etc/allowed_commands.config
+
+
+Para permitir comandos suplementares no Agente, abra allowed_Commands.config em um editor. Digite cada comando em sua própria linha, exatamente como você digitaria o comando em um prompt de comando. O caso é significativo. Certifique-se de que especifica o nome de caminho totalmente qualificado. Coloque o nome do caminho entre aspas se ele contiver espaços. Por exemplo:
+
+[listing]
+----
+"C:\Program Files\NetApp\SnapDrive\sdcli.exe"
+ myscript.bat
+----
+Reinicie o Agente para que as alterações entrem em vigor.
+
+
+NOTE: Por razões de segurança, você não deve usar uma entrada curinga (*) para permitir todos os comandos.

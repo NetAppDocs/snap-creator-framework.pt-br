@@ -1,0 +1,47 @@
+---
+permalink: domino-ops/concept_domino_database_restore_overview.html 
+sidebar: sidebar 
+keywords: domino, ibm, restore, restoring, databases, understanding, snapmirror, snapvault, destination, directories 
+summary: O plug-in IBM Domino restaura arquivos de banco de dados da cópia Snapshot do volume no qual o banco de dados é armazenado. Quando a restauração Snapshot estiver concluída, o plug-in aplica quaisquer alterações registradas no diretório changeinfo. 
+---
+= Restaurar bancos de dados
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O plug-in IBM Domino restaura arquivos de banco de dados da cópia Snapshot do volume no qual o banco de dados é armazenado. Quando a restauração Snapshot estiver concluída, o plug-in aplica quaisquer alterações registradas no diretório changeinfo.
+
+
+
+== Compreensão das operações de restauração do SnapMirror e do SnapVault
+
+Não é possível usar o Snap Creator para restaurar uma cópia SnapMirror dos dados. Se você quiser restaurar uma cópia de espelho, primeiro você precisa quebrar o espelho e, em seguida, restaurar manualmente os dados. Para obter mais informações, consulte link:http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-sm-ic-fr/home.html["Guia expresso de recuperação de desastres em volume do ONTAP 9"].
+
+Somente restaurações de volume pontual estão disponíveis quando você restaura uma cópia SnapVault a partir do storage secundário. Não é possível executar uma restauração de volume atualizada ou uma restauração de arquivo único. Você pode contornar essa limitação restaurando primeiro do armazenamento secundário para o armazenamento primário. No storage primário, é possível executar uma restauração de volume mais atualizada ou uma restauração de arquivo único conforme necessário.
+
+
+
+== Compreender os diretórios de destino
+
+As restaurações de volume e restaurações de arquivo único geralmente têm diretórios de destino diferentes. Especifique o diretório de destino no parâmetro diretório de restauração de dados no arquivo de configuração de backup e restauração (consulte a etapa link:task_using_the_gui_to_create_a_configuration_file.md#STEP_E6C507729B3647FD8B2E8D0818F22D3B["Task_using_the_gui_to_create_a_Configuration_file.md_E6C507729B3647FD8B2E8D0818F22D3B"]):
+
+* Para uma restauração de volume, você precisa definir o diretório de restauração de dados para o diretório de dados do Domino.
+* Para uma restauração de arquivo único, você precisa definir o diretório de restauração de dados para um subdiretório no volume de dados do Domino.
+
+
+Isso significa que, se você alternar tipos de restauração, precisará modificar o diretório de restauração de dados para apontar para a configuração correta para cada tipo de restauração. Caso contrário, as informações de mudança não serão aplicadas corretamente e os dados serão inconsistentes com o estado do banco de dados para o qual você deseja restaurar. Claro, você pode criar configurações diferentes para restaurações de volume e arquivo único, se preferir.
+
+
+
+== Onde executar uma restauração
+
+Com uma exceção, você pode usar a GUI do Snap Creator ou a CLI do Snap Creator para restaurar bancos de dados. Para restaurações em um único arquivo em um ambiente SAN, use a CLI, conforme descrito em xref:concept_single_file_restore_in_fc_iscsi_environments.adoc[Executar uma restauração de arquivo único em um ambiente SAN].
+
+
+NOTE: Este guia mostra como usar a CLI apenas para restaurações de um único arquivo em um ambiente SAN. Caso contrário, ele mostra como usar a GUI para restaurar bancos de dados. Para obter informações sobre como usar a CLI, consulte https://library.netapp.com/ecm/ecm_download_file/ECMP12395422["Guia de administração do Snap Creator Framework 4.1.2"].
+
+*Informações relacionadas*
+
+link:task_performing_point_in_time_volume_restore.adoc["Executar uma restauração de volume"] link:task_performing_point_in_time_single_file_restore_with_nfs.adoc["Executar uma restauração de arquivo único"] link:concept_single_file_restore_in_fc_iscsi_environments.adoc["Executar uma restauração de arquivo único em um ambiente SAN"]

@@ -1,0 +1,91 @@
+---
+permalink: domino-ops/task_scheduling_actions_using_the_snap_creator_gui.html 
+sidebar: sidebar 
+keywords: domino, ibm, scheduling, schedule, backups 
+summary: Você pode agendar trabalhos de backup recorrentes após executar o backup inicial. 
+---
+= Agendamento de backups
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode agendar trabalhos de backup recorrentes após executar o backup inicial.
+
+Você deve ter criado o arquivo de configuração para o backup, conforme descrito em xref:task_using_the_gui_to_create_a_configuration_file.adoc[Criando um arquivo de configuração].
+
+. No painel Perfis e Configurações, selecione o arquivo de configuração e clique em *Gerenciamento* > *horários* na parte superior da janela Snap Creator Framework.
+. No painel trabalhos, clique em *criar*
+. Na caixa de diálogo novo trabalho, especifique as informações do trabalho:
++
+|===
+| Para este campo... | Faça isso... 
+
+
+ a| 
+Nome do trabalho
+ a| 
+Introduza o nome do trabalho.
+
+
+
+ a| 
+Data de início
+ a| 
+Use o controle do calendário para selecionar a data em que o agendamento deve começar.
+
+
+
+ a| 
+Ativo
+ a| 
+Selecione esta caixa para ativar a programação. Desmarque a caixa para desativar a programação.
+
+
+
+ a| 
+Perfil
+ a| 
+Selecione o perfil para o ficheiro de configuração.
+
+
+
+ a| 
+Configuração
+ a| 
+Selecione o ficheiro de configuração.
+
+
+
+ a| 
+Ação
+ a| 
+Selecione cópia de segurança.
+
+
+
+ a| 
+Política
+ a| 
+Selecione a política para o trabalho de cópia de segurança. *Nota:* você deve ter configurado a política no arquivo de configuração.
+
+
+
+ a| 
+Frequência
+ a| 
+Selecione a frequência com que o trabalho deve ser executado. Dependendo da sua escolha, são apresentados novos campos onde pode especificar os minutos, a hora e o dia para executar o trabalho. Se você quiser usar um cron job, selecione cron e digite o comando cron.
+
+|===
++
+O exemplo a seguir mostra como agendar um trabalho de backup para ser executado todos os dias à meia-noite:
+
++
+image::../media/scfw_domino_new_job.gif[Esta imagem é explicada pelo texto circundante.]
+
+. Clique em *Salvar*.
++
+O trabalho agendado está listado no separador agendas no painel trabalhos. Selecione o trabalho a executar, editar ou eliminar.
+
+

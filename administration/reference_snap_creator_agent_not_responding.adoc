@@ -1,0 +1,30 @@
+---
+permalink: administration/reference_snap_creator_agent_not_responding.html 
+sidebar: sidebar 
+keywords: snap, creator, agent, responding, corrective, action 
+summary: O Snap Creator Agent não está respondendo. 
+---
+= Snap Creator Agent não responde
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O Snap Creator Agent não está respondendo.
+
+* *Emissão*
++
+O Snap Creator Agent não está respondendo.
+
+* *Ações corretivas*
++
+Verifique o seguinte:
+
++
+** O Snap Creator Agent está em execução.
+** A porta selecionada ainda não está em uso.
+** A comunicação na porta Agente é permitida através do firewall.
+
+
+

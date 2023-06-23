@@ -1,0 +1,35 @@
+---
+permalink: domino-ops/concept_adding_commands_to_the_backup_and_restore_configuration.html 
+sidebar: sidebar 
+keywords: domino, ibm, adding, commands, backup, restore, configuration, supplemental, 
+summary: Você pode preferir usar comandos SnapDrive para backups em vez de comandos nativos do Snap Creator, para garantir a consistência do sistema de arquivos no nível do sistema operacional. 
+---
+= Adicionando comandos à configuração de backup e restauração
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ocasionalmente, uma operação de backup ou restauração pode precisar executar um comando que não está disponível no Snap Creator. Em hosts de janela que usam FC ou iSCSI, por exemplo, você pode preferir usar comandos SnapDrive para backups em vez de comandos nativos do Snap Creator, para garantir a consistência do sistema de arquivos no nível do SO.
+
+
+
+== Onde executar comandos suplementares
+
+Por padrão, comandos suplementares são executados no Snap Creator Agent. Você pode executar um comando suplementar no servidor prependendo o comando com o SERVIDOR de texto, seguido por dois pontos (:). Por exemplo, SERVER:C: Myscript.bat.
+
+Se você quiser executar um comando suplementar no Agente, você deve permitir explicitamente que o comando seja executado incluindo-o no arquivo allowed_commands.config no Agente. Não há nenhum requisito para permitir comandos suplementares no servidor.
+
+
+
+== Onde adicionar comandos suplementares
+
+Você pode usar a GUI do Snap Creator ou a CLI do Snap Creator para adicionar comandos à sua configuração de backup e restauração.
+
+
+NOTE: Este guia mostra como usar a GUI para adicionar comandos. Para obter informações sobre como usar a CLI, consulte https://library.netapp.com/ecm/ecm_download_file/ECMP12395422["Guia de administração do Snap Creator Framework 4.1.2"].
+
+*Informações relacionadas*
+
+link:concept_allowing_additional_commands_through_the_snap_creator_agent.adoc["Permitindo comandos suplementares no Snap Creator Agent"] link:task_configuring_snap_creator_to_use_snapdrive_by_using_the_gui.adoc["Adicionando comandos suplementares à configuração"]

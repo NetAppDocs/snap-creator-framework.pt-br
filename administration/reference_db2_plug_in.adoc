@@ -1,0 +1,66 @@
+---
+permalink: administration/reference_db2_plug_in.html 
+sidebar: sidebar 
+keywords: db2, plug-in, communicate, database 
+summary: O plug-in DB2 usa o comando DB2 para se comunicar com o banco de dados. 
+---
+= Plug-in DB2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O plug-in DB2 usa o comando DB2 para se comunicar com o banco de dados.
+
+A tabela a seguir lista os parâmetros de plug-in DB2, fornece as configurações de parâmetros e descreve os parâmetros.
+
+|===
+| Parâmetro | Definição | Descrição 
+
+
+ a| 
+NOME_APP
+ a| 
+db2
+ a| 
+Fornece o nome da aplicação.
+
+
+
+ a| 
+DB2_DATABASES
+ a| 
+db_name:user_name
+ a| 
+Lista os bancos de dados DB2 e o nome de usuário.vários bancos de dados e nomes de usuário podem ser especificados como uma lista separada por ponto e vírgula: Por exemplo, `db1:user1;db2:user2`.
+
+
+
+ a| 
+DB2_CMD
+ a| 
+path_to_db2cli_cmd
+ a| 
+Especifica o caminho que é usado para inicializar a conexão do banco de dados para que outros comandos possam ser executados no banco de dados.
+
+* Ambiente baseado em UNIX:``db2_install_directory/sqllib/bin/db2``
++
+Por exemplo: `/home/db2inst1/sqllib/bin/db2`
+
+* Windows: `db2_install_directory\SQLLIB\BIN\db2cmd.exe`
++
+Por exemplo: `C:\"Program Files"\IBM\SQLLIB\BIN\db2cmd.exe`
+
+
+
+Se um caminho não for especificado, então sqllib/DB2 é usado como caminho.
+
+|===
+*Nota:* o plug-in DB2 lida com operações de Layout de arquivo em qualquer lugar (WAFL) por padrão. Se você quiser fazer backup de um backup de grupo de consistência com o plug-in DB2, defina o parâmetro como parâmetro NTAP_CONSISTENCY_GROUP_WAFL_SYNC como N. se você definir esse parâmetro como Y, operações de sincronização adicionais e redundantes serão executadas.
+
+Para obter as informações mais recentes sobre suporte ou para visualizar matrizes de compatibilidade, consulte Matriz de interoperabilidade.
+
+*Informações relacionadas*
+
+http://mysupport.netapp.com/matrix["Ferramenta de Matriz de interoperabilidade: Mysupport.NetApp.com/Matrix"]

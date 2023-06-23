@@ -1,0 +1,22 @@
+---
+permalink: administration/task_deleting_clones.html 
+sidebar: sidebar 
+keywords: unmount, delete, clone, gui, snap, creator, management, configuration, action, snapshot, copy, controller, volume 
+summary: 'Você pode desmontar (ou excluir) clones.' 
+---
+= Desmontar clones
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode desmontar (ou excluir) clones.
+
+. No menu principal da GUI Snap Creator, selecione *Gerenciamento* > *Configurações*.
+. Na guia *Configurações*, selecione um arquivo de configuração e selecione *ações* > *Desmontar*.
+. Na janela parâmetros adicionais, selecione o controlador, o volume, a política de cópia Snapshot que contém o backup montado e o nome específico da cópia Snapshot no qual o clone foi criado; em seguida, clique em *OK*.
++
+O clone não está montado; a cópia Snapshot não é excluída.
+
+

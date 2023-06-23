@@ -1,0 +1,88 @@
+---
+permalink: administration/reference_cli_command_results_in_500_cannot_locate_object_error.html 
+sidebar: sidebar 
+keywords: unix, 500, locate, error, cli, ssl, libraries 
+summary: Em um ambiente UNIX, você pode encontrar o erro 500 não consegue localizar o objeto depois de executar um comando CLI. 
+---
+= O comando CLI resulta em 500 não é possível localizar erro de objeto
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Em um ambiente UNIX, você pode encontrar o erro 500 não consegue localizar o objeto depois de executar um comando CLI.
+
+* *Emissão*
++
+Em um ambiente UNIX, você tenta executar um comando CLI, mas encontra o 500 não consegue localizar o erro de objeto como visto no exemplo a seguir:
+
++
+[listing]
+----
+500 Can't locate object method "new" via package "LWP::Protocol::https::Socket"
+----
+* *Causa*
++
+Existem duas causas possíveis desta mensagem de erro:
+
++
+** A causa mais provável desta mensagem de erro é que as bibliotecas SSL da CLI não estão ligadas.
+** Se a mensagem de erro não for o resultado da não vinculação das bibliotecas SSL, outra causa pode ser que a biblioteca Perl HTTPS esteja ausente.
+
+
+* *Ações corretivas*
++
+Para resolver o problema de vinculação de arquivos de biblioteca, os simlinks precisam ser criados manualmente. Consulte o administrador do sistema operacional e verifique a presença dos arquivos libsssl.so e libcrypto.so. Pacotes SSL podem precisar ser instalados.
+
++
+Supondo que os arquivos estão presentes, você deve vincular manualmente os arquivos. Para fazer isso, execute um dos seguintes conjuntos de comandos com base no seu sistema operacional:
+
++
+** Para 32 bits:
++
+[listing]
+----
+cd /usr/lib
+ln -s libssl.so.1.0.0 libssl.so.6
+ln -s libcrypto.so.1.0.0 libcrypto.so.6
+----
+** Para 3264it:
++
+[listing]
+----
+cd /usr/lib64
+ln -s libssl.so.1.0.0 libssl.so.6
+ln -s libcrypto.so.1.0.0 libcrypto.so.6
+----
+
+
+* *Ações corretivas*
++
+Para resolver o problema da biblioteca Perl HTTPS ausente, instale a biblioteca LWP::Protocol::https no modo CPAN.
+
++
+Execute as seguintes etapas:
+
++
+.. Abra uma sessão SSH do seu servidor Linux e execute o seguinte comando: perl -MCPAN -e shell
++
+
+NOTE: Se esta for a primeira vez que você usou o CPAN, você será solicitado com o seguinte:
+
++
+[listing]
+----
+Would you like me to configure as much as possible automatically? [yes]
+----
++
+Pressione *Enter* para aceitar o padrão. O shell CPAN será aberto.
+
+.. Execute o seguinte comando: Install LWP::Protocol::https
++
+Os pacotes necessários são baixados e instalados. Se forem necessários pacotes adicionais, você pode ser solicitado a instalá-los também selecionando [yes].
+
+.. Depois que a instalação estiver concluída, digite exit para retornar ao shell normal.
+
+
+

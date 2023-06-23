@@ -1,0 +1,24 @@
+---
+permalink: domino-ops/concept_single_file_restore_in_fc_iscsi_environments.html 
+sidebar: sidebar 
+keywords: domino, ibm, performing, single-file, restore, single, file, san 
+summary: Para restaurações em um único arquivo em um ambiente SAN, você pode usar o SnapDrive para montar a cópia Snapshot no host do Snap Creator Agent. 
+---
+= Executar uma restauração de arquivo único em um ambiente SAN
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para restaurações em um único arquivo em um ambiente SAN, você pode usar o SnapDrive para montar a cópia Snapshot no host do Snap Creator Agent. Em seguida, você pode copiar o arquivo que deseja restaurar para o diretório de restauração de dados e usar uma ação personalizada do Snap Creator para concluir o processamento de restauração.
+
+*Informações relacionadas*
+
+xref:task_using_snapdrive_for_windows_to_mount_snapshot_copy.adoc[Usando o SnapDrive para montar uma cópia Snapshot]
+
+xref:task_copying_files_to_restore_location.adoc[Copiando o arquivo para o diretório de restauração de dados]
+
+xref:task_running_snap_creator_by_using_the_custom_action.adoc[Usando uma ação personalizada do Snap Creator para concluir o processamento de restauração]
+
+xref:task_disconnecting_snapshot_copy.adoc[Desligar a cópia Snapshot]

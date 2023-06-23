@@ -1,0 +1,30 @@
+---
+permalink: domino-ops/task_creating_a_domino_backup_using_the_snap_creator_gui.html 
+sidebar: sidebar 
+keywords: domino, ibm, backing up, backup, databases, on-demand, on, demand 
+summary: Você deve fazer backup de seus bancos de dados assim que eles estiverem disponíveis no storage NetApp. Você pode agendar backups recorrentes após o backup inicial. 
+---
+= Backup de bancos de dados sob demanda
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você deve fazer backup de seus bancos de dados assim que eles estiverem disponíveis no storage NetApp. Você pode agendar backups recorrentes após o backup inicial.
+
+Você deve ter criado o arquivo de configuração para o backup, conforme descrito em xref:task_using_the_gui_to_create_a_configuration_file.adoc[Criando um arquivo de configuração].
+
+. No painel Perfis e Configurações, selecione o arquivo de configuração e clique em *ações* > *Backup*.
+. Na caixa de diálogo Additional Parameters (parâmetros adicionais), selecione a política para a tarefa de cópia de segurança na lista pendente *Policy* (Política) e clique em *OK*.
++
+image::../media/scfw_domino_select_a_policy.gif[Esta imagem é explicada pelo texto circundante.]
+
++
+
+NOTE: Você deve ter configurado a política no arquivo de configuração.
+
++
+O Snap Creator inicia o trabalho de cópia de segurança. As informações do trabalho são exibidas no painel Console.
+
+

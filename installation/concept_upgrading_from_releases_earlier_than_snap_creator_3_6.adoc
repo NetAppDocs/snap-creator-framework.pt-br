@@ -1,0 +1,20 @@
+---
+permalink: installation/concept_upgrading_from_releases_earlier_than_snap_creator_3_6.html 
+sidebar: sidebar 
+keywords: upgrading, upgrade, releases, earlier, before, snap, creator, 3.6 
+summary: Se você estiver atualizando de versões anteriores ao Snap Creator 3,6, primeiro atualize para o Snap Creator 3,6 uma versão de cada vez. 
+---
+= Atualizando a partir de versões anteriores ao Snap Creator 3,6
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se você estiver atualizando de versões anteriores ao Snap Creator 3,6, primeiro atualize para o Snap Creator 3,6 uma versão de cada vez.
+
+Por exemplo, para atualizar do Snap Creator 3,5.x, primeiro você deve atualizar de 3,5.x para 3,6. Depois de executar o Snap Creator 3,6, você pode concluir a atualização para a versão mais recente. Durante esse processo de atualização, você pode instalar o Snap Creator Agent ao mesmo tempo em que atualiza o Snap Creator Server.
+
+*Informações relacionadas*
+
+xref:task_upgrading_the_snap_creator_server_3_6_x_on_windows.adoc[Atualizando o Snap Creator Server 3,6.x no Windows]

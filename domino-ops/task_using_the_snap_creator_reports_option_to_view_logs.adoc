@@ -1,0 +1,31 @@
+---
+permalink: domino-ops/task_using_the_snap_creator_reports_option_to_view_logs.html 
+sidebar: sidebar 
+keywords: domino, ibm, viewing, view, logs, report pane 
+summary: É possível exibir Registros no painel Snap CreatorReports, no mesmo formato usado para exibi-los no painel Console. Você pode exibir Registros de erro, bem como Registros padrão no painel relatórios. 
+---
+= Exibindo logs no painel relatórios
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+É possível exibir Registros no painel Snap CreatorReports, no mesmo formato usado para exibi-los no painel Console. Você pode exibir Registros de erro, bem como Registros padrão no painel relatórios.
+
+. Na parte superior da janela Snap Creator Framework, clique em *relatórios* > *Logs*.
+. No painel relatórios, selecione o perfil, o arquivo de configuração, o tipo de log e o arquivo de log, onde os tipos de log são os seguintes:
++
+** *Out Logs* fornecem informações de nível detalhado para um trabalho.
+** *Debug Logs* fornece informações em nível de verbosidade, além de informações úteis na depuração.
+** *Stderr Logs* fornece informações sobre erros gravados em erro padrão.
+** *Error Logs* fornece todas as informações de erro. *Observação:* dependendo do tamanho do trabalho, escolher *Debug Log* pode fazer com que o navegador fique lento ou sem resposta.
+
+
+. Clique em:
++
+** *Transferir Registo selecionado* para transferir o registo selecionado.
+** * Baixe Logs GUI* para baixar os logs da GUI. Na caixa de diálogo de download, clique em *Open* ou *Save* conforme necessário.
+
+
+

@@ -1,0 +1,105 @@
+---
+permalink: administration/task_creating_scheduled_jobs_using_sc_gui.html 
+sidebar: sidebar 
+keywords: local, retention, policy, configuration, snap, creator, gui, copy, lun, volume, clone, snapvault, ossv, job 
+summary: 'Se você estiver usando uma política de retenção local (localizada no arquivo de configuração), você poderá usar o agendador da interface gráfica do usuário (GUI) do Snap Creator para criar agendas e executar tarefas. O agendador, que está contido no servidor Snap Creator, pode agendar backups (cópias Snapshot), clones de LUN, clones de volume, clones definidos pela aplicação, transferências Open Systems SnapVault (OSSV), tarefas de arquivamento e ações personalizadas.' 
+---
+= Criação de trabalhos agendados
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se você estiver usando uma política de retenção local (localizada no arquivo de configuração), você poderá usar o agendador da interface gráfica do usuário (GUI) do Snap Creator para criar agendas e executar tarefas. O agendador, que está contido no servidor Snap Creator, pode agendar backups (cópias Snapshot), clones de LUN, clones de volume, clones definidos pela aplicação, transferências Open Systems SnapVault (OSSV), tarefas de arquivamento e ações personalizadas.
+
+Se você planeja usar objetos de política em vez de uma política de retenção local, ignore este procedimento e crie uma agenda de políticas.
+
+. No menu principal da GUI Snap Creator, selecione *Management* > *Schedules* e clique em *Create*.
+. Na janela novo trabalho, introduza os detalhes do trabalho.
++
+image::../media/schedule_new_job_window.gif[janela agendar novo trabalho]
+
++
+|===
+| Campo | Descrição 
+
+
+ a| 
+Nome do trabalho
+ a| 
+Especifique o nome do trabalho agendado.
+
+
+
+ a| 
+Data de início
+ a| 
+Selecione a data de hoje ou uma data futura.
+
+
+
+ a| 
+Ativo
+ a| 
+Defina como Ativo para indicar que o trabalho será executado conforme programado. Ativo é a configuração padrão.
+
+
+
+ a| 
+Perfil
+ a| 
+Selecione o perfil a ser associado a este trabalho.
+
+
+
+ a| 
+Configuração
+ a| 
+Selecione a configuração a ser associada a este trabalho.
+
+
+
+ a| 
+Ação
+ a| 
+Selecione uma das seguintes opções:
+
+** *Backup*: Cria um backup usando a tecnologia de armazenamento NetApp.
+** *CloneLun*: Cria um backup e clona um ou mais LUNs usando o comando clone lun.
+** *CloneVol*: Cria um backup e clona um volume.
+** *Clone*: Executa uma operação de clone acionada por plug-in.
+** *OSSV*: Usa SnapVault de sistemas abertos para executar o backup.
++
+Nenhum backup primário foi criado.
+
+** *Arch*: Executa somente o gerenciamento de log de arquivo.
++
+Não foi criada nenhuma cópia de segurança.
+
+** *Custom*: Executa uma ação de clonagem definida por plug-in.
+
+
+
+
+ a| 
+Política
+ a| 
+Selecione a política a ser associada a este trabalho.
+
+
+
+ a| 
+Frequência
+ a| 
+Selecione a frequência para este trabalho. Dependendo da sua seleção, tem de selecionar os campos de hora adequados para executar o trabalho agendado.
+
+E
+
+|===
+. Clique em *Salvar*.
+
+
+*Informações relacionadas*
+
+xref:task_creating_policy_schedules.adoc[Criando agendas de políticas]

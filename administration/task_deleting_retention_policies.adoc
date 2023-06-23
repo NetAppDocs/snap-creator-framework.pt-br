@@ -1,0 +1,26 @@
+---
+permalink: administration/task_deleting_retention_policies.html 
+sidebar: sidebar 
+keywords: delete, retention, policy, snap, creator, gui 
+summary: Você pode excluir políticas de retenção. 
+---
+= Excluindo políticas de retenção
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode excluir políticas de retenção.
+
+. No menu principal da GUI Snap Creator, selecione *Política* > *Gerenciamento de políticas*.
+. Na guia *Policy Manager*, selecione uma política e clique em *Delete*.
++
+
+NOTE: Se tentar eliminar uma política atribuída a um ficheiro de configuração, a GUI apresenta a seguinte mensagem de erro: A política não pode ser eliminada uma vez que o nome da política é aplicado à configuração.Utilize a política de desanexar e, em seguida, elimine a política.
+
+. Clique em *Yes* (Sim) na janela de confirmação.
++
+A política é removida da guia Gerenciador de políticas.
+
+

@@ -1,0 +1,183 @@
+---
+permalink: administration/reference_parameters_to_set_up_a_snapshot_copy.html 
+sidebar: sidebar 
+keywords: parameter, snapshot, copy, snap, creator, server, retention, snapdrive 
+summary: Vários parâmetros de arquivo de configuração são necessários para configurar cópias Snapshot para o Snap Creator Server. 
+---
+= Parâmetros para configurar cópias Snapshot
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vários parâmetros de arquivo de configuração são necessários para configurar cópias Snapshot para o Snap Creator Server.
+
+|===
+| Parâmetro | Definição | Descrição 
+
+
+ a| 
+NTAP_SNAPSHOT_ RETENÇÃO_IDADE
+ a| 
+ a| 
+Permite definir a idade de retenção (em dias) para cópias Snapshot. Se configurado, as cópias Snapshot serão excluídas somente se excederem o número definido no parâmetro NTAP_SNAPSHOT_ RETENÇÕES e se forem maiores do que a idade de retenção (em dias).
+
+
+
+ a| 
+SnapDrive
+ a| 
+"'Y'" ou "'N'"
+ a| 
+Permite que você use o SnapDrive em vez da API do Data ONTAP para criar uma cópia Snapshot.
+
+
+
+ a| 
+SnapDrive_DISCOVERY
+ a| 
+"'Y'" ou "'N'"
+ a| 
+Permite que você use o SnapDrive para descoberta de storage. Isso é necessário em um ambiente SAN ou isan ao usar o parâmetro VALIDATE_VOLUMES.
+
+
+
+ a| 
+NTAP_SNAPSHOT_ DESATIVAR
+ a| 
+"'Y'" ou "'N'"
+ a| 
+Desativa o Snap Creator de criar uma cópia Snapshot para que o Snap Creator possa lidar com o SnapVault ou o SnapMirror for SnapManager. Para que essa configuração funcione, as cópias Snapshot do SnapManager devem seguir esta convenção de nomenclatura: Snapshot_copy_name-policy_recent.
+
+
+
+ a| 
+NTAP_SNAPSHOT_ NODELETE
+ a| 
+"'Y'" ou "'N'"
+ a| 
+Substitui o parâmetro NTAP_SNAPSHOT_RETENÇÕES e impede que cópias Snapshot sejam excluídas. Ativar esta variável pode tornar o volume cheio.
+
+
+
+ a| 
+NTAP_SNAPSHOT_DELETE_CMD
+ a| 
+ a| 
+Exclui instantâneos através do SnapDrive em vez do Snap Creator com base na retenção de instantâneos. * Observação:* todos os volumes (unidades de montagem) usados neste comando do SnapDrive para exclusão de instantâneos também devem ser incluídos o arquivo de configuração.
+
+
+
+ a| 
+NTAP_SNAPSHOT_DELETE_BY_AGE_ONLY
+ a| 
+(PRIMÁRIO
+| SECUNDÁRIO 
+
+
+| AMBOS | N)  a| 
+Permite a exclusão de cópias Snapshot antigas. Esse parâmetro requer o parâmetro NTAP_SNAPSHOT_RETENSION_AGE e força a exclusão com base na idade de cópia Snapshot em vez do número de cópias snapshot.
+
+
+
+ a| 
+NTAP_SNAPSHOT_DEPENDENCY_IGNORE
+ a| 
+"'Y'" ou "'N'"
+ a| 
+Aplica-se apenas à exclusão de cópia Snapshot usando a ação backupDel. A exclusão manual de cópias Snapshot com uma dependência não é permitida.
+
+
+
+ a| 
+NTAP_SNAPSHOT_ CRIAR_CMD NO
+ a| 
+ a| 
+Cria uma cópia Snapshot e elimina os buffers do sistema de arquivos; o número é um número de 1 a 99. *Nota:* esta definição é necessária se ativar o parâmetro SnapDrive. A API do Data ONTAP ainda é usada para executar tudo o resto, mas a opção SnapDrive cria cópias Snapshot.
+
+
+
+ a| 
+NO. DO NTAP_ METADATA_SNAPSHOT_ CREATE_CMD
+ a| 
+ a| 
+Cria o volume de metadados cópia Snapshot e limpa os buffers do sistema de arquivos; o número é um número de 1 a 99.
+
+
+
+ a| 
+NTAP_CONSISTENCY_ GROUP_SNAPSHOT
+ a| 
+"'Y'" ou "'N'"
+ a| 
+Permite o uso de grupos de consistência para criar cópias Snapshot consistentes em vários volumes.
+
+
+
+ a| 
+NTAP_CONSISTENCY_ GROUP_SNAPSHOT_RETRY_COUNT
+ a| 
+ a| 
+Especifica o número de vezes que um instantâneo do grupo de consistência deve ser tentado novamente em caso de falha.
+
+
+
+ a| 
+NTAP_CONSISTENCY_ GROUP_SNAPSHOT_RETRY_WAIT
+ a| 
+Tempo (em segundos)
+ a| 
+Especifica o tempo de espera entre cada tentativa de um instantâneo de grupo de consistência.
+
+
+
+ a| 
+NTAP_CONSISTENCY_ GROUP_TIMEOUT
+ a| 
+(URGENTE
+| MÉDIA 
+
+
+| RELAXADO)  a| 
+Especifica o tempo de espera que o controlador de storage agrupe cópias Snapshot consistentemente.
+ a| 
+NTAP_CONSISTENCY_group_WAFL_SYNC
+
+
+
+ a| 
+"'Y'" ou "'N'"
+ a| 
+Melhora o desempenho de uma cópia Snapshot de grupo de consistência forçando um ponto de consistência (CP) por meio de uma sincronização WAFL antes do início do cg. *Nota:* se você estiver executando o backup do grupo de consistência com o plug-in DB2, você deve definir esse parâmetro como "'N'".
+ a| 
+NTAP_SNAPSHOT_RESTORE_AUTO_DETECT
+
+
+
+ a| 
+"'Y'" ou "'N'"
+ a| 
+Se desativada, esta definição força sempre um único SnapRestore de ficheiro (SFSR) ao executar uma única restauração de ficheiro.
+ a| 
+NTAP_SNAPSHOT_CLEANUP
+
+
+
+ a| 
+"'Y'" ou "'N'"
+ a| 
+Remove todas as cópias Snapshot criadas em caso de falha do backup.
+ a| 
+NTAP_USE_EXTERNAL_SNAPSHOT
+
+
+
+ a| 
+"'Y'" ou "'N'"
+ a| 
+Permite a importação de uma cópia Snapshot que não seja do Snap Creator. A cópia Snapshot mais recente é correspondida.
+ a| 
+NTAP_EXTERNAL_SNAPSHOT_REGEX
+
+|===

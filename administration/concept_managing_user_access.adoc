@@ -1,0 +1,137 @@
+---
+permalink: administration/concept_managing_user_access.html 
+sidebar: sidebar 
+keywords: snap, creator, security, features, rbac, snapcreator 
+summary: 'O Snap Creator fornece recursos de segurança, como controle de acesso baseado em função (RBAC), que permite gerenciar o acesso do usuário no Snap Creator.' 
+---
+= Gerenciando o acesso do usuário
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O Snap Creator fornece recursos de segurança, como o controle de acesso baseado em funções (RBAC), que permite gerenciar o acesso do usuário no Snap Creator.
+
+O RBAC envolve usuários, funções, permissões, operações e perfis. Os usuários, funções e permissões podem ser definidos pelos usuários do Snap Creator.
+
+
+
+== Usuários
+
+* Os usuários são identificados exclusivamente por um nome de usuário e senha.
+* Um usuário pode ser atribuído e não atribuído a uma ou mais funções e perfis.
+* O SNAPCREATOR_USER no arquivo snapcreator.properties é adicionado como um usuário quando o Snap Creator Server é iniciado.
+* O SNAPCREATOR_USER no arquivo snapcreator.properties é atribuído a função Administrador padrão quando o usuário é criado durante a inicialização.
+
+
+
+
+== Funções
+
+As funções têm uma ou mais permissões. As permissões atribuídas determinam as ações que um usuário pode executar e também quais elementos da GUI o usuário pode acessar. Existem três funções integradas:
+
+* *ADMINISTRADOR*
++
+Tem acesso total a todas as APIs. Esta é a única função que pode criar, editar e excluir usuários.
+
+* *OPERADOR*
++
+Essa função é configurada para ser um super usuário e tem acesso a todas as APIs, exceto RBAC.
+
+* *VISUALIZADOR*
++
+Tem acesso muito limitado. Essa função tem acesso a chamadas de API Snap Creator somente leitura.
+
+
+
+Essas funções incorporadas não podem ser adicionadas, removidas ou modificadas.
+
+
+
+== Permissões
+
+As permissões são um conjunto de operações que o usuário está autorizado a executar. As seguintes permissões são integradas:
+
+* * CÓPIA DE SEGURANÇA*
++
+Necessário para executar uma operação de backup ou clone.
+
+* *CONFIGURAÇÃO*
++
+Necessário para criar, ler, atualizar e excluir arquivos de configuração.
+
+* *CUSTOM*
++
+Necessário para iniciar uma operação de plug-in personalizada.
+
+* * EXTENDED_REPOSITORY*
++
+Necessário para executar operações de catálogo (também conhecido como repositório estendido).
+
+* *GLOBAL*
++
+Necessário para criar, editar e excluir arquivos de configuração global.
+
+* *POLICY_ADMIN*
++
+Necessário para chamar operações de política (por exemplo, addPolicy, updatePolicy, removePolicy).
+
+* *POLICY_VIEWER*
++
+Necessário para operações de política somente leitura.
+
+* *RBAC_ADMIN*
++
+Necessário para gerenciar usuários (por exemplo, criar, atualizar, excluir usuários e funções; também para atribuir e cancelar a atribuição de funções, permissões).
+
+* *RBAC_VIEW*
++
+Necessário para exibir contas de usuário, funções atribuídas e permissões atribuídas.
+
+* * RESTAURAR*
++
+Necessário para executar operações de restauração.
+
+* *AGENDADOR*
++
+Necessário para executar operações do agendador.
+
+* *VISUALIZADOR*
++
+Fornece autorização para operações somente leitura.
+
+
+
+
+
+== Operações
+
+As operações são os valores base que o Snap Creator verifica para obter autorização. Alguns exemplos de operações são getTask, fileCloneCreate, createTask, dirCreate e assim por diante.
+
+
+NOTE: As operações não podem ser adicionadas, removidas ou modificadas.
+
+
+
+== Perfis
+
+* Os perfis são atribuídos aos usuários.
+* Os perfis no RBAC são criados no diretório de perfil no sistema de arquivos.
+* Certas APIs do Snap Creator verificam se um usuário está atribuído a um perfil e também verificam as permissões para operações.
++
+Por exemplo, se um usuário quiser um status de tarefa, o RBAC verifica se o usuário tem autorização para chamar SchedulergetJob e, em seguida, verifica se o perfil associado à tarefa está atribuído ao usuário.
+
+* Se um usuário, que recebe a função Operador, criar um perfil, esse perfil será atribuído automaticamente ao usuário.
+
+
+
+
+== Gerenciamento do acesso do usuário para controladores de storage
+
+Se você não estiver usando o proxy Active IQ Unified Manager, precisará de um nome de usuário e senha para se comunicar com os controladores de armazenamento. As senhas podem ser criptografadas para segurança.
+
+
+NOTE: Você não deve usar o usuário root ou o usuário admin/vsadmin. A prática recomendada é criar um usuário de backup com as permissões de API necessárias.
+
+As comunicações de rede são por meio de HTTP (80) ou HTTPS (443), portanto, você deve ter uma ou ambas as portas abertas entre o host onde o Snap Creator é executado e os controladores de armazenamento. Um usuário deve ser criado nos controladores de storage para autenticação. Para HTTPS, você deve garantir que o usuário esteja habilitado e configurado nos controladores de armazenamento.

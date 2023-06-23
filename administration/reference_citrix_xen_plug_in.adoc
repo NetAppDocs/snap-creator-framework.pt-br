@@ -1,0 +1,121 @@
+---
+permalink: administration/reference_citrix_xen_plug_in.html 
+sidebar: sidebar 
+keywords: snap, creator, support, backup, restore, citrix, xenserver, virtual, machine, vm, citrix, xenserver, plug-in 
+summary: 'O Snap Creator suporta o backup e restauração de máquinas virtuais (VMs) Citrix XenServer usando o plug-in Citrix XenServer.' 
+---
+= Plug-in Citrix XenServer
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O Snap Creator suporta o backup e restauração de máquinas virtuais (VMs) Citrix XenServer usando o plug-in Citrix XenServer.
+
+
+NOTE: Para obter as informações mais recentes sobre matrizes de suporte ou compatibilidade, consulte Matriz de interoperabilidade.
+
+O plug-in Citrix XenServer suporta Windows e XenServer.
+
+Considere o seguinte ao usar o plug-in Citrix XenServer:
+
+* O servidor Active IQ Unified Manager como proxy não é suportado.
+* Montar, desmontar e fazer backup de operações usando o Open Systems SnapVault e o gerenciamento de logs de arquivamento não são suportados.
+* As operações de restauração de volume não são suportadas; apenas as operações de restauração definidas pela aplicação são suportadas.
+* As VMs excluídas podem ser restauradas.
+* O Snap Creator Agent deve ser instalado no host onde o XenCenter está instalado e o Snap Creator Server não deve ser instalado no XenServer.
+* O valor SC_Agent_TIMEOUT deve ser maior que o valor padrão: 600 ou superior.
+* Se o valor de APP_DEFINED_RESTORE for Y, a operação de restauração do SnapVault usando a GUI não será suportada.
+* Se o mestre do pool for desativado em um pool de servidores, o arquivo de configuração do Snap Creator deve ser modificado manualmente com o novo servidor mestre para atividades adicionais.
+* As ferramentas do XenServer devem ser instaladas em todas as VMs.
+* Para Fibre Channel em um ambiente de rede de área de armazenamento (SAN), a ferramenta plink.exe deve ser instalada em um host onde o Snap Creator Agent está instalado e o caminho plink.exe deve ser adicionado à variável de ambiente do sistema.
++
+Para obter informações detalhadas sobre como adicionar o caminho plink.exe à variável de ambiente do sistema, consulte o _Snap Creator Framework Installation Guide_.
+
+* As operações de pausa e de pausa da VM são executadas em série.
++
+Para várias VMs, a duração da VM no estado de pausa durante a operação de backup depende do número de VMs.
+
+* A descoberta automática de volumes é suportada.
+
+
+
+
+== Configurações suportadas do Citrix XenServer
+
+As seguintes configurações do Citrix XenServer são suportadas:
+
+* SAN
++
+** Dá suporte a máquinas virtuais convidadas com uma imagem de disco virtual (VDI) por repositório de storage.
+** Suporta discos de dados com uma VDI por repositório de storage
+
+
+* NAS
++
+** Suporta VMs convidadas instaladas em montagens NFS.
+** Compatível com discos de dados em montagens NFS.
+
+
+
+
+
+
+== Parâmetros
+
+A tabela a seguir lista e descreve os parâmetros do plug-in do Citrix XenServer:
+
+|===
+
+
+| Parâmetro | Definição | Descrição 
+
+
+ a| 
+XEN_VMS
+ a| 
+IP do host:número da VM
+ a| 
+Lista as máquinas virtuais de um host específico, separadas por uma barra (/). Por exemplo: 10.10.10.192:VM1/VM2/VM3
+
+
+
+ a| 
+XEN_HOST_USERS
+ a| 
+IP do host:nome de usuário/senha
+ a| 
+Lista hosts Xen e o nome de usuário e senha correspondentes.
+
+
+
+ a| 
+XEN_BIN_PATH
+ a| 
+Por exemplo: c: Arquivos de programas/Citrix/XenCenter/xe.exe
+ a| 
+Especifica o caminho do executável XenServer (XE). O console XenCenter é necessário para importar e exportar os metadados da VM.
+
+
+
+ a| 
+XEN_METADATA_PATH
+ a| 
+Por exemplo: c: /Scmetadata
+ a| 
+Especifica o caminho no servidor para o qual você pode baixar os metadados da máquina virtual.
+
+
+
+ a| 
+XEN_RESTORE_VMS
+ a| 
+Por exemplo: xenserver1:VM1,vm2;xenserver2:VM1,vm2
+ a| 
+Contém as VMs que devem ser restauradas. Este parâmetro é necessário apenas durante uma operação de restauro.
+
+|===
+*Informações relacionadas*
+
+http://mysupport.netapp.com/matrix["Ferramenta de Matriz de interoperabilidade: Mysupport.NetApp.com/Matrix"]

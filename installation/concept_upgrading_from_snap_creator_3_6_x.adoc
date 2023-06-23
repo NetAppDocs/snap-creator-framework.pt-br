@@ -1,0 +1,14 @@
+---
+permalink: installation/concept_upgrading_from_snap_creator_3_6_x.html 
+sidebar: sidebar 
+keywords: upgrading, upgrade, snap, creator, 3.6 
+summary: Quando você atualiza a partir do Snap Creator 3,6.x, o esquema do banco de dados é atualizado e todas as senhas do arquivo de configuração são atualizadas para compatibilidade com o Snap Creator mais recente. 
+---
+= Atualizando a partir do Snap Creator 3,6.x
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Quando você atualiza a partir do Snap Creator 3,6.x, o esquema do banco de dados é atualizado e todas as senhas do arquivo de configuração são atualizadas para compatibilidade com o Snap Creator mais recente.

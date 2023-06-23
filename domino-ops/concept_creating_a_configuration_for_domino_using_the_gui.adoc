@@ -1,0 +1,29 @@
+---
+permalink: domino-ops/concept_creating_a_configuration_for_domino_using_the_gui.html 
+sidebar: sidebar 
+keywords: domino, ibm, creating, create, backup, restore, configuration 
+summary: Você especifica a maioria das informações necessárias para operações de backup e restauração em um arquivo de configuração. O arquivo de configuração é a entrada para operações de backup e restauração do Snap Creator. 
+---
+= Criando uma configuração de backup e restauração
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você especifica a maioria das informações necessárias para operações de backup e restauração em um arquivo de configuração. O arquivo de configuração é a entrada para operações de backup e restauração do Snap Creator.
+
+Você pode criar quantos arquivos de configuração forem necessários, mas você pode especificar apenas um único arquivo de configuração como entrada para uma operação. Você pode usar a GUI do Snap Creator ou a CLI do Snap Creator para criar arquivos de configuração.
+
+
+NOTE: Este guia mostra como usar a GUI para criar arquivos de configuração. Para obter informações sobre como usar a CLI, consulte https://library.netapp.com/ecm/ecm_download_file/ECMP12395422["Guia de administração do Snap Creator Framework 4.1.2"].
+
+Você organiza arquivos de configuração no Snap Creatorprofiles. Os perfis e os arquivos de configuração residem no subdiretório do mecanismo no diretório de instalação do Snap Creator:
+
+* Em hosts UNIX, o diretório para o qual o arquivo de instalação foi extraído
+* Em hosts do Windows, por padrão, C: Arquivos de programas/NetApp/Snap_Creator_Framework/scServer4,1.x
+
+
+*Informações relacionadas*
+
+link:concept_general_configuration_file_information.adoc["Fazer login na GUI do Snap Creator"] link:task_using_the_gui_to_create_a_configuration_file.adoc["Criando um arquivo de configuração"] link:concept_adding_commands_to_the_backup_and_restore_configuration.adoc["Adicionando comandos à configuração de backup e restauração"] link:task_setting_the_snap_creator_archive_log_management_settings.adoc["Limpeza de cópias arquivadas dos logs de transações do Domino"] link:concept_use_meta_data_volumes_setting_to_back_up_the_changeinfo_directory.adoc["Fazer backup do diretório changeinfo"]

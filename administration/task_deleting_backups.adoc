@@ -1,0 +1,24 @@
+---
+permalink: administration/task_deleting_backups.html 
+sidebar: sidebar 
+keywords: delete, backup, copy, configuration, file, delete, snap, creator, gui, data 
+summary: Você pode excluir cópias de backup de um arquivo de configuração. 
+---
+= Eliminar cópias de segurança
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode excluir cópias de backup de um arquivo de configuração.
+
+. No menu principal da interface gráfica do usuário (GUI) Snap Creator, selecione *dados* > *backups*
+. No painel Perfis e Configurações da guia backups, expanda um perfil e selecione um arquivo de configuração.
+. Selecione a cópia de segurança que pretende eliminar e clique em *Eliminar*.
++
+
+NOTE: Se o arquivo de configuração contiver vários volumes do Data ONTAP, você deverá selecionar a cópia Snapshot que deseja excluir em cada um dos volumes do Data ONTAP.
+
+. Clique em *Yes* (Sim) na janela de confirmação.
+

@@ -1,0 +1,79 @@
+---
+permalink: domino-ops/task_preparing_storage_systems_for_snapmirror_replication.html 
+sidebar: sidebar 
+keywords: domino, ibm, preparing, storage, systems, snapmirror, replication 
+summary: Antes de usar para espelhar cópias Snapshot, é necessário configurar uma relação de proteção de dados entre os volumes de origem e destino e inicializar a relação. Após a inicialização, o SnapMirror faz uma cópia Snapshot do volume de origem e transfere a cópia e todos os blocos de dados que ele faz referência ao volume de destino. Ele também transfere quaisquer outras cópias Snapshot menos recentes no volume de origem para o volume de destino. 
+---
+= Preparação de sistemas de storage para replicação do SnapMirror
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de usar para espelhar cópias Snapshot, é necessário configurar uma relação de proteção de dados entre os volumes de origem e destino e inicializar a relação. Após a inicialização, o SnapMirror faz uma cópia Snapshot do volume de origem e transfere a cópia e todos os blocos de dados que ele faz referência ao volume de destino. Ele também transfere quaisquer outras cópias Snapshot menos recentes no volume de origem para o volume de destino.
+
+* Você deve ser um administrador de cluster.
+* Para a verificação de cópias Snapshot no volume de destino, as máquinas virtuais de armazenamento de origem e destino (SVMs) precisam ter um LIF de gerenciamento e um LIF de dados.
++
+O LIF de gerenciamento deve ter o mesmo nome DNS que o SVM. Defina a função de LIF de gerenciamento como dados, o protocolo como nenhum e a política de firewall como mgmt.
+
+
+
+Você pode usar a interface de linha de comando (CLI) do Data ONTAP ou o OnCommand System Manager para criar uma relação do SnapMirror. O procedimento a seguir documenta o uso da CLI.
+
+
+IMPORTANT: Se você estiver armazenando arquivos de banco de dados e logs de transações em volumes diferentes, você deve criar relações entre os volumes de origem e destino para os arquivos de banco de dados e entre os volumes de origem e destino para os logs de transação.
+
+A ilustração a seguir mostra o procedimento para inicializar uma relação SnapMirror:
+
+image::../media/snapmirror_steps_clustered.gif[Esta ilustração mostra o procedimento para inicializar uma relação SnapMirror: Identificando o cluster de destino,creating a destination volume,creating a SnapMirror relationship between the volumes]
+
+. Identificar o cluster de destino.
+. No cluster de destino, use o comando volume create com a opção -typeDP para criar um volume de destino SnapMirror que seja igual ou maior em tamanho do que o volume de origem.
++
+
+IMPORTANT: A definição de idioma do volume de destino tem de corresponder à definição de idioma do volume de origem.
+
++
+O comando a seguir cria um volume de destino de 2 GB chamado dstvolB em SVM2 no agregado node01_aggr:
+
++
+[listing]
+----
+cluster2::> volume create -vserver SVM2 -volume dstvolB -aggregate node01_aggr -type DP
+-size 2GB
+----
+. No SVM de destino, use o comando SnapMirror create com o parâmetro -type DP para criar um relacionamento SnapMirror.
++
+O tipo DP define a relação como uma relação SnapMirror.
+
++
+O comando a seguir cria uma relação SnapMirror entre o volume de origem srcvolA no SVM1 e o volume de destino dstvolB no SVM2, e atribui a política SnapMirror padrão DPDefat:
+
++
+[listing]
+----
+SVM2::> snapmirror create -source-path SVM1:srcvolA -destination-path SVM2:dstvolB
+-type DP
+----
++
+
+NOTE: Não defina um agendamento de espelhamento para o relacionamento do SnapMirror. Faz isso para você quando você cria um agendamento de backup.
+
++
+Se você não quiser usar a política padrão do SnapMirror, poderá invocar o comando SnapMirror policy create para definir uma política do SnapMirror.
+
+. Use o comando SnapMirror initialize para inicializar o relacionamento.
++
+O processo de inicialização executa uma transferência de linha de base para o volume de destino. O SnapMirror faz uma cópia Snapshot do volume de origem e transfere a cópia e todos os blocos de dados que ele faz referência ao volume de destino. Ele também transfere quaisquer outras cópias Snapshot no volume de origem para o volume de destino.
+
++
+O comando a seguir inicializa a relação entre o volume de origem srcvolA em SVM1 e o volume de destino dstvolB em SVM2:
+
++
+[listing]
+----
+SVM2::> snapmirror initialize -destination-path SVM2:dstvolB
+----
+

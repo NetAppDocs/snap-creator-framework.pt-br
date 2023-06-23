@@ -1,0 +1,34 @@
+---
+permalink: administration/reference_snap_creator_server_or_agent_not_starting.html 
+sidebar: sidebar 
+keywords: snap, creator, server, agent, java 
+summary: O Snap Creator Server ou o Snap Creator Agent pode não ser iniciado. 
+---
+= Snap Creator Server ou Agente não está a iniciar
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O Snap Creator Server ou o Snap Creator Agent pode não ser iniciado.
+
+* *Emissão*
++
+O Snap Creator Server ou Snap Creator Agent não será iniciado.
+
+* *Causa*
++
+As causas gerais deste problema são que o Java não está instalado, o nível de bits errado do Java está instalado ou a versão errada do Java está instalada.
+
+* *Ações corretivas*
++
+Verifique se o Java está instalado executando o seguinte comando: java -version
+
++
+Verifique se uma versão suportada do Java está instalada.
+
++
+Além disso, verifique se o nível de bits do Java instalado corresponde ao nível de bits do Snap Creator. Por exemplo, se o Snap Creator de 64 bits estiver instalado, o Java de 64 bits também deverá ser instalado.
+
+

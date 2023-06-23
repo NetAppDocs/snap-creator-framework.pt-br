@@ -1,0 +1,21 @@
+---
+permalink: domino-ops/task_disconnecting_snapshot_copy.html 
+sidebar: sidebar 
+keywords: domino, ibm, disconnecting, disconnect, snapshot, copy 
+summary: Você precisa desconetar a cópia Snapshot montada quando a operação de restauração estiver concluída. 
+---
+= Desligar a cópia Snapshot
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você precisa desconetar a cópia Snapshot montada quando a operação de restauração estiver concluída.
+
+O procedimento a seguir mostra como desconetar uma cópia Snapshot montada em um host do Windows Server 2008. O SnapDrive para Windows e o Agente Criador de Snap devem estar em execução no host.
+
+. No Gerenciador de servidores, clique em *armazenamento* > *SnapDrive* > *Physical_Server_NAME* > *Disks*.
+. No painel identificação do disco, selecione o disco montado e clique em *Disconnect Disk* no menu do botão direito do rato.
+. Na caixa de diálogo Disconnect Disk (Desligar disco), clique em *Yes* (Sim).
+

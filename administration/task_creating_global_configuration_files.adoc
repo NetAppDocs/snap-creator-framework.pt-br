@@ -1,0 +1,96 @@
+---
+permalink: administration/task_creating_global_configuration_files.html 
+sidebar: sidebar 
+keywords: global, configuration, storage, controller, file, create, backup, super, profile 
+summary: 'Você pode criar um arquivo de configuração global para separar o controlador de storage, a máquina virtual de armazenamento (SVM) ou a configuração de credenciais VMware da política de backup.' 
+---
+= Criando arquivos de configuração global
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode criar um arquivo de configuração global para separar a controladora de storage, a máquina virtual de storage (SVM) ou a configuração de credenciais VMware da política de backup.
+
+Os arquivos de configuração global permitem que você controle o acesso e processe operações de backup e restauração.
+
+Você pode criar dois tipos de arquivos de configuração global:
+
+* *Super Global*
++
+Esta configuração aplica-se a todas as configurações em todos os perfis.
+
+* *Perfil Global*
++
+Esta configuração aplica-se a todas as configurações criadas dentro de um perfil.
+
++
+.. No menu principal da GUI do Snap Creator, selecione *Gerenciamento* > *Configurações globais*.
+.. No painel Configurações globais, clique em *Create Global*.
++
+O assistente de configuração para configurações globais é aberto no painel direito.
+
+.. Conclua o assistente de configuração para criar o arquivo de configuração:
++
+... Na página *Configuração*, selecione o tipo de configuração global (Super Global ou Profile Global).
++
+O nome do arquivo de configuração é definido como global por padrão. Não é possível alterar este nome.
+
++
+Se você selecionou Profile Global como o tipo de configuração global, selecione o perfil.
+
++
+
+NOTE: Por padrão, a criptografia de senha é ativada para impedir que as senhas sejam exibidas em texto não criptografado no arquivo de configuração.
+
+... Na página tipo de plug-in, selecione o tipo de plug-in.
++
+A página para a qual você avança no assistente depende da opção selecionada.
+
++
+|===
+| Opção de tipo de plug-in | Página seguinte | Página seguinte 
+
+
+ a| 
+Plug-in de virtualização
+ a| 
+*Plug-ins de virtualização* Selecione o plug-in a configurar.
+ a| 
+*Informações de autenticação* fornecem as informações de autenticação para a opção de plug-in selecionada.
+
+
+
+ a| 
+Nenhum
+ a| 
+* Configurações de conexão de armazenamento*
+ a| 
+--
+
+--
+|===
++
+Para obter mais informações sobre credenciais de plug-in, consulte a documentação do plug-in.
+
+... Na página Configurações de conexão de armazenamento, selecione o tipo de transporte (HTTP ou HTTPS).
++
+É apresentada a porta padrão para o tipo de transporte selecionado. Se o sistema de armazenamento utilizar uma porta não padrão, introduza as informações da porta no campo porta.
+
+... Na página credenciais de controlador/SVM, insira o endereço IP e as credenciais de login para cada controlador de storage ou SVM que contém os volumes neste arquivo de configuração.
++
+
+NOTE: É necessário adicionar, pelo menos, uma controladora de storage ou SVM à configuração. Para usar o recurso de tunelamento vsim, marque a caixa de seleção *IP Tunneling* (somente para cluster).
+
+... Na página credenciais do controlador, verifique se os controladores exibem as informações corretas.
++
+Se forem necessárias alterações, selecione um controlador e clique em *Editar*.
+
+... Na página Configurações do DFM/OnCommand, se você quiser integrar a configuração do Snap Creator com ferramentas de gerenciamento do NetApp OnCommand, selecione e forneça os detalhes.
+... Revise o resumo e clique em *Finish*.
+
+
+
+
+

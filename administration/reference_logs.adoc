@@ -1,0 +1,68 @@
+---
+permalink: administration/reference_logs.html 
+sidebar: sidebar 
+keywords: snap, creator, error, troubleshoot, cmd, output, debug, warn, error, out, debug, stderr 
+summary: O Snap Creator fornece mensagens de erro úteis e logs de solução de problemas. 
+---
+= Tipos de mensagens de erro e logs de solução de problemas
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O Snap Creator fornece mensagens de erro úteis e logs de solução de problemas.
+
+Os seguintes tipos de mensagens de erro são fornecidos pelo Snap Creator:
+
+* *INFO*
++
+Para operações padrão, que ocorrem normalmente.
+
+* *CMD*
++
+Comando externo ou script que o Snap Creator executa (de acordo com a configuração) e o código de retorno do comando ou script é registrado. Normalmente, estes são comandos PRÉ, POST ou quiesce DE APLICATIVO ou unquiesce.
+
+* *SAÍDA*
++
+Para chamadas de biblioteca Data ONTAPI.
+
+* *DEBUG*
++
+Para informações de depuração.
+
+* *AVISAR*
++
+Para chamar sua atenção, mas ela é considerada uma atividade normal geralmente e não requer nenhuma ação (por exemplo, quando você exclui cópias Snapshot)
+
+* *ERRO*
++
+Indica um problema e, provavelmente, requer ação manual para corrigir o erro. O Snap Creator sai de qualquer mensagem DE erro. É importante corrigir qualquer problema que ocorreu antes de ser executado novamente. Snap Creator não corrige problemas automaticamente, mas você pode especificar o que deve ser feito antes de sair do Snap Creator usando PRE_EXIT_CMD definido no arquivo de configuração.
+
+
+
+Os logs de solução de problemas contêm a saída de quaisquer comandos externos ou scripts executados pelo Snap Creator (por exemplo, SnapDrive). Se você chamar outros scripts por meio do Snap Creator, é importante que você configure corretamente os códigos de saída e a saída para esses scripts. Nunca deve sair com o estado 0 se ocorrer um problema.
+
+Há Registros a seguir disponíveis para cada perfil e configuração do Snap Creator:
+
+* *Saída*
++
+Conter apenas informações de registo verboso.
+
+* *Debug*
++
+Contém informações de Registro de verbose e depuração. Se as mensagens de rastreamento estiverem ativadas no arquivo de configuração, que é a configuração padrão, as informações de rastreamento serão exibidas neste log. O parâmetro que ativa mensagens de rastreamento é LOG_TRACE_ENABLE - (Y|N).
+
+* *Erro*
++
+Conter um histórico de todos os eventos de erro para uma determinada configuração. O log de erros ajuda a visualizar informações sobre erros passados para que os usuários possam correlacionar eventos e obter uma perspetiva histórica. Ele pode ser monitorado e usado como uma maneira de integrar o Snap Creator a um aplicativo de monitoramento.
+
+* *Stderr*
++
+Conter informações se problemas com o código Snap Creator forem encontrados; no entanto, o log de fluxos de erro padrão geralmente está vazio.
+
+
+
+Os logs out, Debug e stderr são mantidos como definido pelo valor LOG_num no arquivo de configuração enquanto o log de erro é sempre anexado. Todos os logs são gravados no diretório /scServer_install_path/Engine/logs/profile.
+
+O Snap Creator Agent opcionalmente cria os logs out, Debug e stderr também, e é habilitado, por padrão, com a seguinte configuração de parâmetro: SC_Agent_LOG_ENABLE Y.

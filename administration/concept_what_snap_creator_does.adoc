@@ -1,0 +1,38 @@
+---
+permalink: administration/concept_what_snap_creator_does.html 
+sidebar: sidebar 
+keywords: snap, creator, framework, unix, applications, third-party, databases, hypervisors, windows, aix, hp-ux, linux, solaris, extensibility 
+summary: '"O Snap Creator Framework permite que você use plug-ins personalizados e pré-embalados que padronizam e simplificam a proteção de dados para uma ampla variedade de aplicativos, bancos de dados e hipervisores de terceiros em ambientes Windows e UNIX (AIX, HP-UX, Linux e Solaris).' 
+---
+= O que o Snap Creator Framework faz
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O Snap Creator Framework permite que você use plug-ins personalizados e pré-embalados que padronizam e simplificam a proteção de dados para uma ampla variedade de aplicativos, bancos de dados e hipervisores de terceiros em ambientes Windows e UNIX (AIX, HP-UX, Linux e Solaris).
+
+O Snap Creator fornece o seguinte aproveitando as funcionalidades Snapshot, SnapVault, Open Systems SnapVault e SnapMirror, bem como os recursos de proteção de dados do Console de Gerenciamento do NetApp, o console do Gerenciador de operações e o FlexClone:
+
+* Proteção de dados consistente com aplicações
++
+Uma solução centralizada para fazer backup de informações críticas, integrando-se às arquiteturas de aplicativos existentes para garantir a consistência dos dados e custos operacionais reduzidos.
+
+* Extensibilidade
++
+Integração rápida usando arquitetura modular e automação baseada em políticas.
+
+* Prontidão na nuvem
++
+Uma funcionalidade Snap Creator independente do sistema operacional que suporta plataformas físicas e virtuais e interopera com ambientes DE TI como serviço e nuvem.
+
+* Funcionalidade de clonagem
++
+A clonagem de dados com uso eficiente de espaço é compatível com fins de desenvolvimento e teste.
+
+
+
+A ilustração a seguir mostra os componentes do Snap Creator Framework:
+
+image::../media/scfw_overview_41_refresh_administration.gif[visão geral do scfw 41 administração de atualização]

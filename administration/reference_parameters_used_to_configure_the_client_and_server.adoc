@@ -1,0 +1,105 @@
+---
+permalink: administration/reference_parameters_used_to_configure_the_client_and_server.html 
+sidebar: sidebar 
+keywords: parameter, snap, creator, agent, host, client, port 
+summary: Você deve estar ciente dos parâmetros para configurar o cliente host do Snap Creator Agent e o Snap Creator Server. 
+---
+= Parâmetros para configurar o cliente host do Snap Creator Agent e o Snap Creator Server
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você deve estar ciente dos parâmetros para configurar o cliente host do Snap Creator Agent e o Snap Creator Server.
+
+|===
+| Parâmetro | Definição | Descrição 
+
+
+ a| 
+N.O SC_AGENT_
+ a| 
+Nome do host ou endereço_IP:porta
+ a| 
+Executa comandos ou tarefas em vários hosts remotos simultaneamente usando uma única configuração. Uma tarefa é um plug-in definido (parâmetro APP_NAME) ou um comando especificado com o comando _CMD (por exemplo, NTAP_SNAPSHOT_CREATE_CMD01).
+
+Para especificar um host remoto, você deve digitar seu nome ou endereço IP seguido de dois pontos e a porta na qual o Snap Creator Agent está ouvindo.
+
+Por exemplo: SC_AGENT_ número: Endereço IP:porta
+
+SC_Agent_01 - IP do agente:porta do agente
+
+SC_Agent_02 - IP do agente:porta do agente
+
+No host remoto, você pode iniciar o Snap Creator Agent executando o comando 'path to scAgent_v' no>/bin/scAgent start.
+
+
+
+ a| 
+SC_CLONE_TARGET
+ a| 
+Nome do host ou endereço_IP do clone target:port
+ a| 
+Com o parâmetro PRE/POST_CLONE_CREATE_CMDxx, você pode gerenciar os objetos de armazenamento remoto no lado remoto (por exemplo, montagem ou desinstalação de sistemas de arquivos).
+
+Para especificar um destino clone, você deve inserir seu nome ou endereço IP seguido de dois pontos e a porta na qual o Snap Creator Agent está ouvindo.
+
+
+
+ a| 
+SC_AGENT_TIMEOUT
+ a| 
+Tempo (em segundos)
+ a| 
+Especifica o tempo limite em segundos do serviço Agente. A arquitetura cliente/servidor implementada usa um mecanismo de tempo limite. Isso significa que se o cliente não responder no intervalo especificado, o servidor falha com uma mensagem de tempo limite. No entanto, a tarefa no cliente não é abortada e requer mais investigação.
+
+O tempo limite é definido para 300 segundos por padrão. Em um servidor com uma carga alta ou tarefas conhecidas de longa execução (como scripts criados pelo usuário ou operações complexas do SnapDrive), você deve estender o tempo limite e modificar esse valor de acordo com seus requisitos.
+
+Você deve definir este parâmetro para o tempo máximo que uma operação pode levar (por exemplo, se o quiesce levar 1.800 minutos, esse parâmetro deve ser definido como 1800).
+
+
+NOTE: Alguns plug-ins têm requisitos específicos do valor SC_AGENT_TIMEOUT.
+
+
+
+ a| 
+SC_AGENT_WATCHDOG_ENABLE
+ a| 
+"'Y'" ou "'N'"
+ a| 
+O parâmetro SC_Agent_WATCHDOG_ENABLE se aplica somente quando a versão do Snap Creator Agent é anterior a 4,1. Este parâmetro ativa ou desativa o processo Watchdog. Para Snap Creator Agent 4,1 ou posterior, esse parâmetro é ignorado porque o processo Watchdog está sempre ativado. Se o parâmetro estiver ativado (ou seja, definido como Y) e a versão do Snap Creator Agent for 4,1 ou posterior, o processo Watchdog será iniciado quando o Snap Creator Agentreceber uma solicitação de quiesce.
+
+O processo Watchdog usa o parâmetro SC_AGENT_UNQUIESCE_TIMEOUT como timeout para desativar o aplicativo. Se o parâmetro estiver desativado (ou seja, definido como N) e a versão do Snap Creator for anterior a 4,1, o processo Watchdog desativa o aplicativo, mas ele usa o parâmetro OPERATION_TIMEOUT_IN_MSEC (padrão: 1 hora) do caminho scAgent/etc/agent.properties.
+
+
+NOTE: O parâmetro SC_Agent_WATCHDOG_ENABLE está obsoleto para o Snap Creator Agent 4,1 e aplicável somente para uso com o Snap Creator Agent 4,0. A partir do Snap Creator Agent 4,1, o processo Watchdog é ativado (como é codificado), independentemente do valor definido para este parâmetro.
+
+
+
+ a| 
+SC_AGENT_UNQUIESCE_TIMEOUT
+ a| 
+Tempo (em segundos)
+ a| 
+Especifica o tempo limite de inatividade unquiesce em segundos. Com as versões do Snap Creator Agent anteriores a 4,1, este parâmetro só é usado quando SC_Agent_WATCHDOG_ENABLE está definido como Y. com o Snap Creator Agent 4,1 ou posterior, o parâmetro é sempre aplicável, porque o processo de Watchdog do Snap Creator Agent está sempre ligado.se a comunicação com o Snap Creator Agent não é possível e uma aplicação está no estado quiesce, o Snap Creator Agent retorna automaticamente o aplicativo para o modo normal de operação do servidor. Por padrão, o tempo limite de unquiesce é definido para qualquer valor do parâmetro SC_AGENT_TIMEOUT, mais cinco segundos.
+
+
+
+ a| 
+SC_TMP_DIR
+ a| 
+"'Y'" ou "'N'"
+ a| 
+Permite o uso de um diretório temporário alternativo definido pelo usuário para armazenar arquivos relacionados ao Snap Creator. O usuário cria o diretório e gerencia o acesso do usuário. Os plug-ins usam arquivos temporários para interagir com o banco de dados. Os arquivos temporários são criados no diretório temporário padrão do host, que tem acesso de gravação para todos os usuários. Se o diretório temp estiver cheio, o Snap Creator exibirá um erro ao criar os arquivos temporários.
+
+
+
+ a| 
+SC_AGENT_LOG_ENABLE
+ a| 
+"'Y'" ou "'N'"
+ a| 
+Habilita a criação de log para todas as operações executadas pelo Snap Creator Server para Snap Creator Agent. Se ocorrer uma falha, você pode verificar esses logs. O Snap Creator Server envia operações para o Snap Creator Agent. Se um erro ocorrer antes que o Snap Creator Agent envie um retorno de chamada para o Snap Creator Server, as mensagens do Snap Creator Agent podem ser perdidas. Esse parâmetro ajuda as mensagens do Snap Creator Agent a serem registradas no Snap Creator Agent para que essas mensagens não sejam perdidas.
+
+|===

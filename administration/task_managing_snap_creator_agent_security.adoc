@@ -1,0 +1,57 @@
+---
+permalink: administration/task_managing_snap_creator_agent_security.html 
+sidebar: sidebar 
+keywords: snap, creator, agent, server, manage, security, install, snapdrive 
+summary: Você pode gerenciar as configurações de segurança do Snap Creator Agent adicionando comandos que podem ser usados pelo Snap Creator. Você também pode limitar a comunicação a servidores específicos do Snap Creator. 
+---
+= Gerenciamento da segurança do Snap Creator Agent
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode gerenciar as configurações de segurança do Snap Creator Agent adicionando comandos que podem ser usados pelo Snap Creator. Você também pode limitar a comunicação a servidores específicos do Snap Creator.
+
+O procedimento para gerenciar a segurança do Snap Creator Agent é o mesmo para Windows e UNIX. O procedimento a seguir usa exemplos do ambiente UNIX.
+
+. Faça login no sistema em que o Snap Creator Agent está sendo executado e alterne para o subdiretório etc dentro do diretório de instalação.
++
+`cd /install_path/scAgent4.3.0/etc`
+
+. Se você quiser adicionar comandos que podem ser usados pelo Snap Creator, execute as seguintes etapas:
++
+.. Abra o arquivo allowed_commands.config em um editor de texto.
+.. Adicione comandos conforme necessário, com cada comando em uma linha separada.
++
+
+NOTE: Os comandos inseridos no arquivo allowed_commands.config são sensíveis a maiúsculas e minúsculas e devem corresponder exatamente aos comandos no arquivo de configuração, incluindo aspas e maiúsculas.
+
++
+Comando: "C: Arquivos de programas/NetApp/SnapDrive/sdcli.exe"
+
++
+
+NOTE: Se o comando contiver espaços, você deve incluir o comando dentro de aspas.
+
+.. Salve e feche o arquivo.
+
+
+. Se você quiser limitar a comunicação a servidores específicos do Snap Creator, execute as seguintes etapas:
++
+.. Abra o arquivo agent.properties em um editor de texto.
+.. Altere o parâmetro AUTHORIZED_HOSTS, usando vírgulas para separar os nomes de host.
++
+Ambos os nomes de host e endereços IP são suportados.
+
++
+AUTHORISED_HOSTS: Lyon, 10.10.10.192, Fuji01
+
+.. Salve e feche o arquivo.
+
+
+. Reinicie o Snap Creator Agent.
++
+`/install_path/scAgent4.3.0/bin/scAgent restart`
+
+

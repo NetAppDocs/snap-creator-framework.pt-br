@@ -1,0 +1,73 @@
+---
+permalink: domino-ops/reference_storage_layout_requirements.html 
+sidebar: sidebar 
+keywords: domino, ibm, storage, layout, requirements, 
+summary: Um ambiente típico do IBM Domino tem pelo menos três volumes do Domino, um para dados do Domino, logs de transações do Domino e o diretório plug-in changeinfo. Muitos sites também têm volumes para Domino DAOS e para recompilações de visualização. 
+---
+= Requisitos de layout de storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um ambiente típico do IBM Domino tem pelo menos três volumes do Domino, um para dados do Domino, logs de transações do Domino e o diretório plug-in changeinfo. Muitos sites também têm volumes para Domino DAOS e para recompilações de visualização.
+
+O plug-in do IBM Domino usa o diretório changeinfo para alterações registradas durante operações de backup e para cópias de logs de transação usados em operações de restauração de última hora. É uma prática recomendada armazenar o diretório changeinfo em um volume separado, para evitar a substituição acidental das informações e facilitar o backup.
+
+Você também pode achar útil ter volumes separados para o Domino DAOS (se ele estiver ativado) e para recompilações de visualização. Quando o Domino reconstrói uma vista (por exemplo, quando um utilizador abre uma vista cujo índice foi eliminado ou quando o updall --R é executado), pode gerar ficheiros temporários para ordenar os dados para reconstrução rápida da vista.
+
+Por padrão, esses arquivos temporários estão localizados na pasta temporária do sistema ou na pasta de dados do Domino. A IBM recomenda alterar o local dos arquivos temporários para uma unidade diferente para distribuir e/S de disco e garantir espaço adequado para reconstruir exibições. Para alterar a pasta temporária usada para recompilações de exibição, adicione a configuração View_Rebuild_dir ao arquivo notes.ini.
+
+A tabela a seguir mostra o layout de volume preferido:
+
+|===
+| Volume | Conteúdo | Notas 
+
+
+ a| 
+Volume 1
+ a| 
+Dados do Domino
+ a| 
+Preferido para unidades FC, SAS ou SSD.
+
+
+
+ a| 
+Volume 2
+ a| 
+Logs de transação do Domino
+ a| 
+Preferido para unidades FC, SAS ou SSD.
+
+
+
+ a| 
+Volume 3
+ a| 
+changeinfo
+ a| 
+Armazena alterações registradas durante operações de backup e cópias de logs de transações para uso em operações de restauração atualizadas.
+
+
+
+ a| 
+Volume 4
+ a| 
+Ver reconstrução
+ a| 
+Opcional. Armazena arquivos temporários criados durante atualizações de índice. Pode usar o disco RAM. Adicione a configuração View_Rebuild_dir ao arquivo notes.ini.
+
+
+
+ a| 
+Volume 5
+ a| 
+Repositório DAOS
+ a| 
+Opcional. Contém arquivos .dlo do DAOS. Os baixos requisitos de e/S tornam este um bom candidato para unidades SATA.
+
+|===
+
+NOTE: Em ambientes virtuais, os discos instalados no convidado são preferidos.

@@ -1,0 +1,31 @@
+---
+permalink: sap-hana-ops/task_configuring_log_backups.html 
+sidebar: sidebar 
+keywords: configuring, log, backups 
+summary: Os backups de log devem ser armazenados em um sistema de storage diferente do storage primário. O sistema de armazenamento utilizado para a cópia de segurança de dados também pode ser utilizado para a cópia de segurança de registo. 
+---
+= Configurando backups de log
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Os backups de log devem ser armazenados em um sistema de storage diferente do storage primário. O sistema de armazenamento utilizado para a cópia de segurança de dados também pode ser utilizado para a cópia de segurança de registo.
+
+No armazenamento secundário, um volume precisa ser configurado para manter os backups de log. Certifique-se de que as cópias Snapshot automáticas estejam desativadas para esse volume.
+
+. Monte o volume em cada nó do banco de dados, executando o comando mount ou editando o arquivo de tabela do sistema de arquivos (fstab).
++
+[listing]
+----
+hana2b:/vol/backup_log_ANA /mnt/backup_log_ANA nfs
+rw,bg,vers=3,hard,timeo=600,rsize=65536,wsize=65536,actimeo=0,noatime   0  0
+----
++
+No SAP HANA Studio, o destino do backup de log é configurado como mostrado na figura a seguir.
+
++
+image::../media/sap_hana_studio_log_backup_destination_gui.gif[Esta imagem é explicada pelo texto circundante.]
+
+

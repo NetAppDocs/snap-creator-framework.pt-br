@@ -1,0 +1,27 @@
+---
+permalink: sap-hana-ops/task_performing_file_based_backup_from_the_snap_creator_gui.html 
+sidebar: sidebar 
+keywords: performing, perform, file-based, backup, snap, creator, gui, graphical, user, interface 
+summary: 'Você pode executar o Backup baseado em arquivos na interface gráfica do usuário (GUI) do Snap Creator.' 
+---
+= Executando o backup baseado em arquivos da GUI do Snap Creator
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode executar o Backup baseado em arquivos na interface gráfica do usuário (GUI) do Snap Creator.
+
+Você deve ter habilitado o parâmetro Backup baseado em arquivo na guia Configurações de backup baseadas em ARQUIVO HANA.
+
+. Selecione a configuração HANA_database_backup.
+. Selecione *ações* > *Backup baseado em arquivos*.
++
+image::../media/performing_file_based_backup_with_gui.gif[Executando backup baseado em arquivos com GUI]
+
+. Defina a opção Política como *nenhum* e clique em *OK*.
++
+image::../media/performing_file_based_backup_with_gui_2.gif[Executando backup baseado em arquivos com GUI]
+
+

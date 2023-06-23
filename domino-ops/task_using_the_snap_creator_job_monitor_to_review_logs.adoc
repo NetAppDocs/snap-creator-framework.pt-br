@@ -1,0 +1,37 @@
+---
+permalink: domino-ops/task_using_the_snap_creator_job_monitor_to_review_logs.html 
+sidebar: sidebar 
+keywords: domino, ibm, viewing, view, job, status, logs, monitor 
+summary: O Snap Creator Job Monitor é uma interface semelhante a um painel para trabalhos do Snap Creator. Pode utilizar o Monitor de trabalhos para ver o estado do trabalho e transferir registos. 
+---
+= Visualizar o estado e os registos do trabalho no Monitor de trabalhos
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O Snap Creator Job Monitor é uma interface semelhante a um painel para trabalhos do Snap Creator. Pode utilizar o Monitor de trabalhos para ver o estado do trabalho e transferir registos.
+
+O Monitor de trabalhos indica o status do trabalho da seguinte forma:
+
+* image:../media/scfw_domino_icon_job_in_progress.gif["Esta imagem é explicada pelo texto circundante."] indica um trabalho em curso.
+* image:../media/scfw_domino_icon_job_successful.gif["Esta imagem é explicada pelo texto circundante."] indica um trabalho que foi concluído com êxito.
+* image:../media/scfw_domino_icon_job_completed_with_errors.gif["Esta imagem é explicada pelo texto circundante."] indica um trabalho concluído com erros.
+* image:../media/scfw_domino_icon_job_failed.gif["Esta imagem é explicada pelo texto circundante."] indica um trabalho que falhou.
++
+.. No painel Perfis e Configurações, selecione o arquivo de configuração e clique em *Gerenciamento* > *Monitor de trabalho* na parte superior da janela Snap Creator Framework.
++
+É apresentado o painel Monitor de trabalhos, onde pode visualizar o estado do trabalho.
+
+.. Selecione uma tarefa e clique em *Download Logs* > *Log_Type*, onde Log_Type é um dos seguintes:
++
+*** *Out Logs* fornecem informações de nível detalhado para um trabalho.
+*** *Debug Logs* fornece informações em nível de verbosidade, além de informações úteis na depuração.
+*** *Logs GUI* fornece informações sobre as ações da GUI do Snap Creator.o log da GUI não é específico para a tarefa selecionada.
+
+
+.. Na caixa de diálogo de download, clique em *Open* ou *Save* conforme necessário.
+
+
+

@@ -1,0 +1,16 @@
+---
+permalink: administration/concept_managing_scheduled_jobs.html 
+sidebar: sidebar 
+keywords: manage, scheduled, jobs, listing, running, deleting, managing 
+summary: 'Você pode gerenciar tarefas agendadas criando-as (para automatizar operações de backup), bem como editando, listando, executando e excluindo esses trabalhos programados.' 
+---
+= Gerir trabalhos agendados
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode gerenciar tarefas agendadas criando-as (para automatizar operações de backup), bem como editando, listando, executando e excluindo essas tarefas agendadas.
+
+O Snap Creator Server contém um agendador centralizado que permite que tarefas do Snap Creator sejam agendadas, seja por meio de um cronograma de políticas (parte de objetos de Política) ou por serem criadas diretamente através do agendador. O agendador pode executar até 10 trabalhos simultaneamente e pode colocar trabalhos adicionais em fila até que um trabalho em execução seja concluído.

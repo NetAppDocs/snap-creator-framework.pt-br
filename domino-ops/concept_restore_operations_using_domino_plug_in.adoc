@@ -1,0 +1,78 @@
+---
+permalink: domino-ops/concept_restore_operations_using_domino_plug_in.html 
+sidebar: sidebar 
+keywords: domino, ibm, understanding, plug-in, restore 
+summary: O plug-in IBM Domino restaura arquivos de banco de dados da cópia Snapshot do volume no qual o banco de dados é armazenado. Quando a operação de restauração Snapshot estiver concluída, o plug-in aplica quaisquer alterações registradas no diretório changeinfo. 
+---
+= Compreendendo as operações de restauração do plug-in do IBM Domino
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O plug-in IBM Domino restaura arquivos de banco de dados da cópia Snapshot do volume no qual o banco de dados é armazenado. Quando a operação de restauração Snapshot estiver concluída, o plug-in aplica quaisquer alterações registradas no diretório changeinfo.
+
+Os passos de alto nível são os seguintes:
+
+. Restaure arquivos de banco de dados a partir de cópias Snapshot.
+. Aplicar alterações registradas no diretório changeinfo.
+. Aplique informações de log de transações, se disponíveis.
+
+
+
+
+== Opções de restauração
+
+O plug-in oferece uma ampla variedade de opções de restauração:
+
+|===
+
+
+| Tipo de restauração | Descrição 
+
+
+ a| 
+Restauração de volume (ponto no tempo)
+ a| 
+Restaura todo o volume para o estado no momento da cópia Snapshot.
+
+
+
+ a| 
+Restauração de volume (até o minuto)
+ a| 
+Restaura todo o volume ao seu estado no momento da cópia Snapshot e, em seguida, reproduz os logs de transação do Domino para a cópia mais recente.
+
+
+
+ a| 
+Restauração de volume (selecionável até ao minuto)
+ a| 
+Restaura todo o volume ao seu estado no momento da cópia Snapshot e, em seguida, reproduz os logs de transação do Domino para um horário especificado.
+
+
+
+ a| 
+Restauração de arquivo único (ponto no tempo)
+ a| 
+Restaura um único arquivo ao seu estado no momento da cópia Snapshot (somente NFS).
+
+
+
+ a| 
+Restauração de arquivo único (atualizada)
+ a| 
+Restaura um único arquivo ao seu estado no momento da cópia Snapshot e, em seguida, reencaminha os logs de transação do Domino para a cópia mais recente (somente NFS).
+
+
+
+ a| 
+Restauração de arquivo único (selecionável até o minuto)
+ a| 
+Restaura um único arquivo ao seu estado no momento da cópia Snapshot e, em seguida, reencaminha os logs de transação do Domino para um tempo especificado (somente NFS).
+
+|===
+*Nota:* para restaurações até o minuto e selecionáveis até o minuto, o log de transações do Domino deve ser ativado.
+
+Os registos de transações só podem ser reproduzidos para a frente. Selecionar uma hora antes da cópia Snapshot ser criada causa um erro de restauração.

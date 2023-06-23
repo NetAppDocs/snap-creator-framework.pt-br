@@ -1,0 +1,77 @@
+---
+permalink: installation/task_upgrading_snap_creator_server_4_1_x_on_unix_based_systems.html 
+sidebar: sidebar 
+keywords: upgrading, upgrade, snap, creator, server, 4.1.x, unix, unix-based 
+summary: Você pode atualizar a partir do Snap Creator Server 4,1.x em sistemas baseados em UNIX. 
+---
+= Atualizando o Snap Creator Server 4,1.x em sistemas baseados em UNIX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode atualizar a partir do Snap Creator Server 4,1.x em sistemas baseados em UNIX.
+
+* Você parou os processos do Snap Creator antes de fazer backup dos diretórios do Snap Creator para garantir que os dados de backup estejam completos.
++
+Por exemplo, insira os seguintes comandos:
+
++
+[listing]
+----
+/install_path/scServer4.1.0/bin/scServer stop
+/install_path/scAgent4.1.0/bin/scAgent stop
+----
+* Você fez backup dos seguintes diretórios e de todos os subdiretórios e arquivos associados, dentro do subdiretório do mecanismo Snap Creator 4,1.x Server (/install_path/scServer4,1.x/Engine):
++
+** Banco de dados Snap Creator (../snapcreator)
+** Propriedades snap Creator Server (../etc)
+** Arquivos de configuração (../configs)
+** Registos (../registos)
+** Repositório de plug-ins, se ativado (../snapcreatorPlugin) *Observação:* você não deve excluir as cópias de backup do Snap Creator 4,1.x que você criou.
+
+
+
+
+Os caminhos fornecidos nas etapas a seguir referem-se ao caminho de instalação padrão. As informações do caminho podem diferir do caminho de instalação se os padrões não forem usados.
+
+Depois que o processo de atualização estiver concluído, você deve considerar os seguintes problemas:
+
+* Se o banco de dados Snap Creator que é atualizado contiver algumas tarefas marcadas como "'em andamento'", o estado permanecerá o mesmo mesmo depois que o processo de atualização estiver concluído.
+* O administrador padrão no Snap Creator mais recente deve ser um administrador no Snap Creator 4,1.x.
++
+Se o usuário 4,1.x não for um administrador, a atualização atribuirá uma função de operador ao usuário 4,1.x.
+
++
+.. Pare os processos do Snap Creator se você ainda não o fez.
++
+Para obter informações sobre como parar os processos, consulte os detalhes fornecidos anteriormente neste tópico.
+
+.. Instale a versão mais recente do Snap Creator, mas não inicie o Snap Creator Server.
++
+Para obter detalhes, consulte as informações sobre como instalar o Snap Creator Server no UNIX.
+
+.. Copie o diretório de banco de dados do Snap Creator 4,1.x com backup para o local mais recente em /install_path/scServer4,1.x/Engine/snapCreator.
+.. Copie o diretório de configuração 4,1.x com backup para o local mais recente em /install_path/scServer4,1.x/Engine/configs).
+.. Copie o diretório de logs 4,1.x com backup para o local mais recente em /install_path/scServer4,1.x/Engine/logs.
+.. Mude os diretórios para o subdiretório do motor no caminho de instalação do Snap Creator em /install_path/scServer4,1.x/Engine.
+.. Atualize o Snap Creator inserindo o seguinte comando: java -jar snapcreator.jar -upgrade
+
+
+
+
+Depois que o processo de atualização estiver concluído, inicie o Snap Creator Server inserindo o seguinte comando:
+
+[listing]
+----
+/install_path/scServer4.1.x/bin/scServer start
+----
+Além disso, exclua o diretório de instalação do Snap Creator 4,1.x.
+
+
+IMPORTANT: Não exclua as cópias de backup até ter certeza de que não precisa reverter para uma versão mais antiga.
+
+Você também deve validar a inicialização da GUI do Snap Creator Framework navegando até o host local na porta especificada (https://IP_address:gui_port[]).
+
+Você deve se conetar usando HTTPS; caso contrário, a conexão não será automaticamente redirecionada para uma conexão HTTPS e a GUI não funcionará.

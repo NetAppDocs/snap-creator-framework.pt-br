@@ -1,0 +1,42 @@
+---
+permalink: administration/task_changing_the_snap_creator_server_port.html 
+sidebar: sidebar 
+keywords: snap, creator, server, snapcreator, properties, file, restart, server, installation, unix 
+summary: Para alterar a porta que o Snap Creator Server usa, você pode editar o arquivo snapcreator.properties e reiniciar o servidor. 
+---
+= Alterar a porta Snap Creator Server após a instalação
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para alterar a porta que o Snap Creator Server usa, você pode editar o arquivo snapcreator.properties e reiniciar o servidor.
+
+O procedimento para alterar a porta Snap Creator Server é o mesmo para Windows e UNIX. O procedimento a seguir usa exemplos do ambiente UNIX.
+
+. Faça login no sistema no qual o Snap Creator Server está sendo executado e alterne para o subdiretório etc dentro do diretório de instalação.
++
+[listing]
+----
+cd /install_path/scServer4.3.0/engine/etc
+----
+. Usando um editor de texto, abra o arquivo snapcreator.properties.
+. Altere o valor da porta (por padrão, 8443) nos seguintes parâmetros para a nova porta:
++
+[listing]
+----
+...
+SNAPCREATOR_STARTUP_PORT=8443
+...
+SNAPCREATOR_STORAGE_URL=https\://localhost\:8443/services/v1/StorageService
+...
+----
+. Salve e feche o arquivo snapcreator.properties.
+. Reinicie o Snap Creator Server.
++
+[listing]
+----
+/install_path/scServer4.3.0/bin/scServer restart
+----
+

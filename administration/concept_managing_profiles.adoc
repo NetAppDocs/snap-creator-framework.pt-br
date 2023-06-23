@@ -1,0 +1,16 @@
+---
+permalink: administration/concept_managing_profiles.html 
+sidebar: sidebar 
+keywords: create, view, delete, profiles, managing, rbac 
+summary: Você pode criar, exibir e excluir perfis. 
+---
+= Gerenciamento de perfis
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode criar, exibir e excluir perfis.
+
+Um perfil é essencialmente uma pasta usada para organizar arquivos de configuração. Os perfis também atuam como objetos para o controle de acesso baseado em funções (RBAC), o que significa que os usuários podem ter acesso a apenas determinados perfis e aos arquivos de configuração contidos dentro.

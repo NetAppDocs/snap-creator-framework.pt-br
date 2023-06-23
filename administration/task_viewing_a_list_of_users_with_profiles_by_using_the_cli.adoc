@@ -1,0 +1,30 @@
+---
+permalink: administration/task_viewing_a_list_of_users_with_profiles_by_using_the_cli.html 
+sidebar: sidebar 
+keywords: snap, creator, command, line, interface, cli 
+summary: 'Você pode exibir uma lista de todas as contas de usuário do Snap Creator que têm perfis usando apenas a interface de linha de comando (CLI).' 
+---
+= Exibindo uma lista de usuários do Snap Creator e perfis atribuídos usando a CLI
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode exibir uma lista de todas as contas de usuário do Snap Creator que têm perfis usando apenas a interface de linha de comando (CLI).
+
+. Introduza o seguinte comando:
++
+`snapcreator --server host_name --port port_number --user sc_user_name --passwd sc_passwd --profile profile_name --action userListForProfile --verbose`
+
++
+Aqui está um exemplo:
+
++
+[listing]
+----
+snapcreator --server localhost --port 8080
+--user SCadmin --passwd passwd123 –profile FirstProfile
+--action userListForProfile --verbose
+----
+

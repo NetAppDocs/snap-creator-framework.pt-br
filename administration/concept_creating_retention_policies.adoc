@@ -1,0 +1,16 @@
+---
+permalink: administration/concept_creating_retention_policies.html 
+sidebar: sidebar 
+keywords: creating, retention, policies, local, configuration 
+summary: 'Se você planeja usar objetos de política em vez de uma política de retenção local (que está contida no arquivo de configuração), você pode criar uma política de retenção.' 
+---
+= Criação de políticas de retenção
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se você planeja usar objetos de política em vez de uma política de retenção local (que está contida no arquivo de configuração), você pode criar uma política de retenção.
+
+Como parte da criação de uma política de retenção, você pode criar um tipo de backup e um cronograma de políticas.

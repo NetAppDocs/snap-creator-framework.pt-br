@@ -1,0 +1,40 @@
+---
+permalink: sap-hana-ops/task_starting_the_snapvault_relationships_with_data_ontap_operating_in_7_mode.html 
+sidebar: sidebar 
+keywords: sap, hana, starting, snapvault, relationship, data, ontap, operating, 7-mode 
+summary: Você pode iniciar uma relação do SnapVault com comandos executados no sistema de storage secundário. 
+---
+= Iniciando as relações SnapVault com o Data ONTAP operando no modo 7D.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode iniciar uma relação do SnapVault com comandos executados no sistema de storage secundário.
+
+. Para sistemas de storage que executam o Data ONTAP operando no modo 7, você inicia as relações do SnapVault executando o seguinte comando:
++
+[listing]
+----
+hana2b> snapvault start -S hana1a:/vol/data_00001/mnt00001 /vol/backup_data_00001/mnt00001
+Snapvault configuration for the qtree has been set.
+Transfer started.
+Monitor progress with 'snapvault status' or the snapmirror log.
+hana2b>
+hana2b> snapvault start -S hana1a:/vol/data_00003/mnt00003 /vol/backup_data_00003/mnt00003
+Snapvault configuration for the qtree has been set.
+Transfer started.
+Monitor progress with 'snapvault status' or the snapmirror log.
+hana2b>
+hana2b> snapvault start -S hana1b:/vol/data_00002/mnt00002 /vol/backup_data_00002/mnt00002
+Snapvault configuration for the qtree has been set.
+Transfer started.
+Monitor progress with 'snapvault status' or the snapmirror log.
+hana2b>
+----
++
+
+NOTE: Recomenda-se que utilize uma rede dedicada para o tráfego de replicação. Nesse caso, configure o nome do host dessa interface nos controladores de storage primário. Em vez de hana1b e hana1a, o nome do host pode ser hana1a-rep e hana1b-rep.
+
+

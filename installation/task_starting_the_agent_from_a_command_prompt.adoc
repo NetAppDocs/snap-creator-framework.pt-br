@@ -1,0 +1,35 @@
+---
+permalink: installation/task_starting_the_agent_from_a_command_prompt.html 
+sidebar: sidebar 
+keywords: starting, start, agent, command, prompt 
+summary: 'Você pode iniciar manualmente o Snap Creator Agent a partir de um prompt de comando executando um script em lote (scAgent.bat).' 
+---
+= Iniciando o Agente a partir de um prompt de comando
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode iniciar manualmente o Snap Creator Agent a partir de um prompt de comando executando um script em lote (scAgent.bat).
+
+Normalmente, você deve seguir este procedimento somente se você não tiver selecionado a opção *Start Agent as Service* durante o processo de instalação.
+
+Você também pode programar o script de lote (scAgent.bat) para ser executado na inicialização através do agendador de tarefas do Windows. Para obter detalhes sobre como usar o agendador de tarefas do Windows, consulte a documentação do sistema operacional Windows.
+
+. Abra um prompt de comando e digite os seguintes comandos:
++
+[listing]
+----
+cd \install_path\scAgentrelease-version\bin\
+scAgent.bat start
+----
++
+[listing]
+----
+cd \Program Files\NetApp\Snap_Creator_Framework\scAgent4.1.0\bin\
+scAgent.bat start
+----
+
+
+Como o script em lote (scAgent.bat) executa o Snap Creator em primeiro plano, o Snap Creator Agent continua a ser executado apenas enquanto o prompt de comando estiver aberto. Fechar o prompt de comando irá sair do Snap Creator Agent. Para executar o Snap Creator em segundo plano, o serviço Snap Creator Agent deve ser usado.

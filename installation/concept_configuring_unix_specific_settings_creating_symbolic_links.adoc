@@ -1,0 +1,19 @@
+---
+permalink: installation/concept_configuring_unix_specific_settings_creating_symbolic_links.html 
+sidebar: sidebar 
+keywords: configuring, configure, unix, settings, create, creating, symbolic, links 
+summary: 'Se você vai instalar o Snap Creator Agent em um sistema operacional UNIX (AIX, Linux e Solaris), para que o plug-in IBM Domino funcione corretamente, três links simbólicos (links simbólicos) devem ser criados para vincular aos arquivos de objetos compartilhados do Domino.' 
+---
+= Configurando configurações específicas do UNIX: Criando links simbólicos
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se você vai instalar o Snap Creator Agent em um sistema operacional UNIX (AIX, Linux e Solaris), para que o plug-in IBM Domino funcione corretamente, três links simbólicos (links simbólicos) devem ser criados para vincular aos arquivos de objetos compartilhados do Domino.
+
+Os procedimentos de instalação variam ligeiramente dependendo do sistema operacional. Consulte o procedimento adequado para o seu sistema operativo.
+
+
+NOTE: O Domino não suporta o sistema operativo HP-UX.

@@ -1,0 +1,180 @@
+---
+permalink: domino-ops/reference_domino_plug_in_specific_errors.html 
+sidebar: sidebar 
+keywords: domino, ibm, troubleshooting, plug-ins, errors 
+summary: 'Os erros comuns do Snap Creator se enquadram em duas categorias: erros genéricos do Snap Creator e erros específicos do Domino plug-in. Erros específicos do plug-in do Domino geralmente envolvem problemas de pré-instalação, bancos de dados defeituosos ou problemas com uma ação de restauração personalizada.' 
+---
+= Solução de problemas de erros específicos do plug-in do Domino
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Os erros comuns do Snap Creator se enquadram em duas categorias: erros genéricos do Snap Creator e erros específicos do Domino plug-in. Erros específicos do plug-in do Domino geralmente envolvem problemas de pré-instalação, bancos de dados defeituosos ou problemas com uma ação de restauração personalizada.
+
+
+NOTE: Para obter informações sobre erros genéricos do Snap Creator, consulte link:https://library.netapp.com/ecm/ecm_download_file/ECMP12395422["Guia de administração do Snap Creator Framework 4.1.2"].
+
+
+
+== O plug-in Domino não é suportado nesta plataforma
+
+Normalmente, você recebe esse erro quando os pré-requisitos para o plug-in Domino não foram atendidos. Geralmente, a mensagem de erro é semelhante à seguinte:
+
+[listing]
+----
+Failed to load plug-in domino. Reason: ERROR: [ltd-00009] Domino plug-in
+couldn't be loaded. Reasons could be 1) Domino plug-in is not supported
+on this platform.
+----
+Também foi conhecida a seguinte mensagem de erro:
+
+[listing]
+----
+ERROR: [tampico:9090(4.1.x)] SCF-00038: Application quiesce for
+plug-in [domino] failed with exit code [99], continuing with backup.
+----
+Assim como este:
+
+[listing]
+----
+ERROR: [scf-00094] Application environment set for plug-in domino failed
+[ERROR: [scf-00060] unknown application object [app] / application domino at snapcreator.pl line 6410.
+----
+Estas mensagens de erros aparecem se uma das seguintes condições não for cumprida:
+
+* As etapas de pré-instalação não foram executadas ou foram executadas incorretamente:
++
+** Em hosts UNIX, você deve criar links simbólicos para arquivos de objetos compartilhados do IBM Domino.
+** Em hosts do Windows, você deve adicionar o caminho de instalação do IBM Domino à variável de ambiente PATH. Para obter mais informações, consulte link:https://library.netapp.com/ecm/ecm_download_file/ECMP12395424["Guia de instalação do Snap Creator Framework 4.1.2"].
+
+
+* O nível de bits do Domino é diferente do nível de bits do Snap Creator. Por exemplo, se você estiver usando o Domino de 32 bits, use o Snap Creator de 32 bits.
+
+
+
+
+== O backup do Snap Creator falha por causa de um banco de dados ruim
+
+Por padrão, uma operação de backup falhará se um ou mais bancos de dados estiverem em um estado inconsistente ou corrompido. Você pode forçar o plug-in a prosseguir com as operações de backup apesar de erros, conforme descrito na etapa link:task_using_the_gui_to_create_a_configuration_file.md#STEP_AA41331683A24598B7845367CB967F99["tarefa usando a gui para criar um arquivo de configuração"].
+
+
+
+== Falha na restauração do Domino usando ação personalizada
+
+Os erros de restauração geralmente ocorrem quando os caminhos de restauração não são definidos corretamente. Verifique os caminhos para carateres extras e barras de fundo. Além disso, verifique se o diretório de restauração de dados está definido corretamente.
+
+Os erros são semelhantes aos seguintes:
+
+[listing]
+----
+########## Custom plug-in action ##########
+[Thu Apr 19 16:05:55 2012] DEBUG: Restoring to current time.
+[Thu Apr 19 16:05:55 2012] DEBUG: Calling dominocore::postRestoreToTime with arguments(C:\Lotus\Domino\notes.ini,F:\Domino\data\,H:\changeinfo\fuji15-daily_20120419130836,-1,F:\Domino\data\restore\mail\dadams.nsf,UP-TO-THE-MINUTE,H:\changeinfo\logs\)
+[Thu Apr 19 16:05:55 2012] TRACE: Notes API initialized
+Applying Change info for:F:\Domino\data\restore\mail\dadams.nsf
+Error: unable to open file 'H:\changeinfo\fuji15-daily_20120419130836/restore_mail_dadams.nsf.info', for path 'F:\Domino\data\restore\mail\dadams.nsf'.
+Error:5114
+NSFRecoverDatabases failed for database:F:\Domino\data\restore\mail\dadams.nsf
+Recovery Manager: Recovery only supported for Backup Files.ERROR_CODE:5114
+[Thu Apr 19 16:05:55 2012] ERROR: [ltd-00008] Restoring databases finished with errors
+[Thu Apr 19 16:05:55 2012] ERROR: [scf-00154] Action custom for plugin domino failed with exit code 1, Exiting!
+[Thu Apr 19 16:05:55 2012] DEBUG: Exiting with error code - 2
+----
+
+
+== Todos os erros específicos do Domino plug-in
+
+A tabela a seguir lista as mensagens de erro específicas do plug-in do IBM Domino no formato de referência:
+
+|===
+| Código de erro | Mensagem de erro | Descrição/resolução 
+
+
+ a| 
+ltd-00001
+ a| 
+O plug-in do Domino não pode funcionar com SNAP_TIMESTAMP_ONLY
+ a| 
+Para obter mais informações, consulte a etapa link:task_using_the_gui_to_create_a_configuration_file.md#STEP_81795CF9D6294AC891BC3D0CE4827CA3["Task_using_the_gui_to_create_a_Configuration_file.md_81795CF9D6294AC891BC3D0CE4827CA3"].
+
+
+
+ a| 
+ltd-00002
+ a| 
+Quiescing bancos de dados terminados com erros
+ a| 
+O plug-in Domino não conseguiu colocar todos os bancos de dados no modo de backup. Verifique os logs para encontrar a razão exata do erro ou execute Snap Creator no modo de depuração para encontrar o erro.
+
+
+
+ a| 
+ltd-00003
+ a| 
+Unquiescente bancos de dados finalizados com erros
+ a| 
+O plug-in Domino não conseguiu tirar todos os bancos de dados do modo de backup. Verifique os logs para encontrar a razão exata do erro ou execute Snap Creator no modo de depuração para encontrar o erro.
+
+
+
+ a| 
+ltd-00004
+ a| 
+Falha ao descobrir bases de dados
+ a| 
+Um erro de aplicativo causou falha na descoberta de aplicativos. Verifique as configurações e as configurações do aplicativo. Você pode desativar a descoberta automática definindo APP_auto_Discovery e comentando VALIDAR_VOLUMES.
+
+
+
+ a| 
+ltd-00005
+ a| 
+Falha na coleta de informações do sistema operacional
+ a| 
+Um erro ao coletar informações do sistema operacional fez com que a ação scdump falhasse. Verifique os logs e tente executar o comando manualmente.
+
+
+
+ a| 
+ltd-00006
+ a| 
+Falha na coleta de informações do SnapDrive
+ a| 
+Um erro ao coletar informações do SnapDrive fez com que a ação scdump falhasse. Verifique os logs e tente executar o comando manualmente.
+
+
+
+ a| 
+ltd-00008
+ a| 
+Restauração de bancos de dados concluída com erros
+ a| 
+O plug-in Domino não conseguiu restaurar todos os bancos de dados com sucesso. Verifique os logs para encontrar a razão exata do erro ou execute Snap Creator no modo de depuração para encontrar o erro.
+
+
+
+ a| 
+ltd-00009
+ a| 
+O plug-in Domino não pode ser executado como root
+ a| 
+As razões podem ser:
+
+* O plug-in Domino não é suportado nesta plataforma.
+* Os pré-requisitos para que o plug-in Domino seja executado não estão satisfeitos.
+
+
+Para obter mais informações, link:reference_domino_plug_in_specific_errors.html#domino-plug-in-is-not-supported-on-this-platform["O plug-in Domino não é suportado nesta plataforma"]consulte .
+
+
+
+ a| 
+ltd-00010
+ a| 
+Erros encontrados ao abrir bancos de dados
+ a| 
+Verifique os logs para encontrar a razão exata do erro ou execute Snap Creator no modo de depuração para encontrar o erro.
+
+|===

@@ -1,0 +1,19 @@
+---
+permalink: installation/concept_install_snap_creator_agent.html 
+sidebar: sidebar 
+keywords: installing, install, snap, creator, agent 
+summary: Você pode instalar o Snap Creator Agent em hosts Windows e UNIX. 
+---
+= Instalar o Snap Creator Agent
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode instalar o Snap Creator Agent em hosts Windows e UNIX.
+
+
+IMPORTANT: Embora a instalação e execução de vários agentes em um único host seja permitida, a prática recomendada é usar um único agente por host.
+
+Se você planeja usar o plug-in IBM Domino, o plug-in exige que o Snap Creator Agent seja instalado em um local diferente da pasta de dados do Domino.

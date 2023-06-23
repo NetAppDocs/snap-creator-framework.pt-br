@@ -1,0 +1,36 @@
+---
+permalink: administration/task_performing_volume_restore_using_the_gui.html 
+sidebar: sidebar 
+keywords: volume, restore, snap, creator, gui, perform, wizard 
+summary: Você pode executar uma restauração de volume usando a GUI do Snap Creator. 
+---
+= A efetuar a restauração do volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode executar uma restauração de volume usando a GUI do Snap Creator.
+
+. No menu principal da GUI Snap Creator, selecione *Gerenciamento* > *Configurações*.
+. Na guia *Configurações*, no painel *Perfis e Configuração*, selecione o arquivo de configuração.
+. Selecione *Ação* > *Restaurar*.
++
+O assistente de restauração é exibido no painel direito.
+
+. Conclua as páginas no assistente Restaurar para executar a restauração.
++
+.. Na página *Restore details*, selecione o nome do controlador/SVM, Restore volume name, Policy e Restore Snapshot copy name e, em seguida, selecione *volume Restore* na lista suspensa *Restore type*.
++
+image::../media/restore_wizard_restore_details.gif[restaurar detalhes do assistente de restauração]
+
+.. Revise o resumo e clique em *Finish*.
+
+
++
+É apresentada uma mensagem de aviso a perguntar se existem mais itens a restaurar.
+
+. Clique em *não* e, em seguida, clique em *OK* na página de confirmação da restauração.
+. No painel *Console*, verifique se a restauração foi concluída com êxito visualizando as mensagens.
+

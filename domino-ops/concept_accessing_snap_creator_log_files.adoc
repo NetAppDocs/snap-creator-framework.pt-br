@@ -1,0 +1,64 @@
+---
+permalink: domino-ops/concept_accessing_snap_creator_log_files.html 
+sidebar: sidebar 
+keywords: domino, ibm, viewing, job, status, logs, accessing, snap, creator, log, files 
+summary: Você pode exibir o status de uma tarefa no Monitor de trabalho Snap Creator. É possível exibir um log de ações de tarefa no painel Console enquanto o trabalho está sendo executado ou no Log out para o trabalho. Uma série de logs especializados também estão disponíveis. 
+---
+= Exibindo status e logs do trabalho
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode exibir o status de uma tarefa no Monitor de trabalho Snap Creator. É possível exibir um log de ações de tarefa no painel Console enquanto o trabalho está sendo executado ou no Log out para o trabalho. Uma série de logs especializados também estão disponíveis.
+
+Você pode exibir os seguintes logs na GUI:
+
+|===
+| Registo | Descrição 
+
+
+ a| 
+Fora
+ a| 
+Forneça informações de nível detalhado para um trabalho.
+
+
+
+ a| 
+Depurar
+ a| 
+Fornece informações de nível verbose, além de informações úteis na depuração.
+
+
+
+ a| 
+GUI
+ a| 
+Fornece informações sobre as ações da GUI do Snap Creator.
+
+
+
+ a| 
+Stderr
+ a| 
+Fornece informações sobre erros gravados em erro padrão (somente painel relatórios).
+
+
+
+ a| 
+Erro
+ a| 
+Fornece todas as informações de erro (somente painel relatórios).
+
+|===
+Pode visualizar todos os registos num editor de texto se preferir não utilizar o Monitor de trabalhos ou o painel relatórios. Os logs residem no diretório de instalação do Snap Creator Server.
+
+*Informações relacionadas*
+
+xref:task_using_the_snap_creator_job_monitor_to_review_logs.adoc[Visualizar o estado e os registos do trabalho no Monitor de trabalhos]
+
+xref:task_using_the_snap_creator_reports_option_to_view_logs.adoc[Exibindo logs no painel relatórios]
+
+xref:task_creating_an_scdump_using_the_snap_creator_gui.adoc[Usando scdump para reunir logs em um formato compactado]

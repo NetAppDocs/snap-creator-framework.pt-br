@@ -1,0 +1,44 @@
+---
+permalink: sap-hana-ops/task_restoring_databases_after_a_primary_storage_failure_with_clustered_data_ontap.html 
+sidebar: sidebar 
+keywords: sap, hana, restore, restoring, databases, primary, storage, failure, clustered, data, ontap 
+summary: Você pode restaurar um banco de dados SAP HANA após uma falha no sistema de storage primário que executa o Clustered Data ONTAP. 
+---
+= Restauração de bancos de dados após uma falha de storage primário com o Clustered Data ONTAP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode restaurar um banco de dados SAP HANA após uma falha no sistema de storage primário que executa o Clustered Data ONTAP.
+
+Supondo que o volume primário seja perdido completamente, você precisa criar um novo volume primário e, em seguida, restaurar a partir do volume de backup.
+
+. Criar um volume primário com proteção de dados do tipo.
++
+[listing]
+----
+hana::> volume create -vserver hana1a -volume hana_data -aggregate aggr_sas_101 -size 300G -state online -type DP -policy default -autosize-mode grow_shrink -space-guarantee none
+-snapshot-policy none -foreground true
+[Job 6744] Job is queued: Create hana_data.
+[Job 6744] Job succeeded: Successful
+----
+. Restaure todos os dados do volume de backup.
++
+[listing]
+----
+hana::> snapmirror restore -destination-path hana1a:hana_data -source-path hana2b:backup_hana_data -source-snapshot sc-backup-daily_20140505121000
+[Job 6746] Job is queued: snapmirror restore from source "hana2b:backup_hana_data" for the
+snapshot sc-backup-daily_20140505121000.
+
+hana::> job show -id 6746
+Owning
+Job ID Name                 Vserver    Node           State
+------ -------------------- ---------- -------------- ----------
+6746   SnapMirror restore   hana        hana01        Running
+       Description: snapmirror restore from source "hana2b:backup_hana_data" for the snapshot sc-backup-daily_20140505121000
+----
+
+
+Quando o processo de restauração terminar, você usa o SAP HANA para executar a recuperação.

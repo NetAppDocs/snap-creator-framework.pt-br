@@ -1,0 +1,14 @@
+---
+permalink: administration/concept_troubleshooting_snap_creator_server_or_agent_issues.html 
+sidebar: sidebar 
+keywords: encounter, issues, snap, creator, server, agent, troubleshoot, issues, troubleshooting 
+summary: Você pode encontrar alguns problemas com o Snap Creator Server ou Snap Creator Agent. Você deve estar ciente desses problemas e saber como solucioná-los. 
+---
+= Solução de problemas do Snap Creator Server ou do Snap Creator Agent
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode encontrar alguns problemas com o Snap Creator Server ou Snap Creator Agent. Você deve estar ciente desses problemas e saber como solucioná-los.

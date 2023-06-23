@@ -1,0 +1,29 @@
+---
+permalink: administration/task_deleting_configuration_files.html 
+sidebar: sidebar 
+keywords: delete, configuration, file, profile, management 
+summary: Você pode excluir arquivos de configuração de um perfil. 
+---
+= Eliminar ficheiros de configuração de um perfil
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode excluir arquivos de configuração de um perfil.
+
+
+IMPORTANT: Ao excluir arquivos de configuração, as programações associadas à configuração também são removidas como parte do processo.
+
+. No menu principal da GUI Snap Creator, selecione *Gerenciamento* > *Configurações*.
+. No painel Perfis e Configurações, expanda o conteúdo do perfil.
++
+Os arquivos de configuração atribuídos ao perfil são listados abaixo do nome do perfil.
+
+. Clique com o botão direito do rato no ficheiro de configuração e selecione *Eliminar*.
+. Clique em *Yes* (Sim) na janela de confirmação.
++
+O arquivo de configuração é removido da lista sob o nome do perfil e é excluído permanentemente do Snap Creator Server.
+
+

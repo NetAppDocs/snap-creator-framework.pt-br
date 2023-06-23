@@ -1,0 +1,65 @@
+---
+permalink: sap-hana-ops/task_restoring_and_recovering_sap_hana_databases.html 
+sidebar: sidebar 
+keywords: sap, hana, restoring, restore, recovering, recover, databases 
+summary: Use o SAP HANA Studio e o Snap Creator para restaurar e recuperar bancos de dados SAP HANA. 
+---
+= Restauração e recuperação de bancos de dados SAP HANA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Use o SAP HANA Studio e o Snap Creator para restaurar e recuperar bancos de dados SAP HANA.
+
+. No SAP HANA Studio:
++
+.. Selecione recuperar para o sistema SAP HANA.
+.. O sistema SAP HANA é desligado.
+.. Selecione o tipo de recuperação.
+.. Fornecer locais de backup de log.
+.. A lista de backups de dados é mostrada
+.. Selecione cópia de segurança para ver a ID de cópia de segurança externa.
+
+
+. Para um sistema de storage executando somente o Clustered Data ONTAP:
++
+.. Necessário apenas se tiver sido utilizado outro backup que não o último para a restauração.
+.. Apenas necessário para "'volume SnapRestore'" do armazenamento primário.
+.. Desativar as relações do SnapVault
+
+
+. No Snap Creator:
++
+.. Selecione "Restaurar" para o sistema SAP HANA.
+.. Selecione a restauração do storage primário ou secundário, dependendo da disponibilidade do backup no storage primário.
+.. Selecione o controlador de storage, o nome do volume e o nome da cópia Snapshot. O nome da cópia Snapshot está correlacionado com a ID da cópia de segurança anterior.
+.. Para sistemas SAP HANA com vários nós, é necessário restaurar vários volumes:
++
+... Escolha *Adicionar mais itens de restauração*.
+... Selecione o controlador de storage, o nome do volume e o nome da cópia Snapshot.
+... Repita este processo para todos os volumes necessários.
+
+
+.. Para sistemas de banco de dados de alocação única (MDC) de contentores de banco de dados de alocação única, os bancos de dados DO SISTEMA e DO LOCATÁRIO são restaurados.
+.. O processo de restauração foi iniciado
+.. Restauração concluída para todos os volumes.
+
+
+. Nos nós do banco de dados, desmonte e monte todos os volumes de dados para limpar "alças NFS obsoletas".
+. No SAP HANA Studio:
++
+.. Selecione *Refresh* na lista de backup.
+.. Selecione cópia de segurança disponível para recuperação (item verde).
+.. Inicie o processo de recuperação.
+.. Para sistemas de banco de dados de alocação única (MDC) de contentores de banco de dados de alocação única (MDC), inicie o processo de recuperação primeiro para o banco de DADOS DO SISTEMA e, em seguida, para o banco de dados DE LOCATÁRIO.
+.. O sistema SAP HANA é iniciado.
+
+
+. (Opcional) Retomar relações SnapVault para todos os volumes restaurados.
++
+
+NOTE: Nos sistemas de armazenamento, esta etapa só é necessária se um backup diferente do mais recente tiver sido usado para a restauração.
+
+

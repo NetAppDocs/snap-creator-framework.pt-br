@@ -1,0 +1,18 @@
+---
+permalink: administration/task_running_a_scheduled_job.html 
+sidebar: sidebar 
+keywords: schedule, job, run, snap, creator, gui 
+summary: Pode executar um trabalho agendado. 
+---
+= Execução de trabalhos agendados
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Pode executar um trabalho agendado.
+
+. No menu principal da GUI Snap Creator, selecione *Management* > *Schedules*.
+. Na guia horários, selecione um trabalho na lista de tarefas agendadas e clique em *Executar*.
+

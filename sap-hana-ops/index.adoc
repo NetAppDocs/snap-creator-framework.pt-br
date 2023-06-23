@@ -1,0 +1,14 @@
+---
+permalink: sap-hana-ops/index.html 
+sidebar: sidebar 
+keywords: sap, hana, plug-in, operations, guide, configure, use, backup, back, up, restore, databases 
+summary: Descreve como configurar e usar o plug-in SAP HANA para fazer backup e restauração de bancos de dados SAP HANA. 
+---
+= Guia de operações de plug-in do SAP HANA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="Lead"]
+Você pode configurar e usar o plug-in SAP HANA para Snap Creator 4.3.3 para fazer backup e restaurar bancos de dados SAP HANA.

@@ -1,0 +1,25 @@
+---
+permalink: domino-ops/concept_general_configuration_file_information.html 
+sidebar: sidebar 
+keywords: domino, ibm, logging into, Snap Creator, GUI, login 
+summary: Você usa um navegador da Web para fazer login na GUI do Snap Creator. Verifique com o administrador o endereço IP do Snap Creator Server, a porta e as credenciais de login. 
+---
+= Fazer login na GUI do Snap Creator
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você usa um navegador da Web para fazer login na GUI do Snap Creator. Verifique com o administrador o endereço IP do Snap Creator Server, a porta e as credenciais de login.
+
+. Digite o seguinte URL no navegador da Web: `+https://server_name:port+`, Onde:
++
+** Server_name é o nome ou endereço IP do Snap Creator Server
+** Porta é a porta do Snap Creator Server (8443, por padrão)
+
+
+. Insira as credenciais de login do Snap Creator Server.
+
+
+A GUI do Snap Creator é exibida no navegador. Se você estiver iniciando a GUI pela primeira vez, uma mensagem de boas-vindas será exibida na tela. Clique em *OK* para ignorar a mensagem.

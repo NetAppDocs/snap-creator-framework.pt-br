@@ -1,0 +1,22 @@
+---
+permalink: administration/task_creating_new_configuration_files_by_copying_existing_configuration_files_using_the_cli.html 
+sidebar: sidebar 
+keywords: cli, command-line, interface, configuration, file, copy 
+summary: 'Usando a interface de linha de comando (CLI), você pode criar um novo arquivo de configuração copiando um arquivo de configuração existente e renomeando o novo arquivo.' 
+---
+= Criando novos arquivos de configuração copiando arquivos de configuração existentes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Usando a interface de linha de comando (CLI), você pode criar um novo arquivo de configuração copiando um arquivo de configuração existente e renomeando o novo arquivo.
+
+. Mude para o diretório de configuração: `cd install_path/scServer4.3/engine/configs`
+. Copie o arquivo de configuração de origem: `cp source_profile_name/configuration_nametarget_profile_name/new_configuration_name`
++
+Você deve fornecer um nome para o novo arquivo de configuração.
+
+. Personalize o novo arquivo de configuração para uso com o aplicativo ou banco de dados que você deseja gerenciar.
+

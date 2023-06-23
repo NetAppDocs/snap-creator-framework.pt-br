@@ -1,0 +1,37 @@
+---
+permalink: administration/reference_what_you_should_back_up.html 
+sidebar: sidebar 
+keywords: create, backup, copy, snap, creator, directories, information, server, snapcreator 
+summary: A prática recomendada é criar cópias de backup de diretórios específicos do Snap Creator para ajudar a garantir que os dados do Snap Creator possam ser restaurados sem perda. 
+---
+= Quais informações do Snap Creator devem ser copiadas
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A prática recomendada é criar cópias de backup de diretórios específicos do Snap Creator para ajudar a garantir que os dados do Snap Creator possam ser restaurados sem perda.
+
+Você deve criar cópias de backup dos seguintes diretórios:
+
+* O subdiretório do mecanismo Snap Creator Server 4,3:
++
+** Base de dados Snap Creator (..
+** Propriedades do Snap Creator Server (..)
+** Perfis e configuração (.. Configurações)
+** Registos (.. Registos)
+** Repositório de plug-in, se ativado (..
+
+
+* O diretório Snap Creator Agent:
++
+** Propriedades do Snap Creator Agent (...etc)
+** Registos, se ativado (.. Registos)
+** Plug-ins (.. Plugins)
+
+
+
+
+
+NOTE: De forma otimizada, os backups devem ser programados para ocorrer quando os serviços ou processos do Snap Creator podem ser interrompidos, a fim de garantir que os dados do Snap Creator sejam copiados de forma consistente.

@@ -1,0 +1,26 @@
+---
+permalink: sap-hana-ops/concept_reviewing_available_backups_in_sap_hana_studio.html 
+sidebar: sidebar 
+keywords: reviewing, review, available, backups, sap, hana, studio 
+summary: Você pode ver a lista de backups de Snapshot de storage no SAP HANA Studio. 
+---
+= Revisão dos backups disponíveis no SAP HANA Studio
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode ver a lista de backups de Snapshot de storage no SAP HANA Studio.
+
+O backup destacado na figura a seguir mostra uma cópia Snapshot chamada "'Backup-ANA_Hourly_20140320103943". Esse backup inclui cópias Snapshot para todos os três volumes de dados do sistema SAP HANA. O backup também está disponível no storage secundário.
+
+image::../media/sap_hana_backup_list_scfw_gui.gif[Esta imagem é explicada pelo texto circundante.]
+
+O nome da cópia Snapshot é usado pelo Snap Creator como ID de backup quando o Snap Creator Registra a cópia Snapshot de storage no catálogo de backup do SAP HANA. No SAP HANA Studio, o backup do Snapshot de storage fica visível no catálogo de backup. A ID de cópia de segurança externa (EBID) tem o mesmo valor que o nome da cópia de instantâneo, como mostrado na figura a seguir.
+
+image::../media/sap_hana_backup_catalog.gif[Esta imagem é explicada pelo texto circundante.]
+
+Com cada execução de backup, o Snap Creator exclui os backups Snapshot no storage primário e secundário com base nas políticas de retenção definidas para diferentes programações (por hora, diariamente, etc.).
+
+O Snap Creator também exclui os backups no catálogo de backup do SAP HANA se o backup não existir no storage primário ou secundário. O catálogo de backup do SAP HANA sempre mostra a lista completa de backups disponíveis no storage primário e/ou secundário.

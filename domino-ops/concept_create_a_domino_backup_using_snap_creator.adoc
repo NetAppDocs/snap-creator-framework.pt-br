@@ -1,0 +1,23 @@
+---
+permalink: domino-ops/concept_create_a_domino_backup_using_snap_creator.html 
+sidebar: sidebar 
+keywords: domino, ibm, backing up, backup, databases 
+summary: Você pode fazer backup de bancos de dados sob demanda ou de acordo com um cronograma. Você pode usar a GUI do Snap Creator ou a CLI do Snap Creator para fazer backup de bancos de dados. 
+---
+= Fazer backup de bancos de dados
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode fazer backup de bancos de dados sob demanda ou de acordo com um cronograma. Você pode usar a GUI do Snap Creator ou a CLI do Snap Creator para fazer backup de bancos de dados.
+
+
+NOTE: Você pode usar a GUI para fazer backup de bancos de dados. Para obter informações sobre como usar a CLI, consulte https://library.netapp.com/ecm/ecm_download_file/ECMP12395422["Guia de administração do Snap Creator Framework 4.1.2"^].
+
+*Informações relacionadas*
+
+* link:task_creating_a_domino_backup_using_the_snap_creator_gui.adoc["Backup de bancos de dados sob demanda"]
+* link:task_scheduling_actions_using_the_snap_creator_gui.adoc["Agendamento de backups"]
+

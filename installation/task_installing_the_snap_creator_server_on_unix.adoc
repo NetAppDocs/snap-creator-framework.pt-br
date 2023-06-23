@@ -1,0 +1,180 @@
+---
+permalink: installation/task_installing_the_snap_creator_server_on_unix.html 
+sidebar: sidebar 
+keywords: installing, install, snap, creator, server, unix, unix-based 
+summary: 'Para plataformas UNIX (AIX, HP-UX, Linux e Solaris), o processo de instalação do Snap Creator consiste em extrair o pacote de software Snap Creator (um arquivo .tar contendo o Snap Creator Server e o Snap Creator Agent), executar um script de configuração, iniciar o serviço e validar a porta.' 
+---
+= Instalar o Snap Creator Server em sistemas baseados em UNIX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para plataformas UNIX (AIX, HP-UX, Linux e Solaris), o processo de instalação do Snap Creator consiste em extrair o pacote de software Snap Creator (um arquivo .tar contendo o Snap Creator Server e o Snap Creator Agent), executar um script de configuração, iniciar o serviço e validar a porta.
+
+JRE 1,8 Atualização 72 ou posterior deve ser instalada.
+
+A pessoa que executa a instalação deve ter acesso suficiente e Privileges para executar a instalação.
+
+
+NOTE: Você deve ter Privileges de nível raiz para executar a configuração inicial.
+
+A porta padrão para o Snap Creator Server é 8443. Você pode usar netstat ou uma ferramenta semelhante para verificar se a porta de rede que você deseja usar suporta HTTPS, está disponível e ainda não está em uso (por exemplo, em hosts UNIX você pode entrar `netstat -nap | grep 8443`).
+
+Você já deve ter baixado o Snap Creator.
+
+O recurso Serviços UNIX (servidor e agente) fornece um script de início para o Snap Creator Server e o Snap Creator Agent. Os scripts de início são escritos em um script de shell UNIX (Bourne shell) e são projetados para serem executados em todos os ambientes UNIX que são suportados pelo Snap Creator.
+
+. Copie o arquivo Snap Creatortar.gz baixado para o local onde você deseja instalar o Snap Creator Server:
++
+.. Criar um subdiretório: Mkdir snap_Creator_directoryCrie um subdiretório:
++
+mkdir snap_creator_directory
+
++
+[listing]
+----
+mkdir /SC_41
+----
+.. Copie o arquivo Snap Creatortar.gz para o diretório recém-criado:
++
+[listing]
+----
+cp NetApp_Snap_Creator_Frameworkrelease-os.tar.gz
+/snap_creator_directory
+----
++
+[listing]
+----
+cp NetApp_Snap_Creator_Framework4.1.0-Linux32.tar.gz
+/SC_41
+----
+
+
+. Mude para o diretório onde o arquivo .tar do Snap Creator Framework está localizado e extraia o arquivo:
++
+
+NOTE: Dependendo do ambiente UNIX, talvez seja necessário descompactar o arquivo antes de inserir o comando tar.
+
++
+[listing]
+----
+cd snap_creator_directory
+tar -xvf NetApp_Snap_Creator_Frameworkrelease-os.tar.gz
+----
++
+** Snap_Creator_Directory é o local onde o Snap Creator será instalado.
+** A versão é a versão atual do pacote de software Snap Creator.
+** o é o sistema operacional.
++
+[listing]
+----
+cd /sc_41
+tar -xvf NetApp_Snap_Creator_Framework4.1.0-Linux32.tar.gz
+----
+
+
++
+Isso extrai tanto o servidor quanto o software Agent. Normalmente, apenas o Snap Creator Server está configurado. Os agentes geralmente residem no banco de dados ou servidores de aplicativos a serem protegidos, como visto no exemplo a seguir:
+
++
+E
+
++
+[listing]
+----
+NetApp_Snap_Creator_Framework4.1.0-Linux32.tar.gz  scServer4.1.0
+scAgent4.1.0
+----
+. Execute a configuração inicial do Snap Creator:
++
+[listing]
+----
+cd scServer*
+./snapcreator --setup
+Welcome to the NetApp Snap Creator Framework release-version!
+\#\#\# Installation options \#\#\#
+01. NetApp Snap Creator Framework release-version Server
+02. NetApp Snap Creator Framework release-version Remote CLI
+Select install option (enter a number or "q" to quit):
+----
++
+Entre `01` para instalar o Snap Creator Server.
+
++
+** A opção 01 executa a configuração inicial do Snap Creator Server configurando um usuário e senha do Snap Creator, designando a porta GUI onde o Snap Creator Server será executado e configurando outros parâmetros.
+** A opção 02 configura o Snap Creator Server como um binário local e permite que você emita comandos da CLI do seu sistema local para um Snap Creator Server remoto.
+
+
+. Aceite o contrato de licença do utilizador final introduzindo y aqui:
++
+[listing]
+----
+END USER LICENSE AGREEMENT
+...the EULA displays...
+
+Do you accept the End User License Agreement (y|n): <Enter y>
+
+Enter controller serial number (Recommended): <OPTIONAL: Enter serial number for one of your storage controllers>
+----
+. Introduza o número de série do controlador.
++
+O número de série do controlador está incorporado no arquivo de propriedades do Snap Creator e incluído nas saídas de suporte e log. Você pode usar essas informações para ajudar a solucionar problemas que possam ocorrer mais tarde.
+
+. Insira a porta do servidor, o IP do sistema e o caminho do bin JAVA e, em seguida, continue com os prompts.
++
+[listing]
+----
+Enter Snap Creator server port [8443]: <Enter server port>
+
+Enable job monitor (Y|N): <Enter Y>
+
+Enter job monitor size, how many jobs to allow [100]: <Enter the number of jobs from 1-1000>
+----
++
+
+NOTE: Embora o valor máximo aceito para o *tamanho do monitor de trabalho* seja 10.000, o tamanho máximo recomendado que você fornecer é 1000.
+
++
+[listing]
+----
+Enter scServer Administrator Username: <Enter the Administrator username>
+Enter password for snap_creator_administrator: <Enter the password>
+Confirm password for snap_creator_administrator: <Enter the password again>
+
+Enter JAVA Bin Path: /usr/java/default/bin
+Enter Your System IP: 10.232.30.18
+INFO: Updated NetApp Snap Creator Framework release-version
+/install_path/scServerrelease-version/engine/etc/snapcreator.properties
+INFO: Updated NetApp Snap Creator Framework release-version
+/install_path/scServerrelease-version/bin/scServer
+
+INFO: To start scServer please do the following:
+
+/install_path/scServerrelease-version/bin/scServer start
+
+INFO: To access NetApp Snap Creator Framework release-version GUI goto https://hostname:gui_port
+----
+. Inicie o Snap Creator Framework Server:
++
+[listing]
+----
+/install_path/scServerrelease-version/bin/scServer start
+Checking Status of scServer:
+Running
+----
+. Valide a inicialização da GUI do Snap Creator Framework navegando até o host local na porta especificada (por exemplo, https://10.12.123.123:8443[] ).
++
+Você deve se conetar usando HTTPS; caso contrário, a GUI não funciona.
+
++
+Se a comunicação passar por um firewall, abra a porta de rede.
+
+
+
+*Informações relacionadas*
+
+xref:task_installing_java_on_snap_creator_hosts.adoc[Instalando o Java em hosts Snap Creator]
+
+xref:task_downloading_the_snap_creator_software.adoc[Baixando o software Snap Creator]

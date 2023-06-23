@@ -1,0 +1,27 @@
+---
+permalink: administration/task_deleting_snap_creator_profiles.html 
+sidebar: sidebar 
+keywords: delete, snap, creator, profile 
+summary: Você pode excluir perfis Snap Creator. 
+---
+= Eliminar perfis
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode excluir perfis Snap Creator.
+
+A exclusão de um perfil também exclui todos os arquivos de configuração associados ao perfil.
+
+. No menu principal da GUI Snap Creator, selecione *Gerenciamento* > *Configurações*.
++
+Os perfis Snap Creator existentes estão listados no painel Perfis e Configurações.
+
+. Clique com o botão direito do rato no perfil a eliminar e selecione *Eliminar*.
+. Clique em *Yes* na mensagem de confirmação
++
+O perfil e os arquivos de configuração associados são excluídos permanentemente do Snap Creator.
+
+

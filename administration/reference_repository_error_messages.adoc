@@ -1,0 +1,568 @@
+---
+permalink: administration/reference_repository_error_messages.html 
+sidebar: sidebar 
+keywords: table, repository, error, message, global, configuration, repo 
+summary: A tabela a seguir lista as mensagens de erro do Repositório. 
+---
+= Mensagens de erro do repositório
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A tabela a seguir lista as mensagens de erro do Repositório.
+
+|===
+| Código de erro | Mensagem de erro | Descrição/resolução 
+
+
+ a| 
+REPO-01001
+ a| 
+A configuração global não existe
+ a| 
+Verifique se o arquivo global.conf existe na pasta configs.
+
+
+
+ a| 
+REPO-01002
+ a| 
+A configuração global já existe
+ a| 
+O arquivo global.conf já existe na pasta configs. Exclua primeiro o arquivo de configuração global ou atualize o arquivo existente.
+
+
+
+ a| 
+REPO-01103
+ a| 
+A criação de configuração global falhou com o erro [%s]
+ a| 
+Falha ao criar o arquivo global.conf na pasta configs. Verifique as permissões do usuário que executa o Snap Creator no diretório.
+
+
+
+ a| 
+REPO-01203
+ a| 
+A atualização da configuração global falhou com o erro [%s]
+ a| 
+Falha ao atualizar o arquivo global.conf na pasta configs. Verifique as permissões do usuário que executa o Snap Creator no diretório.
+
+
+
+ a| 
+REPO-01303
+ a| 
+Falha ao remover a configuração global com erro [%s]
+ a| 
+Falha ao remover o arquivo global.conf na pasta configs. Verifique se o arquivo está presente na pasta configs ou verifique as permissões do usuário que executa o Snap Creator no diretório
+
+
+
+ a| 
+REPO-01403
+ a| 
+A exportação da configuração global falhou com o erro [%s]
+ a| 
+Falha ao ler o arquivo global.conf na pasta configs. Verifique se o arquivo de configuração global foi excluído.
+
+
+
+ a| 
+REPO-01503
+ a| 
+A importação da configuração global [%s] falhou com o erro [%s]
+ a| 
+Falha ao atualizar o arquivo global.conf na pasta configs. Verifique as permissões do usuário que executa o Snap Creator no diretório.
+
+
+
+ a| 
+REPO-01603
+ a| 
+A recuperação da configuração global falhou com o erro [%s]
+ a| 
+Falha ao ler o arquivo global.conf na pasta configs. Verifique se o arquivo de configuração global foi excluído.
+
+
+
+ a| 
+REPO-02002
+ a| 
+O perfil [%s] já existe, use um nome diferente.
+ a| 
+O perfil com o mesmo nome já existe. Se o perfil não estiver visível, o usuário não tem permissão nesse perfil.
+
+
+
+ a| 
+REPO-02003
+ a| 
+O perfil [%s] não existe
+ a| 
+Verifique se o seu perfil foi renomeado ou excluído. Além disso, o usuário pode não ter permissão neste perfil.
+
+
+
+ a| 
+REPO-02103
+ a| 
+A criação de configuração de perfil global [%s] falhou com o erro [%s]
+ a| 
+Falha ao criar o arquivo global.conf no perfil. Verifique as permissões do usuário que executa o Snap Creator no diretório.
+
+
+
+ a| 
+REPO-02106
+ a| 
+A criação da configuração do perfil [%s] falhou com o erro [%s]
+ a| 
+Falha ao criar perfil na pasta configs. Verifique as permissões do usuário que executa o Snap Creator no diretório.
+
+
+
+ a| 
+REPO-02203
+ a| 
+A atualização da configuração do perfil [%s] falhou com o erro [%s]
+ a| 
+Falha ao atualizar o perfil na pasta configs. Verifique as permissões do usuário que executa o Snap Creator no diretório.
+
+
+
+ a| 
+REPO-02213
+ a| 
+A renomeação do perfil [%s] para [%s] falhou com o erro [%s]
+ a| 
+Falha ao renomear o perfil na pasta configs. Verifique as permissões do usuário que executa o Snap Creator no diretório ou verifique se o seu perfil já foi renomeado ou excluído.
+
+
+
+ a| 
+REPO-02303
+ a| 
+Falha ao remover a configuração do perfil [%s]
+ a| 
+
+
+
+ a| 
+REPO-02403
+ a| 
+A exportação da configuração do perfil [%s] falhou com o erro [%s]
+ a| 
+
+
+
+ a| 
+REPO-02503
+ a| 
+A importação da configuração do perfil [%s] falhou com o erro [%s]
+ a| 
+
+
+
+ a| 
+REPO-02603
+ a| 
+A recuperação do perfil global falhou com o erro [%s]
+ a| 
+
+
+
+ a| 
+REPO-02606
+ a| 
+A recuperação do perfil [%s] falhou com o erro [%s]
+ a| 
+
+
+
+ a| 
+REPO-02703
+ a| 
+A listagem de perfis falhou com erro [%s]
+ a| 
+A listagem de perfis falhou. Verifique o caminho da pasta configs.
+
+
+
+ a| 
+REPO-03002
+ a| 
+A configuração [%s] já existe para o perfil [%s]
+ a| 
+O arquivo de configuração com o mesmo nome já existe para o perfil fornecido. Escolha um nome diferente.
+
+
+
+ a| 
+REPO-03103
+ a| 
+A criação da configuração [%s] para o perfil [%s] falhou com o erro [%s]
+ a| 
+
+
+
+ a| 
+REPO-03203
+ a| 
+A atualização da configuração [%s] para o perfil [%s] falhou com o erro [%s]
+ a| 
+
+
+
+ a| 
+REPO-03212
+ a| 
+Falha ao renomear a configuração [%s] para o perfil [%s] para [%s]
+ a| 
+Falha ao renomear a configuração do perfil. Verifique se sua configuração foi renomeada ou excluída e também verifique as permissões do usuário que executa o Snap Creator no diretório.
+
+
+
+ a| 
+REPO-03303
+ a| 
+Falha ao remover a configuração [%s] do perfil [%s]
+ a| 
+Falha ao excluir a configuração do perfil na pasta configs. Verifique as permissões do usuário que executa o Snap Creator no diretório.
+
+
+
+ a| 
+REPO-03403
+ a| 
+A exportação da configuração [%s] para o perfil [%s] falhou com o erro [%s]
+ a| 
+
+
+
+ a| 
+REPO-03503
+ a| 
+A importação da configuração [%s] para o perfil [%s] falhou com o erro [%s]
+ a| 
+
+
+
+ a| 
+REPO-03603
+ a| 
+A recuperação da configuração [%s] do perfil [%s] falhou com o erro [%s]
+ a| 
+
+
+
+ a| 
+REPO-03703
+ a| 
+A listagem de configurações do perfil [%s] falhou com o erro [%s]
+ a| 
+
+
+
+ a| 
+REPO-04003
+ a| 
+A leitura de catálogo para perfil [%s], configuração [%s] e carimbo de data/hora [%s] falhou com erro [%s]
+ a| 
+
+
+
+ a| 
+REPO-04103
+ a| 
+A gravação de catálogo para perfil [%s], configuração [%s] e carimbo de data/hora [%s] falhou com erro [%s]
+ a| 
+
+
+
+ a| 
+REPO-04203
+ a| 
+A limpeza de catálogo para perfil [%s], configuração [%s] e carimbo de data/hora [%s] falhou com erro [%s]
+ a| 
+
+
+
+ a| 
+REPO-04303
+ a| 
+O catálogo de inventário para o perfil [%s] e a configuração [%s] falhou com o erro [%s]
+ a| 
+
+
+
+ a| 
+REPO-04304
+ a| 
+A configuração [%s] não existe
+ a| 
+
+
+
+ a| 
+REPO-04309
+ a| 
+Falha ao adicionar objeto de política [%s]
+ a| 
+Erro de banco de dados; verifique o rastreamento de pilha para obter mais informações.
+
+
+
+ a| 
+REPO-04313
+ a| 
+Falha ao remover o objeto de política para ID de política: %S.
+ a| 
+Erro de banco de dados; verifique o rastreamento de pilha para obter mais informações.
+
+
+
+ a| 
+REPO-04315
+ a| 
+Falha ao atualizar o objeto de política : %s.
+ a| 
+Erro de banco de dados; verifique o rastreamento de pilha para obter mais informações.
+
+
+
+ a| 
+REPO-04316
+ a| 
+Falha ao listar políticas
+ a| 
+Erro de banco de dados; verifique o rastreamento de pilha para obter mais informações.
+
+
+
+ a| 
+REPO-04321
+ a| 
+Falha ao adicionar objeto do tipo de cópia de segurança [%s]
+ a| 
+Erro de banco de dados; verifique o rastreamento de pilha para obter mais informações.
+
+
+
+ a| 
+REPO-04323
+ a| 
+A entrada do tipo de cópia de segurança não existe para a ID do tipo de cópia de segurança: %S.
+ a| 
+Passe um tipo de backup válido.
+
+
+
+ a| 
+REPO-04325
+ a| 
+Falha ao remover o objeto do tipo de cópia de segurança para ID do tipo de cópia de segurança: %S.
+ a| 
+Erro de banco de dados; verifique o rastreamento de pilha para obter mais informações.
+
+
+
+ a| 
+REPO-04327
+ a| 
+Falha ao atualizar o objeto do tipo de backup : %s.
+ a| 
+Erro de banco de dados; verifique o rastreamento de pilha para obter mais informações.
+
+
+
+ a| 
+REPO-04328
+ a| 
+Falha ao listar tipos de cópia de segurança
+ a| 
+Erro de banco de dados; verifique o rastreamento de pilha para obter mais informações.
+
+
+
+ a| 
+REPO-04333
+ a| 
+Falha ao adicionar objeto tarefa do programador [%s]
+ a| 
+Erro de banco de dados; verifique o rastreamento de pilha para obter mais informações.
+
+
+
+ a| 
+REPO-04335
+ a| 
+A entrada de trabalho do programador não existe para a ID do trabalho: %S.
+ a| 
+Passe um trabalho de agendador válido.
+
+
+
+ a| 
+REPO-04337
+ a| 
+A remoção do objeto de tarefa do agendador falhou para o ID do trabalho: %S.
+ a| 
+Erro de banco de dados; verifique o rastreamento de pilha para obter mais informações.
+
+
+
+ a| 
+REPO-04339
+ a| 
+Falha ao atualizar o objeto de tarefa do agendador : %s.
+ a| 
+Erro de banco de dados; verifique o rastreamento de pilha para obter mais informações.
+
+
+
+ a| 
+REPO-04340
+ a| 
+Falha ao listar trabalhos do agendador
+ a| 
+Erro de banco de dados; verifique o rastreamento de pilha para obter mais informações.
+
+
+
+ a| 
+REPO-04341
+ a| 
+A adição de objeto de política falhou, a política [%s] com o mesmo nome já existe
+ a| 
+A política com o mesmo nome já existe; tente com um nome diferente.
+
+
+
+ a| 
+REPO-04342
+ a| 
+Falha ao adicionar objeto do tipo de cópia de segurança, já existe o tipo de cópia de segurança [%s] com o mesmo nome
+ a| 
+O tipo de cópia de segurança com o mesmo nome já existe; tente com um nome diferente.
+
+
+
+ a| 
+REPO-04343
+ a| 
+A adição de objeto agendador falhou, o agendador [%s] com o mesmo nome de tarefa já existe
+ a| 
+
+
+
+ a| 
+REPO-04344
+ a| 
+Falha ao atualizar o perfil [%s]. O perfil está vazio.
+ a| 
+
+
+
+ a| 
+REPO-04345
+ a| 
+O tipo de política não pode ser nulo ao adicionar nova política
+ a| 
+
+
+
+ a| 
+REPO-04346
+ a| 
+O objeto de armazenamento não pode ser nulo
+ a| 
+
+
+
+ a| 
+REPO-04347
+ a| 
+A adição de objeto de armazenamento falhou, o armazenamento [%s] com o mesmo nome/IP já existe
+ a| 
+
+
+
+ a| 
+REPO-04348
+ a| 
+Falha ao obter os detalhes do armazenamento. Erro na base de dados!
+ a| 
+
+
+
+ a| 
+REPO-04349
+ a| 
+Nome de host inválido. O armazenamento com o nome/IP do host [%s] não existe
+ a| 
+
+
+
+ a| 
+REPO-04350
+ a| 
+O nome do host não pode ser nulo
+ a| 
+Nome de host inválido
+
+
+
+ a| 
+REPO-04351
+ a| 
+A exclusão do armazenamento [%s] falhou com o erro [%s]
+ a| 
+Falha ao eliminar o armazenamento. Erro na base de dados!
+
+
+
+ a| 
+REPO-04355
+ a| 
+A atualização do armazenamento [%s] falhou com o erro [%s]
+ a| 
+Falha ao atualizar o armazenamento. Erro na base de dados!
+
+
+
+ a| 
+REPO-04356
+ a| 
+O objeto cluster não pode ser nulo
+ a| 
+
+
+
+ a| 
+REPO-04358
+ a| 
+A adição de armazenamento [%s] falhou com o erro [%s]
+ a| 
+
+
+
+ a| 
+REPO-04359
+ a| 
+A atualização do cluster [%s] falhou com o erro [%s]
+ a| 
+
+
+
+ a| 
+REPO-04360
+ a| 
+A adição de objeto de cluster falhou, o cluster [%s] com o mesmo nome/IP já existe
+ a| 
+O cluster com o mesmo nome de host já existe
+
+|===

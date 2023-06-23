@@ -1,0 +1,63 @@
+---
+permalink: domino-ops/task_running_snap_creator_by_using_the_custom_action.html 
+sidebar: sidebar 
+keywords: domino, ibm,using, use, snap, creator, custom, action complete, restore 
+summary: Você pode usar uma ação personalizada do Snap Creator para concluir o processamento de restaurações originadas fora do Snap Creator. 
+---
+= Usando uma ação personalizada do Snap Creator para concluir o processamento de restauração
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode usar uma ação personalizada do Snap Creator para concluir o processamento de restaurações originadas fora do Snap Creator.
+
+Você pode executar essa ação somente na CLI do Snap Creator.
+
+. Na CLI do Snap Creator, digite o seguinte comando: snapcreator.exe ---action custom --server Server --port port --user user --passwd password --profile profile --config --params snapname: Snapshot_name datapath restotype u2m | su2m restoretime
++
+onde
+
++
+** Servidor é o nome do host ou endereço IP do Snap Creator Server.
+** Porta é o número da porta em que o servidor Snap Creator está em execução.
+** Usuário é o nome do usuário Snap Creator.
+** A senha é a senha do usuário do Snap Creator.
++
+
+NOTE: Você pode omitir a opção --passwd se não quiser digitar a senha em texto não criptografado. O Snap Creator solicitará a senha quando você executar o comando
+
+** Perfil é o nome do perfil Snap Creator.
+** Config é o nome do arquivo de configuração Snap Creator.
+** Snapshot_NAME é o nome da cópia Snapshot a partir da qual você deseja restaurar o arquivo.
+** datapath é o caminho do diretório para o qual você deseja restaurar o arquivo.
+** restoretype é o tipo de restauração a ser executada:
++
+*** o u2m executa uma restauração até o minuto.
+*** o su2m executa uma restauração até o minuto selecionável. Especifique a data e a hora para a qual deseja reproduzir os logs de transação do Domino no FORMATO MM/DD/AAAA HH:MM:SS na opção --restoretime. Por exemplo, 01/23/2014 12:45:00.
+
+
+** A disablereplication desativa a replicação do Domino:
++
+*** Digite N (padrão) para permitir a replicação do Domino. O plug-in usa um ID de réplica Domino existente para o arquivo de banco de dados restaurado.
++
+
+NOTE: Um método alternativo para permitir a replicação do Domino é deixar este parâmetro fora do comando.
+
+*** Digite Y para desativar a replicação do Domino. O plug-in define um novo ID de réplica do Domino para o arquivo de banco de dados restaurado. NOTA: Anexar --verbose ao comando mostrará informações adicionais sobre a operação de restauração. Caso contrário, você será imediatamente retornado ao prompt de comando quando o comando terminar de executar.
+
+
+
+
++
+[listing]
+----
+snapcreator.exe --action custom --server Tampico --port 8443
+--user admin --profile Domino --config Nantes
+--params snapname=Nantes-Test_Policy_20140123121459
+datapath=F:\Domino\data\restore\mail\t04.nsf
+restoretype=su2m restoretime="01/23/2014 12:45:00"
+disablereplication=y
+----
+

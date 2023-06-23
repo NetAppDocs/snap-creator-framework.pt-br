@@ -1,0 +1,16 @@
+---
+permalink: sap-hana-ops/concept_sap_hana_backup_and_restore_solution_overview.html 
+sidebar: sidebar 
+keywords: sap, hana, backup, restore, solution, overview 
+summary: As corporações hoje exigem que suas aplicações SAP estejam disponíveis 24 horas por dia, sete dias por semana. Níveis consistentes de performance são esperados independentemente do aumento dos volumes de dados e das tarefas de manutenção de rotina, como backups do sistema. 
+---
+= Visão geral da solução de backup e restauração do SAP HANA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+As corporações hoje exigem que suas aplicações SAP estejam disponíveis 24 horas por dia, sete dias por semana. Níveis consistentes de performance são esperados independentemente do aumento dos volumes de dados e das tarefas de manutenção de rotina, como backups do sistema.
+
+A execução de backups de bancos de dados SAP pode ter um efeito significativo no desempenho de um sistema SAP de produção. Como as janelas de backup estão encolhendo e a quantidade de dados que precisam ser copiados está aumentando, é difícil definir um ponto no tempo em que os backups podem ser executados com efeito mínimo nos processos de negócios. O tempo necessário para restaurar e recuperar sistemas SAP é de particular preocupação, pois o tempo de inatividade deve ser minimizado.

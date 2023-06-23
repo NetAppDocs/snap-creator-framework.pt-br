@@ -1,0 +1,14 @@
+---
+permalink: installation/concept_uninstalling_snap_creator.html 
+sidebar: sidebar 
+keywords: unstalling, snap, creator 
+summary: Você pode desinstalar o Snap Creator de seus sistemas Windows e UNIX. 
+---
+= Desinstalar o Snap Creator
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode desinstalar o Snap Creator de seus sistemas Windows e UNIX.

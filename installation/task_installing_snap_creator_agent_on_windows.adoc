@@ -1,0 +1,85 @@
+---
+permalink: installation/task_installing_snap_creator_agent_on_windows.html 
+sidebar: sidebar 
+keywords: installing, install, snap, creator, agent, windows 
+summary: Você pode instalar o Snap Creator Agent em hosts do Windows usando o instalador do Windows. 
+---
+= Instalando o Snap Creator Agent no Windows
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode instalar o Snap Creator Agent em hosts do Windows usando o instalador do Windows.
+
+* JRE 1,8 Atualização 72 ou posterior deve ser instalada.
+* Você deve ter Privileges de nível de administrador.
+* A porta padrão (9090) ou outra porta de rede deve estar disponível.
+* O Snap Creator deve ser baixado.
++
+.. Inicie o instalador do Snap Creator clicando duas vezes no ícone do ficheiro Snap_Creator_Frameworkrelease-Windowsversion.exe (por exemplo, Snap_Creator_Framework4,1.0-Windows64.exe).
+.. Na página de boas-vindas, clique em *seguinte* para iniciar a instalação.
+.. Revise e aceite os termos do contrato de licença.
+.. Na página escolher tipo de instalação, configure as seguintes configurações para se adequar a vários tipos de instalação:
++
+*** *Selecione o tipo de instalação*
++
+Selecione *Agente*.
+
+*** *Iniciar agente como serviço*
++
+Selecione esta opção para instalar e iniciar o *snapcreatoragentservice* imediatamente após a conclusão do processo de instalação.
+
++
+Se esta opção não estiver selecionada, o campo porta Agente será desativado.
+
++
+
+NOTE: Se você não selecionar essa opção, o serviço não será instalado e você deverá iniciar manualmente o Snap Creator Agent executando um script em lote a partir de um prompt de comando.
+
+*** * Insira o IP do sistema*
++
+Selecione esta opção para fornecer o endereço IP do sistema no qual o Snap Creator Server ou o Snap Creator Agent está instalado. Essa opção é usada para gerar o certificado SSL durante o processo de instalação do Snap Creator.
+
+*** *Digite o caminho do bin JAVA*
++
+Selecione esta opção para fornecer o caminho bin Java para localizar o utilitário keytool. O utilitário keytool é usado para gerar um certificado SSL durante o processo de instalação do Snap Creator.
+
+*** *Porta do agente*
++
+Aceite a porta padrão (9090) ou especifique um número de porta.
+
+
+
+
+
++
+image::../media/choose_install_type_page.gif[escolha a página de tipo de instalação]
+
++
+.. Clique em *seguinte*.
+.. Na página escolher local de instalação, insira um caminho de instalação do Snap Creator ou aceite o caminho padrão (C: Arquivos de programas/NetApp) e clique em *Avançar*.
++
+
+NOTE: Se você pretende usar o plug-in do IBM Domino, você deve selecionar um local diferente da pasta de dados do Domino.
+
+.. Na página escolher pasta do menu Iniciar, personalize a pasta na qual o Snap Creator deve aparecer no menu Iniciar do Windows ou aceite a opção de pasta padrão e clique em *Instalar*.
+.. Depois que a instalação terminar, clique em *Next*.
++
+Durante a instalação do serviço Snap Creator Agent, um prompt de comando é exibido se um serviço foi selecionado como parte das opções de instalação. Esse processo tenta iniciar serviços existentes; portanto, é comum ver as mensagens de falha listadas como parte desta etapa, que você deve ignorar.
+
+.. Clique em *Finish* para fechar o instalador do Windows.
+
+
+
+
+Se você não selecionou a opção *Iniciar agente como serviço* durante o processo de instalação, você deve iniciar manualmente o Snap Creator Agent.
+
+*Informações relacionadas*
+
+xref:task_installing_java_on_snap_creator_hosts.adoc[Instalando o Java em hosts Snap Creator]
+
+xref:task_downloading_the_snap_creator_software.adoc[Baixando o software Snap Creator]
+
+xref:task_starting_the_agent_from_a_command_prompt.adoc[Iniciando o Agente a partir de um prompt de comando]

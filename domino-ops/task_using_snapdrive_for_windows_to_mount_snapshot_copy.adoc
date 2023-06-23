@@ -1,0 +1,36 @@
+---
+permalink: domino-ops/task_using_snapdrive_for_windows_to_mount_snapshot_copy.html 
+sidebar: sidebar 
+keywords: domino, ibm, using, snapdrive, mount, snapshot, copy 
+summary: Você pode usar o SnapDrive para montar a cópia Snapshot do arquivo que deseja restaurar. Em seguida, você pode copiar manualmente o arquivo para o diretório de restauração de dados. 
+---
+= Usando o SnapDrive para montar uma cópia Snapshot
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode usar o SnapDrive para montar a cópia Snapshot do arquivo que deseja restaurar. Em seguida, você pode copiar manualmente o arquivo para o diretório de restauração de dados.
+
+O procedimento a seguir mostra como usar o SnapDrive para Windows para montar uma cópia Snapshot em um host do Windows Server 2008. O SnapDrive para Windows e o Agente Criador de Snap devem estar em execução no host.
+
+. No Gerenciador de servidores, clique em *armazenamento* > *SnapDrive* > *Physical_Server_NAME* > *Disks*.
+. No painel identificação do disco, navegue até a cópia Snapshot que contém a cópia do arquivo que você deseja restaurar e escolha *Connect Disk* no menu de clique com o botão direito do Mouse.
++
+O assistente Connect Disk (ligar disco) é aberto.
+
++
+No assistente Connect Disk (ligar disco), clique em *Next* (seguinte) para avançar para a página seguinte. Clique em *voltar* para voltar à página anterior.
+
++
+
+TIP: Anote o nome da cópia Snapshot. Você precisará do nome ao copiar o arquivo para o diretório de restauração de dados.
+
+. Na página fornecer um Nome do sistema de armazenamento, caminho LUN e Nome, insira opcionalmente texto descritivo para o LUN.
+. Na página Selecionar um tipo de LUN, deixe o padrão.
+. Na página Selecionar propriedades de LUN, selecione a letra da unidade ou o ponto de montagem para a cópia Snapshot.
+. Na página do adaptador de barramento do host (HBA) do iniciador iSCSI/FC, selecione o iniciador iSCSI ou o adaptador de barramento do host FC (HBA).
+. Na página tipo de gestão, selecione o tipo de gestão que pretende utilizar para mapear para o LUN: Automático ou manual.
+. Clique em *Finish* para montar a cópia Snapshot no ponto de montagem especificado.
+

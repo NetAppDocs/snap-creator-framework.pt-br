@@ -1,0 +1,50 @@
+---
+permalink: sap-hana-ops/task_configuring_the_backup_user_and_hdbuserstore.html 
+sidebar: sidebar 
+keywords: configuring, configure, backup, user, hdbususerstore 
+summary: Você deve configurar um usuário de banco de DADOS dedicado dentro do banco de DADOS HANA para executar as operações de backup com o Snap Creator. Em uma segunda etapa, você deve configurar uma chave de armazenamento de usuário SAP HANA para esse usuário de backup. Essa chave de armazenamento de usuários é usada dentro da configuração do plug-in SAP HANA do Snap Creator. 
+---
+= Configurando o usuário de backup e o hdbuserstore
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você deve configurar um usuário de banco de DADOS dedicado dentro do banco de DADOS HANA para executar as operações de backup com o Snap Creator. Em uma segunda etapa, você deve configurar uma chave de armazenamento de usuário SAP HANA para esse usuário de backup. Essa chave de armazenamento de usuários é usada dentro da configuração do plug-in SAP HANA do Snap Creator.
+
+O usuário de backup deve ter o seguinte Privileges:
+
+* ADMINISTRADOR DE CÓPIA DE SEGURANÇA
+* CATÁLOGO LIDO
+
+
+image::../media/sap_hana_studio_to_create_backup_user.gif[A captura de tela a seguir do SAP HANA Studio mostra onde o usuário de backup pode ser criado.]
+
+. No host de administração, o host onde o Snap Creator foi instalado, uma chave de armazenamento de usuários é configurada para todos os hosts de banco de dados que pertencem ao banco de dados SAP HANA. A chave userstore é configurada com o usuário raiz do sistema operacional: Hdbuserstore set keyhost 3[instance]15 userpassword
+. Configure uma chave para todos os quatro nós de banco de dados.
++
+[listing]
+----
+mgmtsrv01:/usr/sap/hdbclient32 # ./hdbuserstore set SCADMIN08 cishanar08:34215 SCADMIN Password
+mgmtsrv01:/usr/sap/hdbclient32 # ./hdbuserstore set SCADMIN09 cishanar09:34215 SCADMIN Password
+mgmtsrv01:/usr/sap/hdbclient32 # ./hdbuserstore set SCADMIN10 cishanar10:34215 SCADMIN password
+mgmtsrv01:/usr/sap/hdbclient32 # ./hdbuserstore set SCADMIN11 cishanar11:34215 SCADMIN Password
+mgmtsrv01:/usr/sap/hdbclient32 # ./hdbuserstore LIST
+DATA FILE       : /root/.hdb/mgmtsrv01/SSFS_HDB.DAT
+
+KEY SCADMIN08
+  ENV : cishanar08:34215
+  USER: SCADMIN
+KEY SCADMIN09
+  ENV : cishanar09:34215
+  USER: SCADMIN
+KEY SCADMIN10
+  ENV : cishanar10:34215
+  USER: SCADMIN
+KEY SCADMIN11
+  ENV : cishanar11:34215
+  USER: SCADMIN
+mgmtsrv01:/usr/sap/hdbclient32
+----
+

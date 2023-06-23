@@ -1,0 +1,68 @@
+---
+permalink: administration/reference_archive_log_plug_in.html 
+sidebar: sidebar 
+keywords: archive, log, plug-in, snap, creator, archive 
+summary: O plug-in de log de arquivamento funciona com logs do Snap Creator Archive e não com os logs de qualquer aplicativo ou banco de dados. 
+---
+= Plug-in de registo de arquivo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O plug-in de log de arquivamento funciona com logs do Snap Creator Archive e não com os logs de qualquer aplicativo ou banco de dados.
+
+A tabela a seguir lista os parâmetros do plug-in do log de arquivamento, fornece suas configurações e os descreve:
+
+|===
+| Parâmetro | Definição | Descrição 
+
+
+ a| 
+ARCHIVE_LOG_ENABLE
+ a| 
+(Y
+| N 
+
+
+| política:idade)  a| 
+Permite o gerenciamento de log de arquivamento (exclusão dos logs de arquivo antigos).
+ a| 
+ARCHIVE_LOG_RETENÇÃO
+
+
+
+ a| 
+number_of_days
+ a| 
+Especifica o número de dias em que os logs de arquivo são mantidos. Esta definição tem de ser igual ou superior a NTAP_SNAPSHOT_ RETENÇÕES.
+ a| 
+ARCHIVE_LOG_DIR
+
+
+
+ a| 
+change_info_directory/logs
+ a| 
+Especifica o caminho para o diretório que contém os logs do arquivo.
+ a| 
+ARCHIVE_LOG_EXT
+
+
+
+ a| 
+extensão_ficheiro
+ a| 
+Especifica a extensão de arquivo dos logs do arquivo. Por exemplo, se os logs de arquivo forem 10192091019.log, especifique esta configuração de parâmetro para LOG.
+ a| 
+ARCHIVE_LOG_RECURSIVE_SEARCH
+
+
+
+ a| 
+(Y
+| N)  a| 
+Permite o gerenciamento de logs de arquivo dentro de subdiretórios. Se os logs do arquivo estiverem localizados em subdiretórios, você deve usar esse parâmetro.
+
+|===

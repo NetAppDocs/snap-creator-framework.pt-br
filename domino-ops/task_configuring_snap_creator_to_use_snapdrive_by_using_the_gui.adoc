@@ -1,0 +1,87 @@
+---
+permalink: domino-ops/task_configuring_snap_creator_to_use_snapdrive_by_using_the_gui.html 
+sidebar: sidebar 
+keywords: domino, ibm, adding, supplemental, commands 
+summary: Você pode adicionar comandos suplementares à sua configuração depois de criar o arquivo de configuração. Você pode executar os comandos no Snap Creator Server ou Agent. 
+---
+= Adicionando comandos suplementares à configuração
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode adicionar comandos suplementares à sua configuração depois de criar o arquivo de configuração. Você pode executar os comandos no Snap Creator Server ou Agent.
+
+Para executar um comando complementar no Agente, você já deve ter adicionado o comando ao arquivo allowed_commands.config no Agente.
+
+Por padrão, comandos suplementares são executados no Agente. Você pode executar um comando suplementar no servidor prependendo o comando com o SERVIDOR de texto, seguido por dois pontos (:). Por exemplo, SERVER:C: Myscript.bat. Não há nenhum requisito para permitir o comando no servidor.
+
+Você pode usar a GUI do Snap Creator ou a CLI do Snap Creator para adicionar comandos à sua configuração de backup e restauração.
+
+
+NOTE: Este guia mostra como usar a GUI para adicionar comandos. Para obter informações sobre como usar a CLI, consulte https://library.netapp.com/ecm/ecm_download_file/ECMP12395422["Guia de administração do Snap Creator Framework 4.1.2"].
+
+. No painel Perfis e Configurações, selecione o arquivo de configuração e clique na guia *comandos*.
++
+Os seguintes tipos de comando estão disponíveis:
+
++
+|===
+| Tipo de comando | Descrição 
+
+
+ a| 
+Quiesce da aplicação
+ a| 
+Apenas para utilização sem plug-in. Ignore este tipo de comando.
+
+
+
+ a| 
+Aplicação un-quiesce
+ a| 
+Apenas para utilização sem plug-in. Ignore este tipo de comando.
+
+
+
+ a| 
+Pré-saída
+ a| 
+Use esse tipo para executar comandos que dizem ao Snap Creator o que fazer depois de um erro fatal.
+
+
+
+ a| 
+Cópia Snapshot criar
+ a| 
+Use esse tipo para executar seus próprios comandos de criação de cópia Snapshot.
+
+|===
++
+
+NOTE: Apenas um subconjunto dos comandos suportados está disponível na GUI. Para obter informações sobre os COMANDOS APP, ARCHIVE, MOUNT/DESMONTE e POST, consulte link:https://library.netapp.com/ecm/ecm_download_file/ECMP12395422["Guia de administração do Snap Creator Framework 4.1.2"].
+
+. Na guia *comandos*, role até a seção do tipo de comando que deseja usar e clique em *Adicionar*.
+. Digite o texto *Add Command here* para inserir o comando.
++
+Para usar o SnapDrive para Windows para criar um backup, você pode digitar o seguinte na seção do tipo de comando cópia Instantânea criar:
+
++
+[listing]
+----
+"C:\Program Files\NetApp\SnapDrive\sdcli.exe" snap create -s %SNAME-%SNAP_TYPE_%SNAP_TIME -D F G H
+----
++
+local:
+
++
+** "C: Arquivos de programas/NetApp/SnapDrive/sdcli.exe" é o caminho de instalação padrão para a CLI do SnapDrive.
+** %SNAME-%SNAP_TYPE_%snap_TIME especifica que o nome da cópia Snapshot será formado a partir do nome do arquivo de configuração, da política Snapshot (hora, diária ou mensal) e da hora e data em que a cópia Snapshot foi criada.
+** D é o interrutor e F G H são os pontos de montagem para a cópia de segurança dos dados. DICA: Para executar o comando no servidor, prepare o comando com o SERVIDOR de texto, seguido por dois pontos (:).
+
+
+. Quando estiver satisfeito com sua entrada, pressione *Enter*.
+. Repita as etapas <<STEP_3F9C83DD05D84075AD0277213FD67C56,PASSO_3F9C83DD05D84075AD0277213FD67C56>> até <<STEP_FBEDD7AE105F42138EB35315EA9FA7CC,PASSO_FBEDD7AE105F42138EB35315EA9FA7CC>>para adicionar outro comando.
+. Clique em *Salvar* no painel conteúdo da Configuração para salvar suas alterações.
+

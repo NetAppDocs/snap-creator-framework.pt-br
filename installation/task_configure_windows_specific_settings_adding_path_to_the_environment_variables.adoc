@@ -1,0 +1,29 @@
+---
+permalink: installation/task_configure_windows_specific_settings_adding_path_to_the_environment_variables.html 
+sidebar: sidebar 
+keywords: configuring, configure, windows, settings, adding, add, path, environment, variables 
+summary: Se você vai instalar o Snap Creator Agent no Windows, você deve adicionar o caminho para os arquivos binários do Domino às variáveis de ambiente do Windows. 
+---
+= Configurando configurações específicas do Windows: Adicionando caminho às variáveis de ambiente
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se você vai instalar o Snap Creator Agent no Windows, você deve adicionar o caminho para os arquivos binários do Domino às variáveis de ambiente do Windows.
+
+. Acesse as configurações avançadas do sistema operacional Windows (por exemplo, *meu computador* > *Propriedades* > *Avançado* > *variáveis de ambiente*) e adicione o caminho do Domino à variável Path.
++
+
+NOTE: Para obter detalhes sobre como modificar as variáveis do sistema, consulte a documentação do sistema operacional Windows.
+
+
+
+Se você adicionar o caminho do Domino às variáveis de ambiente após a instalação do Snap Creator Agent, será necessário reiniciar o serviço Snap Creator Agent. Por exemplo, no host onde o Snap Creator Agent está instalado, abra um prompt de comando e digite os seguintes comandos:
+
+[listing]
+----
+sc stop SnapCreatorAgentService
+sc start SnapCreatorAgentService
+----

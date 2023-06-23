@@ -1,0 +1,29 @@
+---
+permalink: installation/task_checking_job_monitor_size.html 
+sidebar: sidebar 
+keywords: checking, check, job, monitor, size 
+summary: Antes de atualizar para a versão mais recente do Snap Creator, você deve verificar o tamanho do monitor de tarefa para a versão atualmente instalada do Snap Creator. 
+---
+= Verificação do tamanho do monitor de trabalho
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de atualizar para a versão mais recente do Snap Creator, você deve verificar o tamanho do monitor de tarefa para a versão atualmente instalada do Snap Creator.
+
+Ao atualizar o Snap Creator, certifique-se de definir o tamanho do monitor de tarefa igual ou superior à configuração anterior para evitar a perda de dados no banco de dados do monitor de tarefa. O Snap Creator recupera trabalhos apenas até ao limite de tamanho do monitor de trabalhos atualizado.
+
+Por exemplo, se o tamanho do monitor de tarefa for 500 no Snap Creator 4,0, certifique-se de definir o tamanho do monitor de tarefa para um número igual ou superior a 500 ao atualizar para o Snap Creator mais recente.
+
+. Verifique o tamanho do monitor de trabalhos executando uma das seguintes opções:
++
+** Abra os arquivos de propriedades do Snap Creator Server (/install_path/scServer4,1.x/Engine/etc/snapcreator.properties) e verifique a variável SNAPCREATOR_JOB_MONITOR_SIZE.
+** No menu principal da GUI Snap Creator, selecione *Management* > *Job Monitor* e, em seguida, clique em *Size*.
++
+A caixa de diálogo tamanho do Monitor de trabalhos é exibida com o tamanho atual no campo superior.
+
+
+
+

@@ -1,0 +1,43 @@
+---
+permalink: installation/task_uninstalling_snap_creator_on_windows.html 
+sidebar: sidebar 
+keywords: uninstalling, uninstall, snap, creator, windows 
+summary: 'Você pode desinstalar o Snap Creator usando o menu Iniciar do Windows. O desinstalador do Windows remove os componentes do Snap Creator que estão instalados (por exemplo, se tanto o Snap Creator Server como o Snap Creator Agent estiverem instalados, ambos serão desinstalados). Da mesma forma, se apenas um dos componentes estiver instalado, esse componente será desinstalado.' 
+---
+= Desinstalar o Snap Creator no Windows
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode desinstalar o Snap Creator usando o menu Windows *Start*. O desinstalador do Windows remove os componentes do Snap Creator que estão instalados (por exemplo, se o Snap Creator Server e o Snap Creator Agent estiverem instalados, ambos serão desinstalados). Da mesma forma, se apenas um dos componentes estiver instalado, esse componente será desinstalado.
+
+* Faça o backup dos seguintes diretórios e de todos os subdiretórios e arquivos associados, dentro do diretório do mecanismo do servidor de criação de Snap (C: Arquivos de programas/NetApp/Snap_Creator_Framework/scServer4,1.0):
++
+** Base de dados Snap Creator (..
+** Propriedades do Snap Creator Server (..)
+** Arquivos de configuração (... Configurações)
+** Registos (.. Registos)
+** Repositório de plug-in, se ativado (..
+
+
+* Faça o backup dos seguintes diretórios e de todos os subdiretórios e arquivos associados no diretório do Agente de Criador de Snap (C: Arquivos de programas/NetApp/Snap_Creator_Framework/scAgent4,1.0):
++
+** Registos (.. Registos)
+** Plug-ins (.. Plugins)
+** Propriedades snap Creator Agent (...etc), que contém os arquivos allowed_commands.config e agent.properties
+
+
+* Se o Snap Creator foi iniciado manualmente a partir de um prompt de comando, pare e saia do Snap Creator fechando o prompt de comando.
++
+
+NOTE: Se o Snap Creator foi iniciado a partir de um serviço, o desinstalador pára o serviço como parte do processo de desinstalação.
+
++
+.. Selecione *Iniciar* > *todos os programas* > *Snap Creator* > *Desinstalar o NetApp Snap Creator*.
+.. Clique em *Sim* quando lhe for solicitado se fez backup dos arquivos de log e configurações antes de desinstalar o Snap Creator.
+.. Clique em *Fechar* quando solicitado após o processo de desinstalação estar concluído.
+
+
+

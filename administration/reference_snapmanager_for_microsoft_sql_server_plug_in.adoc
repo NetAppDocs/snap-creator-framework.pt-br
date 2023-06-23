@@ -1,0 +1,68 @@
+---
+permalink: administration/reference_snapmanager_for_microsoft_sql_server_plug_in.html 
+sidebar: sidebar 
+keywords: snapmanager, microsoft, sql, server, plug-in, backup, operation, program 
+summary: O plug-in do SnapManager para Microsoft SQL Server é usado para centralizar as operações de backup para o Microsoft SQL Server por meio do Snap Creator. Usando esse plug-in, você pode configurar dezenas ou centenas de SnapManager para servidores Microsoft SQL por meio do Snap Creator, permitindo que você visualize todos os seus status e trabalhos de backup do SnapManager para Microsoft SQL a partir de uma única interface. 
+---
+= Plug-in do SnapManager para Microsoft SQL Server
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O plug-in do SnapManager para Microsoft SQL Server é usado para centralizar as operações de backup para o Microsoft SQL Server por meio do Snap Creator. Usando esse plug-in, você pode configurar dezenas ou centenas de SnapManager para servidores Microsoft SQL por meio do Snap Creator, permitindo que você visualize todos os seus status e trabalhos de backup do SnapManager para Microsoft SQL a partir de uma única interface.
+
+Ao contrário dos outros plug-ins, os plug-ins do SnapManager (SnapManager para Microsoft SQL Server e SnapManager para Microsoft Exchange) usam o PowerShell para se comunicar com uma instalação existente do SnapManager. Os plug-ins do SnapManager exigem que os produtos SnapManager já estejam instalados e em funcionamento. Os plug-ins do SnapManager usam o cmdlet do PowerShell do novo backup para criar um backup por meio do SnapManager. Todas as ações de clonagem e restauração devem continuar sendo conduzidas pela interface SnapManager.
+
+
+NOTE: Para obter as informações mais recentes sobre suporte ou para visualizar matrizes de compatibilidade, consulte Matriz de interoperabilidade.
+
+Ao usar o plug-in do SnapManager para Microsoft SQL Server, você deve estar ciente das seguintes considerações:
+
+* O Snap Creator Agent deve ser instalado no mesmo host que o SnapManager para Microsoft SQL Server. Você deve definir o valor SC_AGENT_TIMEOUT como 900 ou superior.
+* O PowerShell deve ser instalado no local de instalação padrão do Windows PowerShell (por exemplo, C: WINDOWS system32 ou WINDOWS PowerShell v1,0).
+
+
+A tabela a seguir fornece os parâmetros de plug-in do SnapManager para Microsoft SQL Server, fornece suas configurações e os descreve:
+
+|===
+| Parâmetro | Definição | Descrição 
+
+
+ a| 
+SMSQL_PS_CONF
+ a| 
+Exemplo: "C: Arquivos de programas/NetApp/SnapManager para SQL Server/smssqlShell.psc1"
+ a| 
+Especifica o caminho para o arquivo de configuração do PowerShell para o SnapManager para Microsoft SQL Server.
+
+
+
+ a| 
+SMSQL_BACKUP_OPTIONS
+ a| 
+Exemplo: -svr 'SQL' -d 'SQL', '1', 'WSS_content' -RetainBackups 7 -lb -bksif -RetainSnapofSnapInfo 8 -trlog -gen -mgmt padrão
+ a| 
+Especifica as opções de backup do SnapManager para Microsoft SQL Server.o Snap Creator usa um cmdlet do PowerShell para um novo backup.
+
+
+
+ a| 
+SMSQL_SERVER_NAME
+ a| 
+Exemplo: SQL/SHAREPOINT
+ a| 
+Especifica o nome do SnapManager para Microsoft SQL Server.
+
+
+
+ a| 
+SMSQL_32bit
+ a| 
+(Y
+| N) 
+|===
+*Informações relacionadas*
+
+http://mysupport.netapp.com/matrix["Ferramenta de Matriz de interoperabilidade: Mysupport.NetApp.com/Matrix"]

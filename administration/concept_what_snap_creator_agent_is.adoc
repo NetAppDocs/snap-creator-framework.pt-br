@@ -1,0 +1,53 @@
+---
+permalink: administration/concept_what_snap_creator_agent_is.html 
+sidebar: sidebar 
+keywords: snap, creator, agent, quiesce, server, plug-in, multi-tenant 
+summary: O Snap Creator Agent, normalmente instalado no mesmo host em que um aplicativo ou banco de dados está instalado, manipula comandos quiesce e desbloqueia do Snap Creator Server para um determinado aplicativo e é onde os plug-ins estão localizados. Às vezes, o agente é encurtado para scAgent dentro do Snap Creator. 
+---
+= Visão geral do Snap Creator Agent
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O Snap Creator Agent, normalmente instalado no mesmo host em que um aplicativo ou banco de dados está instalado, manipula comandos quiesce e desbloqueia do Snap Creator Server para um determinado aplicativo e é onde os plug-ins estão localizados. Às vezes, o agente é encurtado para scAgent dentro do Snap Creator.
+
+O Snap Creator Agent recebe comunicação da interface de agente do Snap Creator Server por meio da interface RESTful do agente e apenas por HTTPS. Isso significa comunicação segura e criptografada, que é um recurso muito importante em ambientes de vários locatários e de nuvem. Certificados autoassinados permitem o uso de um certificado gerado com o Snap Creator Agent. Além disso, o Snap Creator Agent é protegido por uma combinação configurável de usuário e senha, que é armazenada no disco.
+
+A ilustração a seguir mostra a arquitetura do Snap Creator Agent:
+
+image::../media/scfw_agent_architecture_41_refresh.gif[atualização da arquitetura 41 do agente scfw]
+
+O componente Snap Creator Agent (às vezes abreviado para scAgent dentro do próprio Snap Creator) inclui as seguintes partes:
+
+* *Gerentes de operação e execução*
++
+O Gerenciador de operações cuida das solicitações recebidas, enviadas e concluídas. O Gestor de execução é responsável pela execução das solicitações.
+
+* *Conjunto de fios*
++
+Consistindo em threads de trabalho, o conjunto de threads é usado para executar várias tarefas.
+
++
+Isso determina o número de operações simultâneas em um determinado momento. O Execution Manager executa um plug-in e o executa em um dos threads no conjunto de threads. Se o conjunto de threads tiver oito threads, você poderá executar oito operações de plug-in simultaneamente. Novas operações de entrada são enfileiradas, até que os threads fiquem livres novamente.
+
+* *Cão de guarda*
++
+Acionado pelo Gerente de execução para determinadas operações, normalmente quiesce, o Watchdog volta ao Gerente de execução após um tempo especificado para parar a operação, se necessário, e executa uma operação de desfazer correspondente. Por exemplo, a função Plug-in quiesce é chamada para colocar o aplicativo em um modo de backup. O cão de guarda começa a ouvir. Se o unquiesce não for executado dentro da janela de tempo especificada, o Watchdog desbloqueia o aplicativo, colocando-o de volta no modo de operação normal. Isto serve para garantir que o banco de dados não fique preso no modo de backup.
+
+* *Context Store*
++
+Mantendo todas as informações necessárias para o tempo de vida do fluxo de trabalho, o armazenamento de contexto fornece objetos de contexto ao plug-in conforme necessário e, se um fluxo de trabalho falhar ou nunca for concluído, o objeto de contexto é excluído após um período de tempo.
+
++
+Para fluxos de trabalho que não terminam ou que falham em um estado indefinido, há um tempo máximo de contexto especificado em install_path/etc/agent.properties: CONTEXT_LIFETIME_IN_MSEC.1800000 (o valor padrão, 30 minutos). Se esse valor for aumentado, o Snap Creator Agent ocupa mais memória.
+
+* * Plug-in fábrica *
++
+O Plug-in Factory inicia o plug-in e garante que ele seja executado em um espaço isolado. A fábrica Plug-in também se comunica com o armazenamento de contexto para acessar informações armazenadas. Ele também permite a execução de plug-ins nativos e baseados em Perl do Snap Creator usando o Plug-in Integration Engine.
+
++
+O Snap Creator Agent também pode usar plug-ins escritos em outras linguagens que não Java.
+
+

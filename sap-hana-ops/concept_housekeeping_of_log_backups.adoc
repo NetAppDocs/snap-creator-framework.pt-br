@@ -1,0 +1,27 @@
+---
+permalink: sap-hana-ops/concept_housekeeping_of_log_backups.html 
+sidebar: sidebar 
+keywords: housekeeping, log, backups 
+summary: A manutenção dos backups de log no SAP HANA baseia-se em uma função no HANA Studio ou em uma instrução SQL que permite excluir todos os backups mais antigos do que um backup selecionado. 
+---
+= Limpeza de backups de log
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A manutenção dos backups de log no SAP HANA baseia-se em uma função no HANA Studio ou em uma instrução SQL que permite excluir todos os backups mais antigos do que um backup selecionado.
+
+O Snap Creator lida com o serviço de limpeza dos backups de dados (cópias Snapshot) excluindo as cópias Snapshot no storage primário ou secundário e excluindo as entradas correspondentes no CATÁLOGO HANA, com base em uma política de retenção definida.
+
+Os backups de log que são mais antigos do que o backup de dados mais recente são excluídos porque não são necessários.
+
+O Snap Creator lida com o gerenciamento de backups de arquivos de log no nível do sistema de arquivos e no catálogo de backup do SAP HANA. Como parte de cada backup do Snapshot com o Snap Creator, as etapas a seguir são executadas:
+
+* Leia o catálogo de backup e obtenha o ID de backup dos dados mais antigos bem-sucedidos ou backup instantâneo.
+* Exclua todos os backups mais antigos do que o backup mais antigo.
+
+
+
+NOTE: O Snap Creator lida apenas com o serviço de arrumação dos backups com base em cópias Snapshot. Se forem criados backups adicionais baseados em arquivos, você deverá garantir que os backups baseados em arquivos sejam excluídos do catálogo de backup e do sistema de arquivos. Se tal backup de dados não for excluído manualmente do catálogo de backup, ele pode se tornar o backup de dados mais antigo e a operação de limpeza de backup de log falhará.

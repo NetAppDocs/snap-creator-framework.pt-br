@@ -1,0 +1,23 @@
+---
+permalink: administration/reference_error_messages.html 
+sidebar: sidebar 
+keywords: error, messages, scf, repo, storage, agt, gui 
+summary: Você deve estar ciente das mensagens de erro associadas a diferentes operações do Snap Creator. 
+---
+= Mensagens de erro
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você deve estar ciente das mensagens de erro associadas a diferentes operações do Snap Creator.
+
+Cada mensagem de erro inclui um código de área e um identificador exclusivo de 5 dígitos ----por exemplo, ERRO: [<area code>- identificador de erro de área exclusiva do cliente>] <error message>. O código de área identifica onde ocorreu o erro. Os diferentes códigos de área são os seguintes:
+
+* `scf`: Snap Creator Framework
+* `REPO`: Repositório
+* `STORAGE`: Armazenamento
+* `agt`: Agente Snap Creator
+* `gui`: Interface gráfica do usuário (GUI) do Snap Creator
+

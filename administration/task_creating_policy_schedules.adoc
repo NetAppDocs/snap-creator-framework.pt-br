@@ -1,0 +1,25 @@
+---
+permalink: administration/task_creating_policy_schedules.html 
+sidebar: sidebar 
+keywords: policy, schedule, snap, creator, gui 
+summary: Você pode, opcionalmente, criar agendas de políticas usando a GUI do Snap Creator. 
+---
+= Criando agendas de políticas
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode, opcionalmente, criar agendas de políticas usando a GUI do Snap Creator.
+
+. No menu principal da GUI do Snap Creator, selecione *Política* > *programações de políticas*.
+. Na guia *Policy Schedules*, clique em *Create*.
+. Introduza o nome da programação e selecione a ação e a frequência e, em seguida, clique em *Guardar*.
++
+Dependendo da frequência selecionada, será necessário selecionar os campos de hora apropriados para executar o trabalho agendado.
+
++
+image::../media/add_policy_schedule.gif[adicionar agendamento de política]
+
+

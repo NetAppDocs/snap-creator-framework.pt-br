@@ -1,0 +1,14 @@
+---
+permalink: sap-hana-ops/concept_executing_database_backups.html 
+sidebar: sidebar 
+keywords: executing, database, backups 
+summary: Você pode fazer backup de seu banco de dados SAP HANA usando a GUI do Snap Creator ou a linha de comando. Para agendar backups, você pode usar o agendador dentro da GUI, ou você pode usar a linha de comando em combinação com um agendador externo como o cron. 
+---
+= Executando backups de banco de dados
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode fazer backup de seu banco de dados SAP HANA usando a GUI do Snap Creator ou a linha de comando. Para agendar backups, você pode usar o agendador dentro da GUI, ou você pode usar a linha de comando em combinação com um agendador externo como o cron.

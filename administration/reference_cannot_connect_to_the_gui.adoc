@@ -1,0 +1,37 @@
+---
+permalink: administration/reference_cannot_connect_to_the_gui.html 
+sidebar: sidebar 
+keywords: unix, snap, creator, gui, https 
+summary: Em um ambiente UNIX, você pode não conseguir se conetar à GUI do Snap Creator; você deve verificar se certas condições existem à medida que você investiga a origem do problema. 
+---
+= Não é possível se conetar à GUI do Snap Creator
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Em um ambiente UNIX, você pode não conseguir se conetar à GUI do Snap Creator; você deve verificar se certas condições existem à medida que você investiga a origem do problema.
+
+* *Emissão*
++
+Em um ambiente UNIX, você não pode se conetar à GUI do Snap Creator.
+
+* *Ações corretivas*
++
+Verifique o seguinte:
+
++
+** O URL deve começar com HTTPS.
++
+
+NOTE: Se você usar HTTP em vez de HTTPS, o resultado será que não há nada na página ou um "'?" dependendo do navegador que você usa.
+
+** O número de porta correto é usado no URL e que nada mais já está usando a porta selecionada.
++
+Você pode tentar selecionar uma porta diferente.
+
+** A comunicação é permitida através do firewall do sistema operativo.
+
+
+

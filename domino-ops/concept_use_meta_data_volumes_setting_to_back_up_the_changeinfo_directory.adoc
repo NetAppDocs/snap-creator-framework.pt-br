@@ -1,0 +1,38 @@
+---
+permalink: domino-ops/concept_use_meta_data_volumes_setting_to_back_up_the_changeinfo_directory.html 
+sidebar: sidebar 
+keywords: domino, ibm, backing up, backup, changeinfo, directory 
+summary: Se você pretende fazer backup do diretório changeinfo, você deve configurar o volume que contém o diretório como um volume de metadados. Isso diz ao plug-in IBM Domino para criar uma cópia Snapshot do volume changeinfo depois de criar a cópia Snapshot para arquivos de banco de dados. 
+---
+= Fazer backup do diretório changeinfo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se você pretende fazer backup do diretório changeinfo, você deve configurar o volume que contém o diretório como um volume de metadados. Isso diz ao plug-in IBM Domino para criar uma cópia Snapshot do volume changeinfo _after_ criando a cópia Snapshot para arquivos de banco de dados.
+
+Você já deve ter identificado o volume changeinfo como um volume a ser feito backup quando você criou o arquivo de configuração. Para obter mais informações, consulte a etapa link:task_using_the_gui_to_create_a_configuration_file.md#STEP_2036E43A6921415985798979F2226786["tarefa usando a gui para criar uma configuração"].
+
+Você usa o parâmetro META_DATA_VOLUME no arquivo de configuração para identificar o volume changeinfo como um volume de metadados. O parâmetro não está disponível na GUI.
+
+. Abra o arquivo de configuração em um editor de texto.
++
+Os arquivos de configuração residem no diretório de instalação do Snap Creator, em um subdiretório chamado para o perfil. Em um host do Windows, por exemplo, C: Arquivos de programas/NetApp/Snap_Creator_Framework/scServer4,1.x/Engine/Domino/Fuji15.conf, onde Domino é o nome do perfil e Fuji15.conf é o nome do arquivo de configuração.
+
+. Digite o nome do volume changeinfo no parâmetro META_DATA_VOLUME.
++
+O volume changeinfo já deve ser listado no parâmetro VOLUMES.
+
++
+O exemplo a seguir mostra como configurar o Fuji15_DomChangeInfo como um volume de metadados:
+
++
+[listing]
+----
+VOLUMES=domino_vserver:Fuji15_DomDAOS,Fuji15_DomChangeInfo,
+Fuji15_DomTxn,Fuji15_DomData
+META_DATA_VOLUME=domino_vserver:Fuji15_DomChangeInfo
+----
+

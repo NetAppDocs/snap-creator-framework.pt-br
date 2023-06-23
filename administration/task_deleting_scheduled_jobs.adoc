@@ -1,0 +1,22 @@
+---
+permalink: administration/task_deleting_scheduled_jobs.html 
+sidebar: sidebar 
+keywords: delete, schedule, job, management 
+summary: Pode eliminar um trabalho agendado. 
+---
+= Eliminar trabalhos agendados
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Pode eliminar um trabalho agendado.
+
+. No menu principal da GUI Snap Creator, selecione *Management* > *Schedules*.
+. Na guia horários, selecione um trabalho na lista de tarefas agendadas e clique em *Excluir*.
+. Clique em *Yes* (Sim) na janela de confirmação.
++
+O trabalho agendado é eliminado da lista.
+
+

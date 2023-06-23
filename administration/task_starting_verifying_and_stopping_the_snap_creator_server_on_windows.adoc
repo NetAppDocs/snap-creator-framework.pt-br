@@ -1,0 +1,66 @@
+---
+permalink: administration/task_starting_verifying_and_stopping_the_snap_creator_server_on_windows.html 
+sidebar: sidebar 
+keywords: snap, creator, server, service, start, verify, stop, windows 
+summary: Você pode iniciar e parar o serviço Snap Creator Server e verificar se o serviço Snap Creator Server está sendo executado em seu sistema Windows. 
+---
+= Iniciar, verificar e parar o Snap Creator Server no Windows
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode iniciar e parar o serviço Snap Creator Server e verificar se o serviço Snap Creator Server está sendo executado em seu sistema Windows.
+
+. Se a interface gráfica do usuário (GUI) do Snap Creator não estiver aberta, abra-a:
++
+.. Insira o URL do Snap Creator Server em um navegador da Web: "https://IP_address:gui_port"[]
++
+Por padrão, a porta é 8443.
+
+.. Faça login usando as credenciais da GUI do Snap Creator.
+
+
++
+Se a GUI do Snap Creator for aberta, o serviço Snap Creator Server estará em execução.
+
+. No prompt de comando, inicie ou pare o serviço Snap Creator Server ou verifique se o serviço Snap Creator Server está em execução, conforme aplicável:
++
+|===
+| Se você quiser... | Digite o seguinte... 
+
+
+ a| 
+Inicie o serviço Snap Creator Server
+ a| 
+sc inicie creatorserverservice
+
+
+
+ a| 
+Verifique se o serviço Snap Creator Server está em execução
+ a| 
+sc query creatorserverservice
+
+
+
+ a| 
+Pare o serviço Snap Creator Server
+ a| 
+sc stop creatorserverservice
+
+|===
++
+Se você quiser executar o Snap Creator em primeiro plano, em vez de usar o comando SC start, execute as seguintes etapas:
+
++
+.. Abra um prompt de comando no host onde o Snap Creator Server está instalado e navegue até o diretório Snap Creator ServerDirectory: `cd \install_path\scServer4.3.0\bin\`
+.. Para iniciar o Snap Creator Server, execute o script em lote:
+`scServer.bat start`
++
+Fechar o prompt de comando interrompe o serviço Snap Creator Server. Como o script em lote (scServer.bat) executa o Snap Creator em primeiro plano, o Snap Creator Server será executado apenas enquanto o prompt de comando estiver aberto. Para executar o Snap Creator em segundo plano, você deve usar o comando de serviço Snap Creator Server.
+
+
+
+

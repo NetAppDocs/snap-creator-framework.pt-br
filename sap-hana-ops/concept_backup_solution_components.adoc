@@ -1,0 +1,62 @@
+---
+permalink: sap-hana-ops/concept_backup_solution_components.html 
+sidebar: sidebar 
+keywords: backup, solution, components, sap, hana 
+summary: A solução de backup Snap Creator para SAP HANA consiste no backup de arquivos de dados SAP HANA usando cópias Snapshot baseadas em storage, replicação de backups de arquivos de dados para um local secundário de backup externo, backup de arquivos de log SAP HANA usando a funcionalidade de backup de log de banco de dados HANA, verificação de integridade de bloco de banco de dados usando um backup baseado em arquivo e limpeza de arquivos de dados, backups de arquivos de log e catálogo de backup SAP HANA. 
+---
+= Componentes da solução de backup
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A solução de backup Snap Creator para SAP HANA consiste no backup de arquivos de dados SAP HANA usando cópias Snapshot baseadas em storage, replicação de backups de arquivos de dados para um local secundário de backup externo, backup de arquivos de log SAP HANA usando a funcionalidade de backup de log de banco de dados HANA, verificação de integridade de bloco de banco de dados usando um backup baseado em arquivo e limpeza de arquivos de dados, backups de arquivos de log e catálogo de backup SAP HANA.
+
+Os backups de bancos de dados são executados pelo Snap Creator em conjunto com um plug-in para SAP HANA. O plug-in garante a consistência do banco de dados para que as cópias Snapshot criadas no sistema de storage primário sejam baseadas em uma imagem consistente do banco de dados SAP HANA.
+
+O Snap Creator permite replicar as imagens consistentes do banco de dados para um storage secundário usando o SnapVault. Normalmente, haverá políticas de retenção diferentes definidas para os backups no storage primário e no storage secundário. O Snap Creator lida com a retenção no storage primário e no storage secundário.
+
+O backup de log é executado automaticamente pelas ferramentas de banco de dados SAP HANA. O destino da cópia de segurança do registo não deve estar no mesmo sistema de armazenamento onde o volume de registo da base de dados está localizado. É recomendável configurar o destino do backup de log no mesmo storage secundário em que os backups do banco de dados são replicados com o SnapVault. Com essa configuração, o storage secundário tem requisitos de disponibilidade semelhantes aos do storage primário, para que seja certo que os backups de log sempre podem ser gravados no storage secundário.
+
+image::../media/sap_hana_database_log_backup.gif[Banco de dados SAP HANA e backup de logs]
+
+As programações de backup e as políticas de retenção devem ser definidas com base nos requisitos do cliente. A tabela a seguir mostra um exemplo de configuração das diferentes programações e políticas de retenção.
+
+|===
+|  | Executado pelo Snap Creator | Storage primário | Storage secundário 
+
+
+ a| 
+Backups de bancos de dados
+ a| 
+Horário 1: A cada 4 horas
+ a| 
+Retenção: 6 (6 cópias Snapshot por hora)
+ a| 
+Retenção: 6 (6 cópias Snapshot por hora)
+
+
+
+ a| 
+Programação 2: Uma vez por dia
+ a| 
+Retenção: 3 (3 cópias snapshot diárias)
+ a| 
+Retenção: 28 (4 semanas) (28 cópias snapshot diárias)
+ a| 
+Registrar backups
+
+
+
+ a| 
+Agendamento de ferramentas de banco de dados SAP HANA: A cada 15 minutos
+ a| 
+NA
+ a| 
+Retenção: 28 dias (4 semanas)
+ a| 
+Verificação de integridade do bloco
+
+|===
+Com este exemplo, seis backups por hora e três por dia são mantidos no storage primário. No storage secundário, os backups do banco de dados são mantidos por quatro semanas. Para poder recuperar qualquer um dos backups de dados, você deve definir a mesma retenção para os backups de log.

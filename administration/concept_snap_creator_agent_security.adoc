@@ -1,0 +1,17 @@
+---
+permalink: administration/concept_snap_creator_agent_security.html 
+sidebar: sidebar 
+keywords: snap, creator, server, agent, https, multitenant, environment, self-signed 
+summary: O Snap Creator Server se comunica com o Snap Creator Agent apenas através de HTTPS, o que garante uma comunicação segura e criptografada. Esse recurso é importante em um ambiente multitenant. Certificados autoassinados permitem que você use seu próprio certificado gerado com o Snap Creator Agent. 
+---
+= Segurança do Snap Creator Agent
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O Snap Creator Server se comunica com o Snap Creator Agent apenas através de HTTPS, o que garante uma comunicação segura e criptografada. Esse recurso é importante em um ambiente multitenant. Certificados autoassinados permitem que você use seu próprio certificado gerado com o Snap Creator Agent.
+
+
+NOTE: Isso é suportado apenas para Snap Creator 4,1 e posterior.

@@ -1,0 +1,14 @@
+---
+permalink: installation/concept_upgrading_from_snap_creator_4_0_x.html 
+sidebar: sidebar 
+keywords: upgrading, upgrade, snap, creator, 4.0.x 
+summary: Quando você atualiza a partir do Snap Creator 4,0.x, o esquema do banco de dados é atualizado. 
+---
+= Atualizando a partir do Snap Creator 4,0.x
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Quando você atualiza a partir do Snap Creator 4,0.x, o esquema do banco de dados é atualizado.

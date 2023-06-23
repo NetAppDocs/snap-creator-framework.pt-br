@@ -1,0 +1,30 @@
+---
+permalink: administration/reference_snap_creator_configuration_file_variables.html 
+sidebar: sidebar 
+keywords: variable, parameter, snap, creator, configuration, file, snapshot 
+summary: Você pode definir as variáveis, parâmetros e comandos dentro do arquivo de configuração Snap Creator. 
+---
+= Variáveis, parâmetros e comandos do arquivo de configuração do Snap Creator
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode definir as variáveis, parâmetros e comandos dentro do arquivo de configuração Snap Creator.
+
+O arquivo de configuração Snap Creator é dinâmico, o que significa que você pode criar e definir variáveis dentro do arquivo de configuração.
+
+Por exemplo, ao usar o SnapDrive para Windows em vez de ONTAPI para criar cópias Snapshot. Como os nomes de cópia Snapshot precisam ser exclusivos, você deve definir uma variável dinâmica. Os seguintes exemplos de uma configuração do SnapDrive para Windows:
+
+NTAP_SNAPSHOT_CREATE_CMD1 "c:/Program Files/NetApp/SnapDrive/sdcli.exe" snap create -m fx1b4 -s %SNAME-%snap_TYPE_%snap_time -D e:
+
+ou
+
+NTAP_SNAPSHOT_CREATE_CMD1 "c:/Program Files/NetApp/SnapDrive/sdcli.exe" snap create -m fx1b4 -s %SNAME-%SNAP_TYPE_recent -D e:
+
+Ao usar o SnapDrive para Windows em vez de Data ONTAP para exclusão de cópia Snapshot, o parâmetro NTAP_SNAPSHOT_DELETE_CMDpode ser usado. O parâmetro %SNAPNAME deve ser usado no lugar do nome da cópia Snapshot no comando SnapDrive para Windows.
+
+O exemplo a seguir é de uma configuração do SnapDrive para Windows:
+
+NTAP_SNAPSHOT_DELETE_CMD01: "C: Program Files/NetApp/SnapDrive/sdcli" snap delete -s %SNAPNAME -D I:

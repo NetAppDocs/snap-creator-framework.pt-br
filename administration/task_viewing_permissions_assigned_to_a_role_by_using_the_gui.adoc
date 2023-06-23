@@ -1,0 +1,19 @@
+---
+permalink: administration/task_viewing_permissions_assigned_to_a_role_by_using_the_gui.html 
+sidebar: sidebar 
+keywords: snap, creator, permission, gui, role, management 
+summary: Você pode exibir uma lista de todas as permissões do Snap Creator atribuídas a uma função usando a GUI do Snap Creator. 
+---
+= Exibindo permissões do Snap Creator atribuídas a uma função
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode exibir uma lista de todas as permissões do Snap Creator atribuídas a uma função usando a GUI do Snap Creator.
+
+. No menu principal da GUI Snap Creator, selecione *usuários e funções* > *Gerenciamento de funções*.
+. Na guia ** Gerenciamento de funções**, selecione a função desejada.
+. Selecione a função desejada e exiba as permissões atribuídas no painel função e permissões atribuídas.
+

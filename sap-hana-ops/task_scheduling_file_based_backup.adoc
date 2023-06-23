@@ -1,0 +1,24 @@
+---
+permalink: sap-hana-ops/task_scheduling_file_based_backup.html 
+sidebar: sidebar 
+keywords: sap, hana, scheduling, file-based, backup 
+summary: Para configurações do SAP HANA, você pode agendar operações adicionais, como verificações de integridade de banco de dados e backup baseados em arquivo. Você pode agendar a operação de backup baseada em arquivo para ocorrer em intervalos específicos. 
+---
+= Agendamento de backup baseado em arquivo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para configurações do SAP HANA, você pode agendar operações adicionais, como verificações de integridade de banco de dados e backup baseados em arquivo. Você pode agendar a operação de backup baseada em arquivo para ocorrer em intervalos específicos.
+
+. No menu principal da GUI Snap Creator, selecione *Management* > *Schedules* e clique em *Create*.
+. Na janela novo trabalho, introduza os detalhes do trabalho.
++
+A política de backup baseada em arquivo é definida como "'none'" por padrão.
+
++
+image::../media/creating_file_based_backup_schedules.gif[Criando agendas de backup baseadas em arquivos]
+
+

@@ -1,0 +1,148 @@
+---
+permalink: installation/task_installing_the_snap_creator_agent_on_unix.html 
+sidebar: sidebar 
+keywords: installing, install, snap, creator, agent, unix 
+summary: 'O Snap Creator Agent é executado em qualquer plataforma de sistemas abertos (AIX, HP-UX, Linux e Solaris).' 
+---
+= Instalar o Snap Creator Agent em sistemas baseados em UNIX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O Snap Creator Agent é executado em qualquer plataforma de sistemas abertos (AIX, HP-UX, Linux e Solaris).
+
+JRE 1,8 Atualização 72 ou posterior deve ser instalada. Para obter detalhes, consulte informações em links relacionados sobre a instalação do Java em servidores Snap Creator.
+
+A pessoa que executa a instalação deve ter acesso suficiente e Privileges.
+
+A porta padrão do Snap Creator Agent é 9090. Use netstat ou uma ferramenta semelhante para verificar se a porta de rede (9090 ou a porta que você deseja usar) está disponível e ainda não está em uso (por exemplo, digite: `netstat -nap | grep 9090`).
+
+O Snap Creator já deve ser baixado. Para obter detalhes, consulte informações sobre como baixar o software Snap Creator.
+
+O Linux é usado aqui como plataforma de exemplo.
+
+. Copie o arquivo Snap Creator tar.gz baixado para o local onde você deseja instalar o Snap Creator Agent.
++
+
+NOTE: Se você pretende usar o plug-in do IBM Domino, selecione um local diferente da pasta de dados do Domino.
+
++
+.. Para criar um subdiretório, digite o seguinte comando com o nome do diretório:
++
+[listing]
+----
+mkdir snap_creator_directory
+----
++
+[listing]
+----
+mkdir /SC_41
+----
+.. Copie o arquivo Snap Creator tar.gz para o diretório recém-criado digitando o seguinte comando:
++
+[listing]
+----
+cp NetApp_Snap_Creator_Frameworkrelease-os.tar.gz
+/snap_creator_directory
+----
++
+[listing]
+----
+cp NetApp_Snap_Creator_Framework4.1.0-Linux32.tar.gz
+/SC_41
+----
+
+
+. Mude para o diretório para onde o arquivo .tar do Snap Creator Framework está localizado e extraia o arquivo inserindo os seguintes comandos:
++
+
+NOTE: Dependendo do ambiente UNIX, talvez seja necessário descompactar o arquivo antes de inserir o comando tar.
+
++
+[listing]
+----
+cd snap_creator_directory
+tar -xvf NetApp_Snap_Creator_Frameworkrelease-os.tar.gz
+----
++
+** Snap_Creator_Directory é o local onde o Snap Creator será instalado.
+** A versão é a versão atual do pacote de software Snap Creator.
+** o é o sistema operacional.
++
+[listing]
+----
+cd /sc_41
+tar -xvf NetApp_Snap_Creator_Framework4.1.0-Linux32.tar.gz
+----
+
+
++
+Isso extrai tanto o servidor quanto o software Agent. Normalmente, apenas o Snap Creator Server está configurado. Os agentes normalmente residem no banco de dados ou servidores de aplicativos para serem protegidos como visto no exemplo a seguir:
+
++
+E
+
++
+[listing]
+----
+NetApp_Snap_Creator_Framework4.1.0-Linux32.tar.gz  scServer4.1.0
+scAgent4.1.0
+----
+. Digite os seguintes comandos e responda às instruções mostradas no exemplo para configurar o Snap Creator Agent.
++
+[listing]
+----
+cd scAgent*
+./snapcreator --setup
+Welcome to the NetApp Snap Creator Framework release-version!
+\#\#\# Installation options \#\#\#
+01. NetApp Snap Creator Framework release-version Agent
+Select install option (enter a number or "q" to quit): <Enter 01>
+
+END USER LICENSE AGREEMENT
+<...the EULA displays...>
+
+Do you accept the End User License Agreement (y|n): <Enter y>
+
+Enter Snap Creator server port [9090]: <Enter agent port>
+
+INFO: Updated NetApp Snap Creator Framework release-version
+/install_path/scAgentrelease-version/engine/etc/agent.properties
+
+
+INFO: To start scAgent please do the following:
+
+/install_path/scAgentrelease-version/bin/scAgent start
+----
+. Inicie o Snap Creator Agent:
++
+[listing]
+----
+/install_path/scAgentrelease-version/bin/scAgent start
+----
++
+
+NOTE: Para que o Snap Creator Agent seja executado automaticamente na inicialização, adicione o comando start a um script.
+
++
+As etapas para criar um script diferem ligeiramente dependendo do sistema operacional usado e das preferências do administrador do sistema que gerencia o servidor. Geralmente, o comando start para o Snap Creator Agent pode ser adicionado a um arquivo começando com S9 (por exemplo, S99scAgent) que é colocado no subdiretório /path/to/rc2.d. O subdiretório rc2.d está comumente localizado em /etc/, mas isso pode depender do sistema operacional host e da configuração específica do servidor. Para obter mais informações, consulte a documentação do sistema operacional em uso.
+
++
+É apresentada a seguinte mensagem:
+
++
+[listing]
+----
+Starting scAgent:
+    Watchdog: Running
+       Agent: Running
+----
+
+
+*Informações relacionadas*
+
+xref:task_installing_java_on_snap_creator_hosts.adoc[Instalando o Java em hosts Snap Creator]
+
+xref:task_downloading_the_snap_creator_software.adoc[Baixando o software Snap Creator]

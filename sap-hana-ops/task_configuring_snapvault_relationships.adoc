@@ -1,0 +1,54 @@
+---
+permalink: sap-hana-ops/task_configuring_snapvault_relationships.html 
+sidebar: sidebar 
+keywords: configuring, configure snapvault, relationships, snaprestore 
+summary: Quando você configura relacionamentos do SnapVault, os controladores de storage primário devem ter uma licença válida do SnapRestore e do SnapVault instalada. O storage secundário deve ter uma licença SnapVault válida instalada. 
+---
+= Configurando relacionamentos do SnapVault
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Quando você configura relacionamentos do SnapVault, os controladores de storage primário devem ter uma licença válida do SnapRestore e do SnapVault instalada. O storage secundário deve ter uma licença SnapVault válida instalada.
+
+. Habilite o SnapVault e o NDMP nos controladores de storage primário e secundário.
++
+[listing]
+----
+hana1a> options snapvault.enable on
+hana1a> ndmp on
+hana1a>
+hana1b> options snapvault.enable on
+hana1b> ndmpd on
+hana1b
+hana2b> options snapvault.enable on
+hana2b> ndmpd on
+hana2b>
+----
+. Em todos os controladores de storage primário, configure o acesso ao controlador de storage secundário.
++
+[listing]
+----
+hana1a> options snapvault.access host=hana2b
+hana1a>
+hana1b> options snapvault.access host=hana2b
+hana1b>
+----
++
+
+NOTE: Recomenda-se a utilização de uma rede dedicada para o tráfego de replicação. Nesses casos, o nome de host dessa interface no controlador de storage secundário precisa ser configurado. Em vez de hana2b, o nome do host pode ser hana2b-rep.
+
+. No controlador de storage secundário, configure o acesso para todos os controladores de storage primário.
++
+[listing]
+----
+hana2b> options snapvault.access host=hana1a,hana1b
+hana2b>
+----
++
+
+NOTE: Recomenda-se a utilização de uma rede dedicada para o tráfego de replicação. Nesses casos, o nome de host dessa interface nas controladoras de storage primário precisa ser configurado. Em vez de hana1b e hana1a, o nome do host pode ser hana1a-rep e hana1b-rep.
+
+

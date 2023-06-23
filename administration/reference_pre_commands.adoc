@@ -1,0 +1,74 @@
+---
+permalink: administration/reference_pre_commands.html 
+sidebar: sidebar 
+keywords: snap, creator, server, configuration, pre, command, quiesce, cmd, ntap, clone, exit 
+summary: O Snap Creator Server inclui vários PRÉ COMANDOS DE ficheiros de configuração. 
+---
+= Comandos PRE
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O Snap Creator Server inclui vários PRÉ COMANDOS DE ficheiros de configuração.
+
+
+NOTE: Para o Windows, `cmd.exe /c` deve ser incluído antes de qualquer PRÉ-comando.
+
+|===
+| Comando | Descrição 
+
+
+ a| 
+NO. DO PRE_APP_QUIESCE_ CMD
+ a| 
+Este é o comando de início do backup pré-aplicativo, onde o número é um número de 01-99.
+
+
+
+ a| 
+N.O PRE_NTAP_CMD
+ a| 
+Este é o comando pré-Snapshot, onde o número é um número de 01-99; ele é executado antes de todas as operações.
+
+
+
+ a| 
+N.O PRE_APP_UNQUIESCE_CMD
+ a| 
+Este é o comando de parada de backup pré-aplicativo, onde o número é um número de 01-99.
+
+
+
+ a| 
+PRE_NTAP_CLONE_ DELETE_CMD NO
+ a| 
+Este é o comando de exclusão pré-clone, onde o número é um número de 01-99. *Nota:* o objetivo do comando clone delete é chamar um script de montagem ou comandos para que LUNs clonados possam ser montados com o propósito de fazer backup (provavelmente para fita).
+
+
+
+ a| 
+N.O PRE_EXIT_CMD
+ a| 
+Este é um comando opcional que é executado após um erro fatal ocorrer, mas antes do Snap Creator sair. Isso é útil para reverter para o estado que era antes do Snap Creator ser executado. * Nota:*
+
+* Este comando retorna um aplicativo para o modo de operação normal antes que o Snap Creator saia devido a um erro.
+* Isso é ignorado se você usar app_NAME porque ele é Tratado internamente no Snap Creator.
+
+
+
+
+ a| 
+N.O PRE_RESTORE_CMD
+ a| 
+Este é um comando opcional que pode ser executado antes de inserir uma restauração interativa. Isso permite que você interaja com o aplicativo que está sendo restaurado. Por exemplo, talvez você queira encerrar o aplicativo antes de executar uma restauração. *Observação:* isso não é suportado com o plug-in MySQL.
+
+
+
+ a| 
+PRE_CLONE_CREATE _ CMD NO
+ a| 
+Este é um comando opcional que pode ser executado antes que as operações de clonagem ONTAPI ocorram, onde o número é um número de 01-99.
+
+|===

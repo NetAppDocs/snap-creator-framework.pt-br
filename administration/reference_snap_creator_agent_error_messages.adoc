@@ -1,0 +1,95 @@
+---
+permalink: administration/reference_snap_creator_agent_error_messages.html 
+sidebar: sidebar 
+keywords: snap, creator, agent, error, message, aft, sc_agentconfiguration, parameter, remote, port 
+summary: A tabela a seguir lista as mensagens de erro do Snap Creator Agent. 
+---
+= Mensagens de erro do Snap Creator Agent
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A tabela a seguir lista as mensagens de erro do Snap Creator Agent.
+
+|===
+| Código de erro | Descrição/Resolução 
+
+
+ a| 
+agt-00001
+ a| 
+O Snap Creator Agent ou algum outro processo está em execução na porta especificada. Tente uma porta diferente.
+
+
+
+ a| 
+agt-00003
+ a| 
+Os parâmetros fornecidos não estavam corretos para iniciar o Snap Creator Agent. Verifique os parâmetros necessários.
+
+
+
+ a| 
+agt-00004
+ a| 
+O parâmetro SC_AGENTConfiguration deve ser definido ao usar um agente remoto.
+
+
+
+ a| 
+agt-00005
+ a| 
+Não tem permissão para efetuar operações de quiesce de volta para trás e uma operação já está em execução. Aguarde ou execute unquiesce.
+
+
+
+ a| 
+agt-00006
+ a| 
+O processo de watchdog não consegue gerar. O sistema provavelmente atingiu o número máximo de processos. Desative o watchdog na configuração ou verifique as definições do sistema operativo.
+
+
+
+ a| 
+agt-00008
+ a| 
+A operação quiesce e unquiesce não foi concluída e o backup é apenas consistente com falhas. Verifique os logs. Isso pode acontecer se a operação de quiesce demorar muito e você estiver usando um cão de guarda. O processo watchdog executa uma inquietação forçada após x segundos, conforme definido na configuração.
+
+
+
+ a| 
+agt-00009
+ a| 
+Os comandos pre e Post devem ser permitidos no Agent.conf no lado do agente. Atualize os comandos Agent.confand allow necessary.
+
+
+
+ a| 
+agt-00010
+ a| 
+O agente não pôde ler seu arquivo de configuração. Verifique as permissões no arquivo Agent.conf.
+
+
+
+ a| 
+agt-00011
+ a| 
+Um comando foi enviado para o agente, mas não é permitido. Atualize o Agent.conf para permitir o comando.
+
+
+
+ a| 
+agt-00012
+ a| 
+Este erro ocorre durante o carregamento de um plug-in. Verifique a configuração plug-in e APP_NAME.
+
+
+
+ a| 
+agt-00013
+ a| 
+Este erro ocorre ao executar o método setenv dentro do plug-in. Verifique o plug-in e certifique-se de que a sintaxe está correta.
+
+|===

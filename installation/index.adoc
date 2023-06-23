@@ -1,0 +1,14 @@
+---
+permalink: installation/index.html 
+sidebar: sidebar 
+keywords: install, setup, set, up, Snap, reference_snap_creator_framework_error_messages 
+summary: Descreve como instalar e configurar o Snap Creator. 
+---
+= Guia de instalação
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="Lead"]
+Este guia descreve como instalar e configurar o Snap Creator 4,3.3.

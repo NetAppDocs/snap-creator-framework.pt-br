@@ -1,0 +1,23 @@
+---
+permalink: administration/task_assigning_roles_to_snap_creator_users.html 
+sidebar: sidebar 
+keywords: snap, creator, user, gui, role, management 
+summary: Você pode atribuir funções a usuários do Snap Creator usando a GUI do Snap Creator. 
+---
+= Atribuindo funções aos usuários do Snap Creator
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode atribuir funções a usuários do Snap Creator usando a GUI do Snap Creator.
+
+. No menu principal da GUI Snap Creator, selecione *usuários e funções* > *Gerenciamento de usuários*.
+. Na guia Gerenciamento de usuários, selecione o nome de usuário desejado e clique em *atribuir perfis*.
+. Mova as funções desejadas da coluna esquerda para a coluna direita e clique em *Salvar*.
++
+Você pode selecionar e arrastar as funções entre colunas ou clicar na seta para mover as funções entre colunas.
+
+. Verifique se a função foi atribuída selecionando o usuário e visualizando a função atribuída no painel *Perfis e funções atribuídos*.
+

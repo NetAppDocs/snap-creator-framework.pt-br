@@ -1,0 +1,35 @@
+---
+permalink: installation/task_starting_the_server_from_a_command_prompt.html 
+sidebar: sidebar 
+keywords: starting, start, server, command, prompt 
+summary: 'Você pode iniciar manualmente o Snap Creator Server a partir de um prompt de comando executando um script em lote (scServer.bat).' 
+---
+= Iniciando o servidor a partir de um prompt de comando
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode iniciar manualmente o Snap Creator Server a partir de um prompt de comando executando um script em lote (scServer.bat).
+
+Normalmente, você deve seguir este procedimento somente se você não tiver selecionado a opção *Iniciar servidor como serviço* durante a instalação.
+
+Você também pode agendar o script em lote (scServer.bat) para ser executado na inicialização através do agendador de tarefas do Windows. Para obter detalhes sobre como usar o agendador de tarefas do Windows, consulte a documentação do sistema operacional Windows.
+
+Como o script em lote (scServer.bat) executa o Snap Creator em primeiro plano, o Snap Creator Server continua a ser executado apenas enquanto o prompt de comando estiver aberto. Fechar o prompt de comando encerra o Snap Creator Server. Para ser executado em segundo plano, o serviço Snap Creator Server deve ser usado.
+
+. Abra um prompt de comando e digite os seguintes comandos:
++
+[listing]
+----
+cd \install_path\scServerrelease-version\bin\
+scServer.bat start
+----
++
+[listing]
+----
+cd \Program Files\NetApp\Snap_Creator_Framework\scServer4.1.0\bin\
+scServer.bat start
+----
+

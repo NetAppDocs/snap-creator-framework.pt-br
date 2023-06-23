@@ -1,0 +1,14 @@
+---
+permalink: administration/concept_troubleshooting_cli_command_errors.html 
+sidebar: sidebar 
+keywords: errors, cli, troubleshoot, troubleshooting, command 
+summary: Você deve estar ciente de alguns erros que você pode encontrar ao tentar executar comandos CLI e saber como resolver esses problemas. 
+---
+= Solução de problemas de erros de comando CLI
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você deve estar ciente de alguns erros que você pode encontrar ao tentar executar comandos CLI e saber como resolver esses problemas.

@@ -1,0 +1,20 @@
+---
+permalink: sap-hana-ops/concept_configuring_data_backups.html 
+sidebar: sidebar 
+keywords: configuring, configure, data, backups, back-ups 
+summary: Você deve configurar seus backups de dados depois de instalar os componentes necessários 
+---
+= Configuração de backups de dados
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+Depois de instalar os componentes de software necessários, siga estes passos para concluir a configuração:
+
+. Configure um usuário de banco de dados dedicado e o armazenamento de usuários SAP HANA.
+. Preparar a replicação do SnapVault em todos os controladores de storage.
+. Criar volumes no controlador de storage secundário.
+. Inicialize as relações SnapVault para volumes de banco de dados.
+. Configurar o Snap Creator.
+

@@ -1,0 +1,23 @@
+---
+permalink: administration/task_assigning_policies.html 
+sidebar: sidebar 
+keywords: assign, retention, policy, configuration, snap, creator, gui, assignment 
+summary: Você pode atribuir políticas de retenção aos arquivos de configuração usando a GUI do Snap Creator. 
+---
+= Atribuindo políticas
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode atribuir políticas de retenção aos arquivos de configuração usando a GUI do Snap Creator.
+
+. No menu principal da GUI Snap Creator, selecione *Política* > *Atribuições de políticas*.
+. Selecione um perfil no painel Perfil.
+. Selecione uma política ou políticas para atribuir ao perfil selecionando a caixa de seleção apropriada no painel direito e clique em *Salvar*.
++
+Se os arquivos de configuração já existirem no perfil, uma mensagem será exibida informando que a política atribuída substituirá as configurações no arquivo de configuração.
+
+. Clique em *Sim* para atribuir a política.
+

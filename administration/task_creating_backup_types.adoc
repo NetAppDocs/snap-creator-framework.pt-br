@@ -1,0 +1,22 @@
+---
+permalink: administration/task_creating_backup_types.html 
+sidebar: sidebar 
+keywords: backup, snap, creator, gui, policy, creating, type 
+summary: Opcionalmente, você pode criar um tipo de backup usando a GUI do Snap Creator para ajudar a identificar o propósito de uma política. 
+---
+= Criando tipos de backup
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Opcionalmente, você pode criar um tipo de backup usando a GUI do Snap Creator para ajudar a identificar o propósito de uma política.
+
+. No menu principal da GUI Snap Creator, selecione *Policy* > *Backup Type*.
+. Na guia *Backup type*, clique em *Add*.
+. Introduza o novo nome do tipo de cópia de segurança e, em seguida, clique em *OK*.
++
+O novo tipo de backup está listado em *tipo de backup*.
+
+

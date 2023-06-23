@@ -1,0 +1,23 @@
+---
+permalink: administration/task_assigning_permissions_to_snap_creator_roles.html 
+sidebar: sidebar 
+keywords: assign, permission, snap, creator, gui, role, gui, permission 
+summary: Você pode atribuir permissões a funções do Snap Creator usando a GUI do Snap Creator. 
+---
+= Atribuindo permissões a funções do Snap Creator
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode atribuir permissões a funções do Snap Creator usando a GUI do Snap Creator.
+
+. No menu principal da GUI Snap Creator, selecione *usuários e funções* > *Gerenciamento de funções*.
+. Na guia Gerenciamento de funções, selecione a função desejada e clique em *atribuir permissões*.
+. Mova as permissões desejadas da coluna esquerda para a coluna direita e clique em *Salvar*.
++
+Você pode selecionar e arrastar as permissões entre colunas ou clicar na seta para mover as permissões entre colunas.
+
+. Verifique se a permissão foi atribuída selecionando a função e exibindo a permissão atribuída no painel funções e permissões atribuídas.
+

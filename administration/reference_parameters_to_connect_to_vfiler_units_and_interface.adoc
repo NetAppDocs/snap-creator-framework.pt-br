@@ -1,0 +1,61 @@
+---
+permalink: administration/reference_parameters_to_connect_to_vfiler_units_and_interface.html 
+sidebar: sidebar 
+keywords: several, parameter, snap, creator, sefver, vfiler, unit, interface, management, secondary 
+summary: Vários parâmetros são necessários para conetar o Snap Creator Server a unidades e interfaces do vFiler. 
+---
+= Parâmetros para se conetar a unidades e interfaces do vFiler
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vários parâmetros são necessários para conetar o Snap Creator Server a unidades e interfaces do vFiler.
+
+|===
+| Parâmetro | Definição | Descrição 
+
+
+ a| 
+VFILERS
+ a| 
+ a| 
+Liste as unidades do vFiler e seus sistemas ou volumes de storage de hospedagem. Por exemplo: vFiler1 a controller1:vol1,vol2,vol3;vFiler2 a controller2:vol1;vFiler3 a controller3:vol2,vol3**Nota:** HTTPS não é suportado com unidades do vFiler.
+
+
+
+ a| 
+GESTÃO_ INTERFACES
+ a| 
+ a| 
+Lista os controladores de armazenamento primário e suas interfaces de gerenciamento usadas para comunicações. Por exemplo: MANAGEMENT_INTERFACES controller1:controller1-mgmt;controller2:controller2-mgmt
+
+
+
+ a| 
+INTERFACES SECUNDÁRIAS_
+ a| 
+ a| 
+Listar os controladores de storage primários ou unidades do vFiler e a origem ou destino de suas interfaces secundárias para relacionamentos SnapVault e SnapMirror.por exemplo: controller1:controller1-source/controller2-destination
+
+
+NOTE: As relações SnapVault e SnapMirror devem ser configuradas para usar essa interface secundária. O Snap Creator não gerencia relacionamentos SnapMirror e SnapVault.
+
+
+
+ a| 
+USE_PROXY
+ a| 
+(Y
+| N) 
+
+
+ a| 
+Permite que as chamadas de API passem pelo proxy do servidor Active IQ Unified Manager em vez do controlador de armazenamento diretamente. Se esta opção for utilizada, NTAP_USERS não é necessário.
+ a| 
+ALLOW_IP_ADDR
+ a| 
+(Y
+
+|===

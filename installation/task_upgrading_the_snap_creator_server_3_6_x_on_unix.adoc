@@ -1,0 +1,75 @@
+---
+permalink: installation/task_upgrading_the_snap_creator_server_3_6_x_on_unix.html 
+sidebar: sidebar 
+keywords: upgrading, upgrade, snap, creator, server, 3.6.x, unix, unix-based 
+summary: Você pode atualizar diretamente do Snap Creator Server 3,6.x em sistemas baseados em UNIX. 
+---
+= Atualizando o Snap Creator Server 3,6.x em sistemas baseados em UNIX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode atualizar diretamente do Snap Creator Server 3,6.x em sistemas baseados em UNIX.
+
+* Se você tiver quaisquer nomes de usuário que contenham carateres especiais no Snap Creator, você deve ter renomeado esses usuários usando apenas carateres alfabéticos (a-z, A-Z) antes de executar a atualização.
+* Você parou os processos do Snap Creator antes de fazer backup dos diretórios do Snap Creator para garantir que os dados de backup estejam completos.
++
+Por exemplo, insira os seguintes comandos:
+
++
+[listing]
+----
+/install_path/scServer3.6.x/bin/scServer stop
+/install_path/scAgent3.6.x/bin/scAgent stop
+----
+* Você fez backup dos seguintes diretórios e de todos os subdiretórios e arquivos associados, dentro do diretório servidor Snap Creator 3,6.x (/install_path/scServer3,6.x):
++
+** Banco de dados Snap Creator (../gui/snapCreator)
+** Perfis e arquivos de configuração (../configs)
+** Logs (../logs) *Observação:* não exclua as cópias de backup do Snap Creator 3,6.x que você criou.
+
+
+
+
+Os caminhos fornecidos nas etapas a seguir referem-se ao caminho de instalação padrão. O caminho nos comandos abaixo pode diferir do caminho de instalação.
+
+Depois que o processo de atualização estiver concluído, considere os seguintes problemas:
+
+* Se o banco de dados Snap Creator que é atualizado contiver algumas tarefas marcadas como "'em andamento'", o estado permanecerá o mesmo mesmo depois que o processo de atualização estiver concluído.
+* O administrador padrão no Snap Creator mais recente deve ser um administrador no Snap Creator 3,6.x. Se o usuário 3,6.x não for um administrador, a atualização atribuirá uma função de operador ao usuário 3,6.x.
++
+.. Pare os processos do Snap Creator se você ainda não o fez.
++
+Para obter informações sobre como parar os processos, consulte os detalhes fornecidos anteriormente neste tópico.
+
+.. Instale o Snap Creator mais recente, mas não inicie o serviço Snap Creator Server.
++
+Para obter detalhes, consulte informações sobre como instalar o Snap Creator Server no UNIX.
+
+.. Copie o diretório de banco de dados do Snap Creator 3,6.x com backup para o local mais recente do banco de dados (/install_path/scServer4,1.x/Engine/snapCreator).
+.. Copie os perfis e a pasta de configuração do Snap Creator 3,6.x com backup para o local mais recente (/install_path/scServer4,1.x/Engine/configs).
+.. Copie a pasta de logs do Snap Creator 3,6.x com backup para o local mais recente (/install_path/scServer4,1.x/Engine/logs).
+.. Mude os diretórios para o subdiretório do motor no caminho de instalação do Snap Creator (/install_path/scServer4,1.x/Engine).
+.. Atualize o Snap Creator inserindo o seguinte comando: java -jar snapcreator.jar -upgrade
+
+
+
+
+Depois que o processo de atualização estiver concluído, inicie o serviço Snap Creator Server digitando o seguinte comando:
+
+/Install_path/scServer4,1.x/bin/scServer start
+
+Além disso, exclua o diretório de instalação do Snap Creator 3,6.x.
+
+
+IMPORTANT: Não exclua as cópias de backup até ter certeza de que não precisa reverter para uma versão mais antiga.
+
+Você também deve validar a inicialização da GUI do Snap Creator Framework navegando até o host local na porta especificada (https://IP_address:gui_port[]).
+
+Você deve se conetar usando HTTPS; caso contrário, a conexão não será automaticamente redirecionada para uma conexão HTTPS e a GUI não funcionará.
+
+*Informações relacionadas*
+
+xref:task_installing_the_snap_creator_server_on_unix.adoc[Instalar o Snap Creator Server em sistemas baseados em UNIX]

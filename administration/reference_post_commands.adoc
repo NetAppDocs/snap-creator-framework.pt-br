@@ -1,0 +1,60 @@
+---
+permalink: administration/reference_post_commands.html 
+sidebar: sidebar 
+keywords: snap, creator, server, configuration, post, command, quiescecmde, cmd, ntap, app, post, transfer 
+summary: Snap Creator Server inclui vários COMANDOS DE POST de arquivo de configuração. 
+---
+= Comandos POST
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Snap Creator Server inclui vários COMANDOS DE POST de arquivo de configuração.
+
+|===
+| Comando | Descrição 
+
+
+ a| 
+POST_APP_ QUIESCECM3
+ a| 
+Este é um comando de início de backup pós-aplicativo, onde o número é um número de 01-99.
+
+
+
+ a| 
+N.O POST_NTAP_CMD
+ a| 
+Este é um comando POST, onde o número é um número de 01-99. Isso é executado depois que todas as operações estão concluídas.
+
+
+
+ a| 
+POST_APP_UNQUIESCE _CMD N.º
+ a| 
+Este é um comando de parada de backup pós-aplicativo, onde o número é um número de 01-99.
+
+
+
+ a| 
+NO. POST_NTAP_DATA_TRANSFER_CMD
+ a| 
+Este é um comando de transferência pós-dados que é executado após uma transferência SnapVault ou SnapMirror, onde o número é um número de 01-99.
+
+
+
+ a| 
+N.O CMD PÓS-RESTAURO_
+ a| 
+Este é um comando opcional que pode ser executado depois de concluir uma restauração interativa. Ele permite que você interaja com o aplicativo que está sendo restaurado. Após a conclusão da restauração, talvez você queira iniciar o aplicativo. *Observação:* isso não é suportado com o plug-in MySQL.
+
+
+
+ a| 
+POST_CLONE_CREATE_ CMD NO
+ a| 
+Este é um comando opcional que pode ser executado após as operações de clonagem ONTAPI ocorrerem, onde o número é um número de 01-99. Os comandos são usados para executar operações como a montagem de sistemas de arquivos clonados.
+
+|===
