@@ -2835,15 +2835,6 @@
   <block id="4882c0d9418dd46f0891d1ba1f74a756" category="inline-link">Relatório técnico da NetApp 3917: Melhores práticas para a Domino no NetApp</block>
   <block id="75f73334221fa99061c15af093964999" category="list-text"><block ref="75f73334221fa99061c15af093964999" category="inline-link-rx"></block></block>
   <block id="392849ff80c051402b522ed37941bb02" category="paragraph">Descreve as práticas recomendadas para o plug-in IBM Domino.</block>
-  <block id="3ddf233671b5f67a638021b3cc39372e" category="inline-link">Relatório técnico 3588: Integração do Domino 8,5 para Windows 2008 com um sistema de armazenamento NetApp</block>
-  <block id="f55897b705ad4f312f2975eeead767d6" category="list-text"><block ref="f55897b705ad4f312f2975eeead767d6" category="inline-link-rx"></block></block>
-  <block id="338c1a1e4e0be6512495303eb3bc0bab" category="paragraph">Descreve como integrar o IBM Domino 8,5 para Windows 2008 com um sistema de storage NetApp.</block>
-  <block id="d52209ce4b45633872fe1548507ebc2d" category="inline-link">Relatório técnico 3691: Integração do IBM Domino 8,5 para Linux com um sistema de armazenamento NetApp</block>
-  <block id="0e707561e622847b80c231517d846c9e" category="list-text"><block ref="0e707561e622847b80c231517d846c9e" category="inline-link-rx"></block></block>
-  <block id="1539b028181e57b8a38ce11fee51fa67" category="paragraph">Descreve como integrar o IBM Domino 8.0.2 para Linux com um sistema de storage NetApp.</block>
-  <block id="2edf4d2b71c54e6befe087c3e0b1576b" category="inline-link">Relatório técnico 3723: Implantando o Domino 8.0.2 em um ambiente AIX e NetApp usando NFS</block>
-  <block id="86ab39082091129ec8afe1b08dec276a" category="list-text"><block ref="86ab39082091129ec8afe1b08dec276a" category="inline-link-rx"></block></block>
-  <block id="41f6c38de9dd1188cd73783e789dcc24" category="paragraph">Descreve como integrar o IBM Domino 8.0.2 para AIX a um sistema de storage NetApp.</block>
   <block id="ab4c5327df4435d7b4ef37cd87785e08" category="inline-link">Discussões do Snap Creator Framework</block>
   <block id="a66c6d62fb908b3aa3b09848fafd104e" category="list-text"><block ref="a66c6d62fb908b3aa3b09848fafd104e" category="inline-link-rx"></block></block>
   <block id="b7decea4e578e5db43c72ed6d47895f6" category="paragraph">Permite que você se conete com colegas, faça perguntas, troque ideias, encontre recursos e compartilhe as práticas recomendadas do Snap Creator.</block>
@@ -3246,7 +3237,6 @@
   <block id="2c6ce5b349ba2797c4fa0d706439f60a" category="paragraph">Além disso, você deve executar as seguintes tarefas antes de instalar o Snap Creator:</block>
   <block id="514f0646f4ac4f32305784313cc8cdb8" category="list-text">Baixe o software Snap Creator.</block>
   <block id="a22ff981655293280bcb4f3d30be5b89" category="list-text">Crie um usuário do Data ONTAP.</block>
-  <block id="5a5b4c4fc12c86700228a7c04e33b00c" category="list-text">Instale o Oracle Java ou OpenJDK nos hosts Snap Creator Server e Agent.</block>
   <block id="f91e90f8ae064b5a2246ae7a7171f287" category="list-text">Sincronize o tempo nos hosts Snap Creator Server e Agent.</block>
   <block id="ca4b78518217e66f7768c3fcb28bc1e0" category="list-text">Configure as configurações para o plug-in do IBM Domino (necessário somente se você estiver usando o plug-in do Domino).</block>
   <block id="80ad90a5e4ff120d2cc30409046e481d" category="list-text">Adicione bibliotecas SSL (Secure Sockets Layer) para o ambiente UNIX (necessário somente ao executar o Snap Creator usando a CLI em plataformas UNIX).</block>
@@ -4596,4 +4586,6 @@
   <block id="7cd8fb6e31cc946c078d2740c76a9899" category="sidebar">Instalação</block>
   <block id="fbd81bedca700187dabfca4bf4718312" category="sidebar">Operações de plug-in do SAP HANA</block>
   <block id="7258e7251413465e0a3eb58094430bde" category="sidebar">Administração</block>
+  <block id="8712f94c0adf6f85a8f736374d93a2f4" category="doc">Requisitos de pré-instalação para o ONTAP Snap Creator</block>
+  <block id="715ea6698bcadbb2aa63560067f0847c" category="list-text">Instale o Oracle Java ou OpenJDK Java Runtime Environment (JRE) 1,8 Update 72 ou versões posteriores nos hosts Snap Creator Server e Agent.</block>
 </blocks>

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: preinstallation, requirements, before, install 
 summary: Há requisitos de licença de sistema, software e hardware que você deve considerar antes de instalar o Snap Creator. 
 ---
-= Requisitos de pré-instalação para o Snap Creator
+= Requisitos de pré-instalação para o ONTAP Snap Creator
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -17,7 +17,7 @@ Além disso, você deve executar as seguintes tarefas antes de instalar o Snap C
 
 * Baixe o software Snap Creator.
 * Crie um usuário do Data ONTAP.
-* Instale o Oracle Java ou OpenJDK nos hosts Snap Creator Server e Agent.
+* Instale o Oracle Java ou OpenJDK Java Runtime Environment (JRE) 1,8 Update 72 ou versões posteriores nos hosts Snap Creator Server e Agent.
 * Sincronize o tempo nos hosts Snap Creator Server e Agent.
 * Configure as configurações para o plug-in do IBM Domino (necessário somente se você estiver usando o plug-in do Domino).
 * Adicione bibliotecas SSL (Secure Sockets Layer) para o ambiente UNIX (necessário somente ao executar o Snap Creator usando a CLI em plataformas UNIX).
