@@ -52,6 +52,8 @@ A porta a ser usada para comunicações com o console do Operations Manager; 808
  a| 
 OM_EVENT_GENERATE
  a| 
-(Y
-| N) 
+(S|N)
+ a| 
+Habilita ou desabilita a criação de eventos no console do Operations Manager.
+
 |===

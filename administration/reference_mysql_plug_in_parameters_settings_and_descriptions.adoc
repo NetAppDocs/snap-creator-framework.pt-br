@@ -62,10 +62,7 @@ Lista de bancos de dados e as portas em que estão ouvindo, por exemplo `db1:330
  a| 
 MASTER_SLAVE
  a| 
-(Y
-| N) 
-
-
+(S|N)
  a| 
 Especifica o ambiente de banco de dados de backup:se definido como Y, faz backup do banco de dados mestre.
 
@@ -73,10 +70,19 @@ Se definido como N, o backup do banco de dados escravo ou a configuração Maste
 
 
 NOTE: O backup do Snap Creator Framework exclui os arquivos de log binários necessários do MySQL no servidor MySQL com a opção Master_Slave ativada. O backup do banco de dados MySQL (master) usando Snap Creator Framework remove todos os arquivos de log binários e deixa apenas um único arquivo de log binário vazio com numeração de redefinição (.000001). Devido a este problema, o servidor secundário não consegue iniciar após a operação de cópia de segurança.
+
+
+
  a| 
 PURGE_BINARY_LOG
  a| 
-(Y
+(S|N)
+ a| 
+O parâmetro funciona para a configuração de banco de dados mestre-escravo do MySQL.
+
+Se definido como "Sim", irá apagar os registos binários para o último ficheiro de registo binário disponível.
+
+Se definido como N, utiliza o carimbo de data/hora mais recente para a consulta de limpeza.
 
 |===
 *Informações relacionadas*

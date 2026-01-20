@@ -22,47 +22,44 @@ A tabela a seguir lista os parâmetros do plug-in do log de arquivamento, fornec
  a| 
 ARCHIVE_LOG_ENABLE
  a| 
-(Y
-| N 
-
-
-| política:idade)  a| 
+(S|N|política:idade)
+ a| 
 Permite o gerenciamento de log de arquivamento (exclusão dos logs de arquivo antigos).
+
+
+
  a| 
 ARCHIVE_LOG_RETENÇÃO
-
-
-
  a| 
 number_of_days
  a| 
 Especifica o número de dias em que os logs de arquivo são mantidos. Esta definição tem de ser igual ou superior a NTAP_SNAPSHOT_ RETENÇÕES.
+
+
+
  a| 
 ARCHIVE_LOG_DIR
-
-
-
  a| 
 change_info_directory/logs
  a| 
 Especifica o caminho para o diretório que contém os logs do arquivo.
+
+
+
  a| 
 ARCHIVE_LOG_EXT
-
-
-
  a| 
 extensão_ficheiro
  a| 
 Especifica a extensão de arquivo dos logs do arquivo. Por exemplo, se os logs de arquivo forem 10192091019.log, especifique esta configuração de parâmetro para LOG.
+
+
+
  a| 
 ARCHIVE_LOG_RECURSIVE_SEARCH
-
-
-
  a| 
-(Y
-| N)  a| 
+(S|N)
+ a| 
 Permite o gerenciamento de logs de arquivo dentro de subdiretórios. Se os logs do arquivo estiverem localizados em subdiretórios, você deve usar esse parâmetro.
 
 |===

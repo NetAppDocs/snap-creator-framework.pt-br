@@ -53,57 +53,54 @@ Especifica o sistema de storage, o volume de origem e um IGROUP. O IGROUP é ent
  a| 
 NTAP_CLONE_FOR_BACKUP
  a| 
-(Y
-| N) 
-
-
+(S|N)
  a| 
 Se ativado, clones (volume e LUN) são criados e, em seguida, excluídos após as outras operações serem concluídas. Caso contrário, os clones são excluídos antes que as operações sejam concluídas. *Nota:* se você estiver fazendo backup de clones para fita, isso deve ser definido como Y. se você estiver fazendo atualizações de banco de dados, então você deve configurá-lo como N.
+
+
+
  a| 
 NTAP_CLONE_SECONDARY
  a| 
-(Y
-
-
-
-| N)  a| 
+(S|N)
+ a| 
 Se ativado, os clones são criados no destino do SnapMirror após a conclusão da atualização do SnapMirror. *Nota:* esta configuração deve ser usada com NTAP_SnapMirror_USE_SNAPSHOT, NTAP_SnapMirror_WAIT e NTAP_CLONE_SECONDARY_VOLUMES e a ação cloneVol.
+
+
+
  a| 
 NTAP_CLONE_SECONDARY_VOLUMES
-
-
-
  a| 
  a| 
 Este é um mapeamento dos sistemas de storage primário ou secundário e dos volumes secundários. Isso é necessário para que o Snap Creator possa encontrar os volumes secundários (por exemplo, controller1:controller1-sec/vol1;controller1:controller1-sec/vol2).
+
+
+
  a| 
 NTAP_NUM_VOL_CLONES
-
-
-
  a| 
  a| 
 Esse é o número de clones de volume que você deseja manter. Isso funciona de forma semelhante à política de retenção de cópias Snapshot. *Observação:* isso só funciona para clones de volume que exigem uma licença FlexClone no controlador de armazenamento.
+
+
+
  a| 
 NTAP_NFS_EXPORT_HOST
-
-
-
  a| 
 IP do host
  a| 
 O nome do host ou endereço IP onde o clone deve ser exportado. Este é o host onde você monta o volume clone usando NFS.
+
+
+
  a| 
 NTAP_NFS_EXPORT_ACCESS
-
-
-
  a| 
 raiz
-| leitura-gravação | somente leitura 
+| leitura-gravação 
 
 
- a| 
+| somente leitura  a| 
 O host especificado em NTAP_NFS_EXPORT_HOST recebe acesso ou permissão para o volume clone.
 
 * raiz
@@ -121,21 +118,21 @@ O acesso de leitura/escrita é concedido.
 
  a| 
 NTAP_NFS_EXPORT_PERSISTENT
+
+
+
  a| 
 verdadeiro
-
-
-
 | falso  a| 
 Determina se a exportação NFS é persistente. Se true estiver selecionado, o volume do clone será exportado e o arquivo /etc/exports no controlador de armazenamento será atualizado.
+
+
+
  a| 
 NTAP_CIFS_EXPORT_ENABLE
-
-
-
  a| 
-(Y
-| N)  a| 
+(S|N)
+ a| 
 Configuração para compartilhar um volume clonado usando CIFS.
 
 |===

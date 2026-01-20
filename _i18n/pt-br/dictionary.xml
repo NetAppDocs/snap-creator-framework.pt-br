@@ -319,9 +319,7 @@
   <block id="83f499a540b1323009c200d6f8cc9396" category="cell">Parâmetro</block>
   <block id="51ac4bf63a0c6a9cefa7ba69b4154ef1" category="cell">Definição</block>
   <block id="96611acf5bf8bf22163153db770f7f60" category="paragraph">ARCHIVE_LOG_ENABLE</block>
-  <block id="b3ece1f3eecb9db7cbfc880c8f76c58d" category="paragraph">(Y</block>
   <block id="8d9c307cb7f3c4a32822a51922d1ceaa" category="cell">N</block>
-  <block id="2fb33ec1462b9029d75715a12e44964a" category="cell">política:idade)</block>
   <block id="3291ad0946050f7aa4f9a9380b2bec20" category="paragraph">Permite o gerenciamento de log de arquivamento (exclusão dos logs de arquivo antigos).</block>
   <block id="0012a5e5e44a9bf77fffdc82e8b485cd" category="paragraph">ARCHIVE_LOG_RETENÇÃO</block>
   <block id="21f2f76c313df826d6e15803c794ee11" category="paragraph">number_of_days</block>
@@ -676,15 +674,12 @@
   <block id="3420213108d85f921270d8bf4116781c" category="paragraph">ORA_TEMP</block>
   <block id="122ad43559cb7c871a7232ce20c529b1" category="paragraph">Caminho para o diretório para armazenar o arquivo temporário, por exemplo, /tmp.o usuário Oracle deve ter permissões apropriadas para esse diretório.</block>
   <block id="f5078f21f47485897c87d1fbf5d9e19f" category="paragraph">ARCHIVE_LOG_ONLY</block>
-  <block id="971063cd9d6a788d0c6a3fe3ea0df2ff" category="cell">Política: Cliente</block>
-  <block id="ed6602eb57ddaa11f48abca427c60f87" category="cell">N&gt;)</block>
   <block id="101f18023eaa7790ef6ba727af65d6be" category="paragraph">Informa o plug-in Oracle para executar apenas uma operação de log de switch. Esta configuração é útil se você estiver lidando com backups de log de arquivamento separadamente dos backups de dados.</block>
   <block id="e1f651debac4f720c13ae930ff3ca14a" category="paragraph">ORACLE_HOME</block>
   <block id="84f63854b03bc743e9613cb2423fba8f" category="paragraph">Caminho para o diretório base Oracle</block>
   <block id="d9d6fdba68448106aac5729e8c538906" category="paragraph">ORACLE_HOME_SID</block>
   <block id="7564a8506de540057f4a75b92113eddd" category="paragraph">Caminho para o diretório inicial do Oracle para um determinado identificador do sistema (SID) ao fazer backup de vários bancos de dados, pode ser importante especificar mais de um diretório inicial do Oracle.</block>
   <block id="65fc35d1054d0995c4d10ad24cd695fa" category="paragraph">ORACLE_EXPORT_PARAMETERS</block>
-  <block id="6cf67f81440dbb166c74c36ba4c92808" category="cell">N )</block>
   <block id="e38df05b7bc8106cbcaa3d5564d87ff8" category="paragraph">Os parâmetros de ambiente ORACLE_Home e ORACLE_SID são exportados usando o comando export. Isso é aplicável apenas em UNIX ou em um ambiente baseado em Linux.</block>
   <block id="8b2da37f068707b163e017f0609318eb" category="paragraph">ORACLE_BACKUPMODE</block>
   <block id="5907a203d13cd6e76d9e09273adbfef7" category="paragraph">Opção para configurar backups off-line ou on-line usando a política Snap Creator. A opção padrão é on-line. Por hora:online,diariamente:offline</block>
@@ -4594,4 +4589,32 @@
   <block id="b76926cf8f58acc96af344359c5d2b2c" category="admonition">Para obter informações sobre erros genéricos do Snap Creator, consulte o<block ref="3b0c025e228e0d658ee39b24066f4d94" category="inline-link-macro-rx"></block> .</block>
   <block id="1d7ce8621814d7cbb17fc470a4344f97" category="inline-link-macro">Guia de Instalação do Snap Creator Framework - Adicionando o caminho às variáveis ​​de ambiente</block>
   <block id="b407da2907a6b37afb80f35075ea8531" category="list-text">Em hosts Windows, você deve adicionar o caminho de instalação do IBM Domino à variável de ambiente PATH. Para mais informações, consulte o<block ref="48a25fc471122170a85c7c8edf958c44" category="inline-link-macro-rx"></block> .</block>
+  <block id="a4b10ba4184c91876de7584578453006" category="paragraph">(S|N|política:idade)</block>
+  <block id="6c66b4d2e5944ca886c4b9a9893da0b7" category="paragraph">(S|N)</block>
+  <block id="8d777f385d3dfec8815d20f7496026dc" category="paragraph">dados</block>
+  <block id="29052802445f7d4f3d102b5c718b66ce" category="paragraph">Valida se todos os volumes nos quais o banco de dados reside fazem parte da operação de backup. Atualmente, existem limitações:</block>
+  <block id="44d74d7cf83cd1c3bf4ab4bb1ae30dc5" category="list-text">Somente o Sistema de Arquivos de Rede (NFS) é suportado.</block>
+  <block id="26a3433cdd66ec88654d1ebf84e4d35b" category="list-text">Somente os arquivos de dados dos bancos de dados suportados são verificados.</block>
+  <block id="9585cd9ea994c167725cd420361fa76e" category="paragraph">(S|N)</block>
+  <block id="798b04090e54a1cdf065909a17bb574e" category="paragraph">O parâmetro funciona para a configuração de banco de dados mestre-escravo do MySQL.</block>
+  <block id="ec33ae0eab0cbcf0f68a1beeebab63c0" category="paragraph">Se definido como "Sim", irá apagar os registos binários para o último ficheiro de registo binário disponível.</block>
+  <block id="489a578ac452aa637e84a849df71b5f0" category="paragraph">Se definido como N, utiliza o carimbo de data/hora mais recente para a consulta de limpeza.</block>
+  <block id="dcf1732d7559ab7b8aa81bdea2e96a8c" category="paragraph">(Política Y|N:&lt;Y|N&gt;)</block>
+  <block id="757be32f0616f9f740892c8c0fc80776" category="paragraph">Se definido como "Sim" durante a execução do backup offline do Oracle, o sistema utiliza o mecanismo de interrupção de desligamento para garantir que o banco de dados seja desligado em um estado consistente. Os passos para o desligamento do parâmetro ORACLE_SHUTDOWNABORT são os seguintes:</block>
+  <block id="5d1c258a7bd4c15972e657524837311b" category="list-text">Abortar desligamento</block>
+  <block id="672525866c66061a202ac9dd9e123406" category="list-text">Restrição de inicialização</block>
+  <block id="89e2c99b632a7bfeb86bb5d15d993ac7" category="list-text">Desligamento imediato</block>
+  <block id="ea9053cb7d9a5295733a4c597e3c402f" category="paragraph">Permite que o endereço IP seja usado para o sistema de armazenamento. Isso se aplica ao SnapVault, ao SnapMirror e ao recurso de proteção de dados do Console de Gerenciamento da NetApp . O uso de endereços IP pode causar problemas e só deve ser feito em determinadas condições.</block>
+  <block id="fc663145389e04ad399fafe44ed4e642" category="paragraph">Configuração opcional para o formato das cópias de Snapshot secundárias ao usar o recurso de proteção de dados do NetApp Management Console. Esta opção requer o OnCommand 5.0 ou posterior. Variável obrigatória:</block>
+  <block id="b3d419be703283d1c8ff46f1a9162193" category="list-text">Carimbo de data/hora: %T</block>
+  <block id="2f865c4db2240014a15a1afb9250d27e" category="paragraph">Variáveis opcionais:</block>
+  <block id="ba7a8922105719869fea7de673955831" category="list-text">Tipo de retenção: %R</block>
+  <block id="811cf16f1a1fba73bff1d3e73cc09894" category="list-text">Rótulo do conjunto de dados: %L</block>
+  <block id="c5995da4091638026ed9470567f8c933" category="list-text">Controlador de armazenamento: %H</block>
+  <block id="cbe2e8252606346bc2a477117e7c22db" category="list-text">Nome do volume: %N</block>
+  <block id="b49c482aa020f7e97d705602777a831b" category="list-text">Dados específicos da aplicação: %A</block>
+  <block id="936fd30e8735631071cb62e403722ec4" category="paragraph">Caso essa opção não esteja definida, será utilizada a convenção de nomenclatura padrão para o recurso de proteção de dados do NetApp Management Console. A convenção de nomenclatura só pode ser definida no momento da criação do conjunto de dados.</block>
+  <block id="388306add449258c47380d6b7db98378" category="paragraph">Habilita ou desabilita a criação de eventos no console do Operations Manager.</block>
+  <block id="957338adada6845bcc51f661d173fbb3" category="paragraph">Execute estes scripts ou comandos durante ou antes do processo de backup do OSSV, onde ## é um número de 01 a 99. Isso pode ser usado para realizar backups de snapshots do sistema de arquivos usando o OSSV.</block>
+  <block id="17c3a9f520927a583d184a69999e24cf" category="paragraph">Habilita ou desabilita o uso da versão de 32 bits do PowerShell.</block>
 </blocks>

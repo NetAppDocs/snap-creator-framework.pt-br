@@ -43,26 +43,23 @@ Especifica o nome do aplicativo.
  a| 
 XUSER_ENABLE (ATIVAR XUSER)
  a| 
-(Y
-| N) 
-
-
+(S|N)
  a| 
 Ativa ou desativa o uso de um xuser para o MaxDB para que uma senha não seja necessária para o usuário do banco de dados.
+
+
+
  a| 
 PEGA_LOGWRITER
  a| 
-(Y
-
-
-
-| N)  a| 
+(S|N)
+ a| 
 Executa suspender operações de logwriter (N) ou retomar o logwriter (Y).
+
+
+
  a| 
 DBMCLICMD
-
-
-
  a| 
 caminho_para_dbmcli_cmd
  a| 
@@ -70,23 +67,23 @@ Especifica o caminho para o comando MaxDB dbmcli.se não estiver definido, dbmcl
 
 
 NOTE: Se estiver em um ambiente Windows, o caminho precisa ser contido dentro de aspas duplas ("...").
+
+
+
  a| 
 SQLCLICMD
-
-
-
  a| 
 caminho_para_sqlcli_cmd
  a| 
 Especifica o caminho para o comando sqlcli MaxDB. Se não estiver definido, sqlcli é usado no caminho de pesquisa.
+
+
+
  a| 
 MAXDB_UPDATE_HIST_LOG
-
-
-
  a| 
-(Y
-| N)  a| 
+(S|N)
+ a| 
 Instrui o programa de backup MaxDB se deseja ou não atualizar o log de histórico do MaxDB.
 
 

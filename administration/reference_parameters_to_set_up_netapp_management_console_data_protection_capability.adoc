@@ -20,30 +20,47 @@ Vários parâmetros são necessários para configurar o recurso de proteção de
  a| 
 NTAP_PM_UPDATE
  a| 
-(Y
-| N) 
-
-
+(S|N)
  a| 
 Permite ativar e desativar a atualização da funcionalidade de proteção de dados do Console de Gerenciamento do NetApp que Registra cópias Snapshot do Snap Creator na funcionalidade de proteção de dados do Console de Gerenciamento do NetApp. *Nota:* se NTAP_PM_UPDATE estiver ativado, você deve configurar NTAP_DFM_DATA_SET.
+
+
+
  a| 
 NTAP_DFM_DATA_SET
  a| 
-
-
-
  a| 
 Lista os sistemas de armazenamento e os conjuntos de dados de capacidade de proteção de dados do Console de Gerenciamento da NetApp para correlações de volume; ou seja, controller1:dataset1/vol1,vol2;controller1:dataset2/vol3.
+
+
+
  a| 
 NTAP_PM_RUN_BACKUP
  a| 
-(Y
-
-
-
-| N)  a| 
+(S|N)
+ a| 
 Inicia o backup da capacidade de proteção de dados do Console de Gerenciamento do NetApp, verifica o progresso e o status e aguarda que ele seja concluído.
+
+
+
  a| 
 NTAP_DFM_SNAPSHOT_FORMAT
+ a| 
+ a| 
+Configuração opcional para o formato das cópias de Snapshot secundárias ao usar o recurso de proteção de dados do NetApp Management Console. Esta opção requer o OnCommand 5.0 ou posterior. Variável obrigatória:
+
+* Carimbo de data/hora: %T
+
+
+Variáveis opcionais:
+
+* Tipo de retenção: %R
+* Rótulo do conjunto de dados: %L
+* Controlador de armazenamento: %H
+* Nome do volume: %N
+* Dados específicos da aplicação: %A
+
+
+Caso essa opção não esteja definida, será utilizada a convenção de nomenclatura padrão para o recurso de proteção de dados do NetApp Management Console. A convenção de nomenclatura só pode ser definida no momento da criação do conjunto de dados.
 
 |===

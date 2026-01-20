@@ -20,34 +20,37 @@ Vários parâmetros são necessários para configurar o Open Systems SnapVault (
  a| 
 NTAP_OSSV_ENABLE
  a| 
-(Y
-| N) 
-
-
+(S|N)
  a| 
 Permite a integração do OSSV. Este parâmetro deve ser usado em combinação com o parâmetro NTAP_OSSV_HOMEDIR. O OSSV também é necessário no host que executa o Snap Creator. No OSSV, a lógica de retenção de política lida com as políticas baseadas apenas nas políticas predefinidas do Snap Creator. Ele não suporta nenhum objeto de política.
 
 
 NOTE: Quando este parâmetro OSSV está ativado, o caminho é especificado como volumes. Ao especificar caminhos no Windows para OSSV, os dois pontos (:) não devem ser usados. Por exemplo, se o caminho for e:
+
+
+
  a| 
 NTAP_OSSV_HOMEDIR
  a| 
 /usr/SnapVault
-
-
-
  a| 
 Define o caminho para o diretório home do OSSV (/usr/SnapVault).
+
+
+
  a| 
 NTAP_OSSV_FS_SNAPSHOT
  a| 
-(Y
-
-
-
-| N)  a| 
+(S|N)
+ a| 
 Necessário para definir o parâmetro NTAP_OSSV_FS_SNAPSHOT_CREATE_CMD.permite criar uma cópia Snapshot do sistema de arquivos usando o comando Open System ou sistema de arquivos. A cópia Snapshot do sistema de arquivos é então transferida para o sistema de storage usando o SnapVault.
+
+
+
  a| 
 NTAP_OSSV_FS_SNAPSHOT_CREATE_CMD
+ a| 
+ a| 
+Execute estes scripts ou comandos durante ou antes do processo de backup do OSSV, onde ## é um número de 01 a 99. Isso pode ser usado para realizar backups de snapshots do sistema de arquivos usando o OSSV.
 
 |===

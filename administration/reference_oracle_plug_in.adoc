@@ -75,11 +75,8 @@ Caminho para o diretório para armazenar o arquivo temporário, por exemplo, /tm
  a| 
 ARCHIVE_LOG_ONLY
  a| 
-(Y
-| N 
-
-
-| Política: Cliente | N>)  a| 
+(Política Y|N:<Y|N>)
+ a| 
 Informa o plug-in Oracle para executar apenas uma operação de log de switch. Esta configuração é útil se você estiver lidando com backups de log de arquivamento separadamente dos backups de dados.
 
 
@@ -103,24 +100,31 @@ Caminho para o diretório inicial do Oracle para um determinado identificador do
  a| 
 ORACLE_EXPORT_PARAMETERS
  a| 
-(Y
-| N ) 
-
-
+(S|N)
  a| 
 Os parâmetros de ambiente ORACLE_Home e ORACLE_SID são exportados usando o comando export. Isso é aplicável apenas em UNIX ou em um ambiente baseado em Linux.
+
+
+
  a| 
 ORACLE_BACKUPMODE
  a| 
-
-
-
  a| 
 Opção para configurar backups off-line ou on-line usando a política Snap Creator. A opção padrão é on-line. Por hora:online,diariamente:offline
+
+
+
  a| 
 ORACLE_SHUTDOWNABORT
  a| 
-(Y
+(S|N)
+ a| 
+Se definido como "Sim" durante a execução do backup offline do Oracle, o sistema utiliza o mecanismo de interrupção de desligamento para garantir que o banco de dados seja desligado em um estado consistente. Os passos para o desligamento do parâmetro ORACLE_SHUTDOWNABORT são os seguintes:
+
+* Abortar desligamento
+* Restrição de inicialização
+* Desligamento imediato
+
 
 |===
 *Informações relacionadas*
