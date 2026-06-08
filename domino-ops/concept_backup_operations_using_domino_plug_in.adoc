@@ -22,7 +22,7 @@ Os passos de alto nível são os seguintes:
 . Verifique se existem bancos de dados inconsistentes ou corrompidos.
 +
 
-NOTE: Você pode forçar o plug-in a prosseguir com as operações de backup apesar de erros, conforme descrito na etapa link:task_using_the_gui_to_create_a_configuration_file.md#STEP_AA41331683A24598B7845367CB967F99["Task_using_the_gui_to_create_a_Configuration_file.md_AA41331683A24598B7845367CB967F99"].
+NOTE: Você pode forçar o plug-in a prosseguir com as operações de backup apesar dos erros, conforme descrito na etapa link:task_using_the_gui_to_create_a_configuration_file.html["tarefa_usando_a_interface_de_usuário_para_criar_um_arquivo_de_configuração"].
 
 . Faça uma cópia Snapshot de cada volume.
 . Se o log de transações do Domino estiver em uso, arquive cópias de logs de transações do Domino para uso em operações de restauração mais recentes.

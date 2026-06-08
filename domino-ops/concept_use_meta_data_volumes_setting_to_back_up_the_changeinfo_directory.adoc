@@ -13,7 +13,7 @@ summary: Se você pretende fazer backup do diretório changeinfo, você deve con
 [role="lead"]
 Se você pretende fazer backup do diretório changeinfo, você deve configurar o volume que contém o diretório como um volume de metadados. Isso diz ao plug-in IBM Domino para criar uma cópia Snapshot do volume changeinfo _after_ criando a cópia Snapshot para arquivos de banco de dados.
 
-Você já deve ter identificado o volume changeinfo como um volume a ser feito backup quando você criou o arquivo de configuração. Para obter mais informações, consulte a etapa link:task_using_the_gui_to_create_a_configuration_file.md#STEP_2036E43A6921415985798979F2226786["tarefa usando a gui para criar uma configuração"].
+Você já deve ter identificado o volume changeinfo como um volume a ser copiado quando criou o arquivo de configuração. Para obter mais informações, consulte a etapa link:task_using_the_gui_to_create_a_configuration_file.html["tarefa usando a gui para criar uma configuração"].
 
 Você usa o parâmetro META_DATA_VOLUME no arquivo de configuração para identificar o volume changeinfo como um volume de metadados. O parâmetro não está disponível na GUI.
 

@@ -55,7 +55,7 @@ Selecionar *Restore* inicia automaticamente o assistente Snap Creator Framework 
 
 +
 
-NOTE: Se você estiver restaurando de uma cópia do SnapVault, será solicitado que você restaure do storage primário ou secundário. Sua seleção depende de como você está lidando com a limitação descrita em link:concept_domino_database_restore_overview.md#GUID-4D864E27-DE54-43BF-9B9F-EF2F240F65D9["Concept_Domino_database_restore_overview.md GUID-4D864E27-DE54-43BF-9B9F-EF2F240F65D9"].
+NOTE: Se você estiver restaurando a partir de uma cópia SnapVault, será solicitado a restaurar do storage primário ou secundário. Sua seleção depende de como você está lidando com a limitação descrita em link:concept_domino_database_restore_overview.html["Concept_Domino_database_restore_overview.md GUID-4D864E27-DE54-43BF-9B9F-EF2F240F65D9"].
 
 . Na página Restaurar detalhes, especifique os detalhes da restauração:
 +

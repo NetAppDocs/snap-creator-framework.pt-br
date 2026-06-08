@@ -25,7 +25,7 @@ Somente restaurações de volume pontual estão disponíveis quando você restau
 
 == Compreender os diretórios de destino
 
-As restaurações de volume e restaurações de arquivo único geralmente têm diretórios de destino diferentes. Especifique o diretório de destino no parâmetro diretório de restauração de dados no arquivo de configuração de backup e restauração (consulte a etapa link:task_using_the_gui_to_create_a_configuration_file.md#STEP_E6C507729B3647FD8B2E8D0818F22D3B["Task_using_the_gui_to_create_a_Configuration_file.md_E6C507729B3647FD8B2E8D0818F22D3B"]):
+As restaurações de volume e as restaurações de arquivo único geralmente têm diretórios de destino diferentes. Você especifica o diretório de destino no parâmetro Diretório de Restauração de Dados no arquivo de configuração de backup e restauração (consulte a etapa link:task_using_the_gui_to_create_a_configuration_file.html["tarefa usando a gui para criar um arquivo de configuração"]):
 
 * Para uma restauração de volume, você precisa definir o diretório de restauração de dados para o diretório de dados do Domino.
 * Para uma restauração de arquivo único, você precisa definir o diretório de restauração de dados para um subdiretório no volume de dados do Domino.

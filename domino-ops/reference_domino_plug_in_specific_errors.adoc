@@ -57,7 +57,7 @@ Estas mensagens de erros aparecem se uma das seguintes condições não for cump
 
 == O backup do Snap Creator falha por causa de um banco de dados ruim
 
-Por padrão, uma operação de backup falhará se um ou mais bancos de dados estiverem em um estado inconsistente ou corrompido. Você pode forçar o plug-in a prosseguir com as operações de backup apesar de erros, conforme descrito na etapa link:task_using_the_gui_to_create_a_configuration_file.md#STEP_AA41331683A24598B7845367CB967F99["tarefa usando a gui para criar um arquivo de configuração"].
+Por padrão, uma operação de backup falhará se um ou mais bancos de dados estiverem em um estado inconsistente ou corrompido. Você pode forçar o plug-in a prosseguir com operações de backup apesar dos erros, conforme descrito na etapa link:task_using_the_gui_to_create_a_configuration_file.html["tarefa usando a gui para criar um arquivo de configuração"].
 
 
 
@@ -97,7 +97,7 @@ ltd-00001
  a| 
 O plug-in do Domino não pode funcionar com SNAP_TIMESTAMP_ONLY
  a| 
-Para obter mais informações, consulte a etapa link:task_using_the_gui_to_create_a_configuration_file.md#STEP_81795CF9D6294AC891BC3D0CE4827CA3["Task_using_the_gui_to_create_a_Configuration_file.md_81795CF9D6294AC891BC3D0CE4827CA3"].
+Para obter mais informações, consulte a etapa link:task_using_the_gui_to_create_a_configuration_file.html["tarefa_usando_a_interface_de_usuário_para_criar_um_arquivo_de_configuração"].
 
 
 

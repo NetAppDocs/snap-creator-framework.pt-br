@@ -96,7 +96,7 @@ NOTE: Embora o valor máximo aceito para o *tamanho do log de trabalho* seja 10.
 Durante a instalação do serviço Snap Creator Server, um prompt de comando é exibido se um serviço foi selecionado como parte das opções de instalação. Este processo tenta iniciar serviços existentes; portanto, é comum ver as mensagens de falha listadas como parte desta etapa.
 
 .. Clique em *Finish* para fechar o instalador do Windows.
-.. Valide a inicialização da GUI do Snap Creator Framework navegando até o host local na porta especificada (https://IP_address:gui_port[]).
+.. Valide a inicialização da interface de usuário do Snap Creator Framework navegando até o host local na porta especificada +(https://IP_address:gui_port)+[].
 +
 Você deve se conetar usando HTTPS; caso contrário, a conexão não será automaticamente redirecionada para uma conexão HTTPS e a GUI não funcionará.
 

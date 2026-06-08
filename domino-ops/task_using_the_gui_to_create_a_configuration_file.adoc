@@ -230,7 +230,7 @@ Os volumes especificados são exibidos na página credenciais do controlador/SVM
 IMPORTANT: Se você pretende fazer backup do diretório changeinfo, configure o volume que contém o diretório como um volume de metadados, conforme descrito em xref:concept_use_meta_data_volumes_setting_to_back_up_the_changeinfo_directory.adoc[Fazer backup do diretório changeinfo]. Essa opção informa ao plug-in IBM Domino para criar uma cópia Snapshot do volume changeinfo _after_ criando a cópia Snapshot para arquivos de banco de dados.
 
 . Na página credenciais de controlador/SVM, clique em *Adicionar* se quiser especificar detalhes e volumes da SVM a serem copiados para outro sistema de storage primário.
-. Na página Detalhes do instantâneo, especifique as informações de configuração do instantâneo:
+. [[thirteenth-step]]Na página de detalhes do Snapshot, especifique as informações de configuração do Snapshot:
 +
 |===
 | Para este campo... | Faça isso... 
@@ -299,7 +299,7 @@ A política para cópias Snapshot espelhadas é a mesma que a política para có
 
 .. Clique em *SnapVault* para arquivar cópias Snapshot.
 .. Especifique a política para cópias Snapshot arquivadas.
-.. As instruções estão na etapa a seguir<<STEP_81795CF9D6294AC891BC3D0CE4827CA3,13>> .
+.. As instruções estão na próxima etapa<<thirteenth-step,13>>.
 .. Em *tempo de espera do SnapVault*, insira o número de minutos que deseja que o Snap Creator aguarde até que a operação do SnapVault seja concluída.
 .. Você precisa configurar relacionamentos SnapMirror e SnapVault antes de executar a replicação para o storage secundário. Para obter mais informações, xref:concept_snapmirror_and_snapvault_setup.adoc[Configuração SnapMirror e SnapVault]consulte .
 

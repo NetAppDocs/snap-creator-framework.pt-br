@@ -98,6 +98,6 @@ sc start snapcreatorserverservice
 ----
 
 
-Além disso, você deve validar a inicialização da GUI do Snap Creator Framework navegando até o host local na porta especificada (https://IP_address:gui_port[]).
+Além disso, você deve validar a inicialização da interface de usuário do Snap Creator Framework navegando até o host local na porta especificada +(https://IP_address:gui_port)+[].
 
 Você deve se conetar usando HTTPS; caso contrário, a conexão não será automaticamente redirecionada para uma conexão HTTPS e a GUI não funcionará.

@@ -82,6 +82,6 @@ local:
 
 
 . Quando estiver satisfeito com sua entrada, pressione *Enter*.
-. Repita as etapas <<STEP_3F9C83DD05D84075AD0277213FD67C56,PASSO_3F9C83DD05D84075AD0277213FD67C56>> até <<STEP_FBEDD7AE105F42138EB35315EA9FA7CC,PASSO_FBEDD7AE105F42138EB35315EA9FA7CC>>para adicionar outro comando.
+. Repita os passos 3 e 4 para adicionar outro comando.
 . Clique em *Salvar* no painel conteúdo da Configuração para salvar suas alterações.
 

@@ -72,6 +72,6 @@ Além disso, exclua o diretório de instalação do Snap Creator 4,1.x.
 
 IMPORTANT: Não exclua as cópias de backup até ter certeza de que não precisa reverter para uma versão mais antiga.
 
-Você também deve validar a inicialização da GUI do Snap Creator Framework navegando até o host local na porta especificada (https://IP_address:gui_port[]).
+Você também deve validar a inicialização da GUI do Snap Creator Framework navegando até o host local na porta especificada +(https://IP_address:gui_port)+[].
 
 Você deve se conetar usando HTTPS; caso contrário, a conexão não será automaticamente redirecionada para uma conexão HTTPS e a GUI não funcionará.
