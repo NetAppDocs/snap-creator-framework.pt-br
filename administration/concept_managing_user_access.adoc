@@ -17,6 +17,7 @@ O RBAC envolve usuários, funções, permissões, operações e perfis. Os usuá
 
 
 
+[[users]]
 == Usuários
 
 * Os usuários são identificados exclusivamente por um nome de usuário e senha.
@@ -27,6 +28,7 @@ O RBAC envolve usuários, funções, permissões, operações e perfis. Os usuá
 
 
 
+[[roles]]
 == Funções
 
 As funções têm uma ou mais permissões. As permissões atribuídas determinam as ações que um usuário pode executar e também quais elementos da GUI o usuário pode acessar. Existem três funções integradas:
@@ -49,6 +51,7 @@ Essas funções incorporadas não podem ser adicionadas, removidas ou modificada
 
 
 
+[[permissions]]
 == Permissões
 
 As permissões são um conjunto de operações que o usuário está autorizado a executar. As seguintes permissões são integradas:
@@ -105,6 +108,7 @@ Fornece autorização para operações somente leitura.
 
 
 
+[[operations]]
 == Operações
 
 As operações são os valores base que o Snap Creator verifica para obter autorização. Alguns exemplos de operações são getTask, fileCloneCreate, createTask, dirCreate e assim por diante.
@@ -114,6 +118,7 @@ NOTE: As operações não podem ser adicionadas, removidas ou modificadas.
 
 
 
+[[profiles]]
 == Perfis
 
 * Os perfis são atribuídos aos usuários.
@@ -127,6 +132,7 @@ Por exemplo, se um usuário quiser um status de tarefa, o RBAC verifica se o usu
 
 
 
+[[managing-user-access-for-storage-controllers]]
 == Gerenciamento do acesso do usuário para controladores de storage
 
 Se você não estiver usando o proxy Active IQ Unified Manager, precisará de um nome de usuário e senha para se comunicar com os controladores de armazenamento. As senhas podem ser criptografadas para segurança.

@@ -15,6 +15,7 @@ O plug-in IBM Domino restaura arquivos de banco de dados da cópia Snapshot do v
 
 
 
+[[understanding-snapmirror-and-snapvault-restore-operations]]
 == Compreensão das operações de restauração do SnapMirror e do SnapVault
 
 Não é possível usar o Snap Creator para restaurar uma cópia SnapMirror dos dados. Se você quiser restaurar uma cópia de espelho, primeiro você precisa quebrar o espelho e, em seguida, restaurar manualmente os dados. Para obter mais informações, consulte link:http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-sm-ic-fr/home.html["Guia expresso de recuperação de desastres em volume do ONTAP 9"].
@@ -23,6 +24,7 @@ Somente restaurações de volume pontual estão disponíveis quando você restau
 
 
 
+[[understanding-destination-directories]]
 == Compreender os diretórios de destino
 
 As restaurações de volume e as restaurações de arquivo único geralmente têm diretórios de destino diferentes. Você especifica o diretório de destino no parâmetro Diretório de Restauração de Dados no arquivo de configuração de backup e restauração (consulte a etapa link:task_using_the_gui_to_create_a_configuration_file.html["tarefa usando a gui para criar um arquivo de configuração"]):
@@ -35,6 +37,7 @@ Isso significa que, se você alternar tipos de restauração, precisará modific
 
 
 
+[[where-to-run-a-restore]]
 == Onde executar uma restauração
 
 Com uma exceção, você pode usar a GUI do Snap Creator ou a CLI do Snap Creator para restaurar bancos de dados. Para restaurações em um único arquivo em um ambiente SAN, use a CLI, conforme descrito em xref:concept_single_file_restore_in_fc_iscsi_environments.adoc[Executar uma restauração de arquivo único em um ambiente SAN].

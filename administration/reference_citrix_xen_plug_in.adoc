@@ -42,6 +42,7 @@ Para várias VMs, a duração da VM no estado de pausa durante a operação de b
 
 
 
+[[supported-citrix-xenserver-configurations]]
 == Configurações suportadas do Citrix XenServer
 
 As seguintes configurações do Citrix XenServer são suportadas:
@@ -62,6 +63,7 @@ As seguintes configurações do Citrix XenServer são suportadas:
 
 
 
+[[parameters]]
 == Parâmetros
 
 A tabela a seguir lista e descreve os parâmetros do plug-in do Citrix XenServer:

@@ -54,6 +54,7 @@ Para várias VMs, a duração da VM no estado de suspensão durante a operação
 
 
 
+[[supported-kvm-configurations]]
 == Configurações KVM compatíveis
 
 * SAN: Suporta máquinas virtuais convidadas instaladas em um dispositivo multipath bruto (LUN com vários caminhos).

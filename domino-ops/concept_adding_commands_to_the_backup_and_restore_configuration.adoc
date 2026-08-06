@@ -15,6 +15,7 @@ Ocasionalmente, uma operação de backup ou restauração pode precisar executar
 
 
 
+[[where-to-run-supplemental-commands]]
 == Onde executar comandos suplementares
 
 Por padrão, comandos suplementares são executados no Snap Creator Agent. Você pode executar um comando suplementar no servidor prependendo o comando com o SERVIDOR de texto, seguido por dois pontos (:). Por exemplo, SERVER:C: Myscript.bat.
@@ -23,6 +24,7 @@ Se você quiser executar um comando suplementar no Agente, você deve permitir e
 
 
 
+[[where-to-add-supplemental-commands]]
 == Onde adicionar comandos suplementares
 
 Você pode usar a GUI do Snap Creator ou a CLI do Snap Creator para adicionar comandos à sua configuração de backup e restauração.

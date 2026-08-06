@@ -22,6 +22,7 @@ Os passos de alto nível são os seguintes:
 
 
 
+[[restore-options]]
 == Opções de restauração
 
 O plug-in oferece uma ampla variedade de opções de restauração:
